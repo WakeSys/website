@@ -1,0 +1,30 @@
+@import '../constants';
+@import '../mixins';
+
+
+.headline {
+    font-family: $fontFamily;
+    margin: 0;
+}
+
+.h1 {
+    font-size: 32px;
+    font-weight: $fontWeightBold;
+    color: $wakeSysBlue;
+    letter-spacing: 1.5px;
+}
+
+.h2 {
+    font-size: 25px;
+    font-weight: $fontWeightMedium;
+    color: $grayWeather;
+    margin-bottom: 30px;
+}
+
+.h3 {
+    color: $wakeSysBlue;
+    font-size: 18px;
+    font-weight: $fontWeightLight;
+    letter-spacing: .77px;
+    margin-bottom: 20px;
+}
