@@ -1,0 +1,13 @@
+@import './constants.scss';
+
+@mixin breakpointSmall {
+    @media (max-width: #{$smallScreenMaxWidth}) {
+        @content;
+    }
+}
+
+@mixin breakpointBig {
+    @media (min-width: #{$smallScreenMinWidth}) {
+        @content;
+    }
+}
