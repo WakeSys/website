@@ -1,0 +1,44 @@
+@import '../constants';
+@import '../mixins';
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    position: fixed;
+    overflow-y: auto;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(black, .4);
+}
+
+.modal {
+    position: relative;
+    width: 960px;
+    border-radius: 8;
+    background-color: white;
+    overflow: auto;
+
+    @include breakpointSmall {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        border-radius: 0;
+        width: auto;
+        max-height: 100%;
+    }
+}

@@ -1,0 +1,19 @@
+@import '../constants';
+
+.navigationListItem {
+  margin-right: 30px;
+}
+
+.navigationLinkItem {
+  color: $intoDarkness;
+  font-weight: $fontWeightBold;
+  color: $intoDarkness;
+  text-decoration: none;
+  letter-spacing: .67px;
+  transition: color $standardTransition;
+
+  &:hover,
+  &:focus {
+    color: $wakeSysBlue;
+  }
+}

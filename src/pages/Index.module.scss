@@ -1,13 +1,28 @@
+@import '../components/constants';
+
 .Container {
   max-width: 60rem;
   margin: 3rem auto 0;
   font-family: sans-serif;
-  
+
   h1 {
     color: #333;
   }
-  
+
   p {
     color: #aaa;
   }
+}
+
+.subhealine {
+  span {
+    font-weight: $fontWeightBold;
+  }
+}
+
+.headerParagraph {
+  max-width: 520px;
+  text-align: center;
+  line-height: 1.9;
+  letter-spacing: .9px;
 }

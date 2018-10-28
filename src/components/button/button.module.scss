@@ -1,0 +1,37 @@
+@import '../constants';
+@import '../mixins';
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    background-color: $wakeSysBlue;
+    border-radius: $borderRadius;
+    font-family: $fontFamily;
+    font-weight: $fontWeightMedium;
+    font-size: $fontSizeDefault;
+    letter-spacing: .67px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color $standardTransition, border-color $standardTransition;
+    outline: none;
+
+    @include breakpointBig {
+        width: initial;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: darken($wakeSysBlue, 10%);
+    }
+}
+
+.buttonSmall {
+    padding: 8px 24px;
+    font-size: $fontSizeSmall;
+}
+
+.buttonBig {
+    padding: 20px 30px;
+}

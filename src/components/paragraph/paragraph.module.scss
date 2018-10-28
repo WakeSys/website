@@ -1,0 +1,11 @@
+@import '../constants';
+
+.paragraph {
+    color: $intoDarkness;
+    font-size: $fontSizeSmall;
+    font-weight: $fontWeightRegular;
+    letter-spacing: .6px;
+    line-height: 1.75;
+    margin: 0;
+    margin-bottom: 30px;
+}
