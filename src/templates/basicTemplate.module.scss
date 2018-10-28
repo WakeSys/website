@@ -1,0 +1,12 @@
+@import '~normalize.css';
+@import '../components/constants';
+
+body {
+    font-family: $fontFamily;
+    font-size: $fontSizeDefault;
+    line-height: 1.5;
+}
+
+.topBar {
+    display: flex;
+}
