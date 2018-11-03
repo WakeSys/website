@@ -12,6 +12,10 @@
     font-weight: $fontWeightBold;
     color: $wakeSysBlue;
     letter-spacing: 1.5px;
+
+    @include breakpointBig {
+        font-size: 42px;
+    }
 }
 
 .h2 {
@@ -27,4 +31,38 @@
     font-weight: $fontWeightLight;
     letter-spacing: .77px;
     margin-bottom: 20px;
+}
+
+.topic {
+    display: block;
+    position: relative;
+    margin-bottom: 30px;
+    font-size: $fontSizeDefault;
+    font-weight: $fontWeightLight;
+    color: $wakeSysBlue;
+    transform: translateX(45px);
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 25px;
+        left: -15px;
+        top: 11px;
+        border-top: 1px currentColor solid;
+        border-left: 1px currentColor solid;
+
+    }
+}
+
+.h4 {
+    color: $grayWeather;
+    font-size: 18px;
+    font-weight: $fontWeightMedium;
+    letter-spacing: .77px;
+    margin-bottom: 20px;
+}
+
+.withoutMargin {
+    margin: 0;
 }

@@ -1,0 +1,21 @@
+@import '../constants';
+
+.featureListItem {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 16px;
+}
+
+.FeatureListItemIcon {
+    margin-right: 8px;
+    color: $caipirinha;
+}
+
+.featureListItemLabel {
+    font-family: $fontFamily;
+    font-size: $fontSizeSmall;
+    font-weight: $fontWeightRegular;
+    color: $grayWeather;
+    letter-spacing: .6px;
+}

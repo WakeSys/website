@@ -18,7 +18,7 @@ export const TopBar: React.SFC<ITopBarProps> = ({ navigationList, label, openOve
       <Logo type="colorful" />
       <div className={styles.wrapper}>
         <NavigationList navigationList={navigationList} />
-        <Button buttonSize="small" label={label} onClick={openOverlay} />
+        <Button className={styles.topBarButton} buttonSize="small" label={label} onClick={openOverlay} />
       </div>
     </div>
   );

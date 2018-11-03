@@ -1,8 +1,10 @@
 $wakeSysBlue: #4A90E2;
+$lightGray: #F4F4F4;
 $grayWeather: #4E5056;
 $intoDarkness: #696C76;
 $sunShine: #FFCF54;
 $caipirinha: #6DB553;
+$bloodyRed: #F5695D;
 
 $fontFamily: 'Roboto',
 sans-serif;
@@ -15,6 +17,8 @@ $fontSizeSmall: 14px;
 
 $borderRadius: 8px;
 
+$boxShadowBig: 0 20px 40px 0 rgba(black, .13);
+
 $standardTransition: 200ms ease-in;
 
 $smallScreenMaxWidth: 767px;
@@ -22,4 +26,6 @@ $smallScreenMinWidth: $smallScreenMaxWidth+1;
 
 :export {
     wakeSysBlue: $wakeSysBlue;
+    smallScreenMaxWidth: $smallScreenMaxWidth;
+    smallScreenMinWidth: $smallScreenMinWidth;
 }

@@ -16,4 +16,8 @@
   &:focus {
     color: $wakeSysBlue;
   }
+
+  &[aria-current="page"] {
+    color: $wakeSysBlue;
+  }
 }

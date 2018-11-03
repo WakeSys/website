@@ -1,0 +1,30 @@
+@import '../constants';
+
+.sectionElement {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.sectionElementIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    margin-right: 20px;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 0 5px 10px 0 rgba(black, 0.2);
+    outline: none;
+}
+
+.sectionElementDescription {
+    color: $intoDarkness;
+    font-size: $fontSizeSmall;
+    letter-spacing: 0.6px;
+}

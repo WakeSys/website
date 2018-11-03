@@ -1,0 +1,67 @@
+@import '../constants';
+@import '../mixins';
+
+.introductionVisual {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    background-color: white;
+    box-shadow: $boxShadowBig;
+    border-bottom-left-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+
+    @include breakpointBig {
+        width: 260px;
+    }
+}
+
+.introductionBadge {
+    padding: 4px 0;
+    background-color: $sunShine;
+    color: white;
+    font-size: $fontSizeSmall;
+    font-weight: $fontWeightBold;
+    letter-spacing: .6px;
+    text-align: center;
+    border-top-left-radius: $borderRadius;
+    border-top-right-radius: $borderRadius;
+}
+
+.introductionWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.introductionTickets {
+    font-size: $fontSizeSmall;
+    color: $wakeSysBlue;
+    letter-spacing: .6px;
+    line-height: 1.8;
+}
+
+.introductionMembership {
+    font-size: $fontSizeSmall;
+    color: $bloodyRed;
+    letter-spacing: .6px;
+    line-height: 1.8;
+}
+
+.introductionDivider {
+    height: 2px;
+    margin: 20px 0;
+    background-color: $lightGray;
+}
+
+.introductionTotal {
+    color: $grayWeather;
+    font-weight: $fontWeightBold;
+    letter-spacing: .6px;
+    margin-bottom: 20px;
+}
+
+.introductionStatistics {
+    align-self: center;
+    width: 70%;
+}

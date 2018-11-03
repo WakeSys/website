@@ -1,3 +1,5 @@
+@import '../mixins';
+
 .topBar {
     display: flex;
     justify-content: space-between;
@@ -12,4 +14,12 @@
 .wrapper {
     display: flex;
     align-items: center;
+}
+
+.topBarButton {
+    display: none;
+
+    @include breakpointBig {
+        display: block;
+    }
 }
