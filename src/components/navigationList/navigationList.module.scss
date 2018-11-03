@@ -1,6 +1,98 @@
+@import '../constants';
+@import '../mixins';
+
 .navigationList {
-  display: flex;
+  display: none;
   list-style: none;
   padding: 0;
   margin: 0;
+
+  @include breakpointBig {
+    display: flex;
+  }
+}
+
+.mobileNavigation {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 100;
+
+  @include breakpointBig {
+    display: none;
+  }
+}
+
+.navigationListMobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: $wakeSysBlue;
+    border-radius: 50%;
+    transform: scale(2) translateY(-40%);
+    transform-origin: bottom;
+    transition: transform $standardTransition;
+    z-index: -1;
+  }
+}
+
+.navigationListMobileActive {
+  &:after {
+    content: '';
+    animation: slideIn $standardTransition forwards;
+  }
+}
+
+.navigationItemMobile {
+  margin: 0;
+  font-size: 20px;
+  font-weight: $fontWeightBold;
+  text-transform: uppercase;
+  line-height: 2;
+
+  a {
+    color: white;
+
+    &[aria-current="page"] {
+      color: white;
+    }
+  }
+}
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  background: $wakeSysBlue;
+  border-radius: 50%;
+  transform-origin: center;
+  transition: transform 300ms ease-in-out;
+  z-index: -1;
+  animation: slideIn 200ms ease-in forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(4);
+  }
 }
