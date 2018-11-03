@@ -1,0 +1,21 @@
+
+<svg width="582px" height="410px" viewBox="0 0 582 410" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M552,436 L29.0010969,436 C12.9848392,436 0.00109690365,423.016258 0.00109690365,407 C0.00109690365,397.347122 4.80406419,388.32698 12.8130679,382.938668 L535.253763,31.4500222 C549.000701,22.201331 567.642342,25.8478806 576.891034,39.5948189 C580.221245,44.5447317 582,50.375157 582,56.3410558 L582,406 C582,422.568542 568.568542,436 552,436 Z" id="path-1"></path>
+        <linearGradient x1="128.735085%" y1="-3.02483642%" x2="32.7967388%" y2="76.0265624%" id="linearGradient-3">
+            <stop stop-color="#CC78DA" offset="0%"></stop>
+            <stop stop-color="#4E5056" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-371.000000, -661.000000)">
+            <g id="triangle" transform="translate(371.000000, 635.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#4E5056" xlink:href="#path-1"></use>
+                <polygon id="Path-6" fill="url(#linearGradient-3)" mask="url(#mask-2)" points="582 436.247845 296 436.247845 296 192.392888 582 -0.752155493"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
