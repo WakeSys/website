@@ -1,22 +1,17 @@
 @import '../components/constants';
+@import '../components/mixins';
 
-.Container {
-  max-width: 60rem;
-  margin: 3rem auto 0;
-  font-family: sans-serif;
+.subhealine {
+  text-align: center;
 
-  h1 {
-    color: #333;
-  }
-
-  p {
-    color: #aaa;
+  span {
+    font-weight: $fontWeightBold;
   }
 }
 
-.subhealine {
-  span {
-    font-weight: $fontWeightBold;
+.content {
+  @include breakpointBig {
+    width: 400px;
   }
 }
 
@@ -25,4 +20,15 @@
   text-align: center;
   line-height: 1.9;
   letter-spacing: .9px;
+}
+
+.sectionIntroduction {
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.sectionOwner {
+  @include breakpointBig {
+    margin-top: 250px;
+  }
 }
