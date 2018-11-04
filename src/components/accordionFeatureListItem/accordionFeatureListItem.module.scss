@@ -1,0 +1,54 @@
+@import '../constants';
+
+.accordionFeatureListItem {
+    margin-bottom: 25px;
+}
+
+.accordionFeatureListItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: $fontSizeDefault;
+    font-weight: $fontWeightRegular;
+    color: $intoDarkness;
+    letter-spacing: .6px;
+    cursor: pointer;
+    transition: color $standardTransition;
+
+    &:hover,
+    &:focus {
+        color: $wakeSysBlue;
+
+        .accordionFeatureListIcon {
+            color: $wakeSysBlue;
+        }
+    }
+}
+
+.accordionFeatureListIcon {
+    width: 15px;
+    height: 15px;
+    color: $lightGray;
+    transition: color $standardTransition;
+}
+
+.isActive {
+    animation: slideOut 200ms ease-in forwards;
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateY(-5%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
