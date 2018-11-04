@@ -10,6 +10,7 @@ import { IntroductionVisual } from '../components/introductionVisual/introductio
 import { StaffVisual } from '../components/staffVisual/staffVisual';
 import { FeatureList } from '../components/featureList/featureList';
 import { IFeatureListItemProps } from '../components/featureListItem/featureListItem';
+import { AccordionFeatureListItem } from '../components/accordionFeatureListItem/accordionFeatureListItem';
 
 const styles = require('./Index.module.scss');
 
@@ -75,6 +76,22 @@ export default class IndexPage extends React.Component {
             <Button label="Get in touch" />
           </div>
           <StaffVisual />
+        </SectionWrapper>
+        <SectionWrapper className={styles.sectionOwner}>
+          <div>visual</div>
+          <div className={styles.content}>
+            <Headline type="h2">For the staff</Headline>
+            <AccordionFeatureListItem label="At the Pro-Shop" featureList={featureList} />
+            <AccordionFeatureListItem label="At the Kiosk" featureList={featureList} />
+            <AccordionFeatureListItem label="At the cash register" featureList={featureList} />
+            <AccordionFeatureListItem label="At the rental equipment" featureList={featureList} />
+            <AccordionFeatureListItem
+              className={styles.indexAccordionFeatureListItem}
+              label="At the starting dock"
+              featureList={featureList}
+            />
+            <Button label="Get in touch" />
+          </div>
         </SectionWrapper>
       </BasicTemplate>
     );
