@@ -1,6 +1,29 @@
 @import '../constants';
 @import '../mixins';
 
+
+.staffVisualImageWrapper {
+    margin-bottom: 20px;
+
+    @include breakpointBig {
+        width: 70%;
+    }
+}
+
+.staffVisualImage {
+    width: 100%;
+    box-shadow: $boxShadowBig;
+    border-radius: $borderRadius;
+}
+
+.staffVisualIllustration {
+    display: none;
+
+    @include breakpointBig {
+        display: block;
+    }
+}
+
 @keyframes dash {
     to {
         stroke-dashoffset: 1000;
@@ -9,63 +32,5 @@
 
 .path {
     animation: dash 30s linear infinite;
-}
-
-.staffVisual {
-    position: relative;
-    margin-top: 50px;
-}
-
-.staffVisualTriangle {
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 410px;
-    background-image: url('../assets/staff-visual-triangle.svg');
-    top: 0;
-    right: 0;
-    z-index: -1;
-    transform: translateX(15%);
-
-    @include breakpointBig {
-        width: 582px;
-        margin-top: 10%;
-    }
-}
-
-.staffVisualImage {
-    width: 100%;
-    box-shadow: $boxShadowBig;
-
-    @include breakpointBig {
-        width: 70%;
-        margin-left: 5%;
-    }
-}
-
-.staffVisualSteps {
-    display: none;
-
-    @include breakpointBig {
-        position: absolute;
-        display: flex;
-        width: 64%;
-        top: -35%;
-        right: -9%;
-        z-index: -1;
-        will-change: transform;
-    }
-}
-
-.staffWristbandLabel {
-    position: absolute;
-    top: 19%;
-    right: 20%;
-}
-
-.staffDatabaseLabel {
-    position: absolute;
-    right: 15%;
-    top: 57%;
-    color: white;
+    will-change: transform;
 }
