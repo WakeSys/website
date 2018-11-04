@@ -25,10 +25,21 @@
 .sectionIntroduction {
   align-items: flex-end;
   justify-content: space-around;
+  margin-bottom: 250px;
 }
 
 .sectionOwner {
   @include breakpointBig {
-    margin-top: 250px;
+    margin-bottom: 250px;
+  }
+}
+
+.sectionStaff {
+  @include breakpointSmall {
+    flex-direction: column-reverse;
+  }
+
+  .content {
+    margin-bottom: 50px;
   }
 }

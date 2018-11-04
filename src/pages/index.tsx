@@ -7,10 +7,11 @@ import { Paragraph } from '../components/paragraph/paragraph';
 import { SectionElement } from '../components/sectionElement/sectionElement';
 import { SectionWrapper } from '../components/sectionWrapper/sectionWrapper';
 import { IntroductionVisual } from '../components/introductionVisual/introductionVisual';
-import { StaffVisual } from '../components/staffVisual/staffVisual';
+import { OwnerVisual } from '../components/ownerVisual/ownerVisual';
 import { FeatureList } from '../components/featureList/featureList';
 import { IFeatureListItemProps } from '../components/featureListItem/featureListItem';
 import { AccordionFeatureListItem } from '../components/accordionFeatureListItem/accordionFeatureListItem';
+import { StaffVisual } from '../components/staffVisual/staffVisual';
 
 const styles = require('./Index.module.scss');
 
@@ -75,10 +76,12 @@ export default class IndexPage extends React.Component {
             <FeatureList featureList={featureList} />
             <Button label="Get in touch" />
           </div>
-          <StaffVisual />
+          <OwnerVisual />
         </SectionWrapper>
-        <SectionWrapper className={styles.sectionOwner}>
-          <div>visual</div>
+        <SectionWrapper className={styles.sectionStaff}>
+          <div>
+            <StaffVisual />
+          </div>
           <div className={styles.content}>
             <Headline type="h2">For the staff</Headline>
             <AccordionFeatureListItem label="At the Pro-Shop" featureList={featureList} />
