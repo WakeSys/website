@@ -12,6 +12,7 @@ import { FeatureList } from '../components/featureList/featureList';
 import { IFeatureListItemProps } from '../components/featureListItem/featureListItem';
 import { AccordionFeatureListItem } from '../components/accordionFeatureListItem/accordionFeatureListItem';
 import { StaffVisual } from '../components/staffVisual/staffVisual';
+import { CustomerVisual } from '../components/customerVisual/customerVisual';
 
 const styles = require('./Index.module.scss');
 
@@ -79,9 +80,7 @@ export default class IndexPage extends React.Component {
           <OwnerVisual />
         </SectionWrapper>
         <SectionWrapper className={styles.sectionStaff}>
-          <div>
-            <StaffVisual />
-          </div>
+          <StaffVisual />
           <div className={styles.content}>
             <Headline type="h2">For the staff</Headline>
             <AccordionFeatureListItem label="At the Pro-Shop" featureList={featureList} />
@@ -95,6 +94,14 @@ export default class IndexPage extends React.Component {
             />
             <Button label="Get in touch" />
           </div>
+        </SectionWrapper>
+        <SectionWrapper className={styles.sectionCustomer}>
+          <div className={styles.content}>
+            <Headline type="h2">For your customers</Headline>
+            <FeatureList featureList={featureList} />
+            <Button label="Get in touch" />
+          </div>
+          <CustomerVisual />
         </SectionWrapper>
       </BasicTemplate>
     );

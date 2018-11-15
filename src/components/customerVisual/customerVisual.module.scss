@@ -1,0 +1,16 @@
+@import '../constants';
+@import '../mixins';
+
+.customerVisual {
+    position: relative;
+    margin-top: 50px;
+
+    @include breakpointBig {
+        width: 50%;
+        margin: 0;
+    }
+}
+
+.customerVisualImage {
+    width: 100%;
+}

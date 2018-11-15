@@ -1,0 +1,93 @@
+@import '../constants';
+@import '../mixins';
+
+.footer {
+    border-top: 1px solid $lightGray;
+}
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    @include breakpointBig {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 80px auto;
+        box-sizing: border-box;
+        padding: 0 40px;
+    }
+}
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerHeadline {
+    color: $coldGray;
+    font-size: $fontSizeDefault;
+    font-weight: $fontWeightBold;
+    letter-spacing: .67px;
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.footerLink {
+    font-size: $fontSizeSmall;
+    font-weight: $fontWeightLight;
+    color: $grayWeather;
+    transition: color $standardTransition;
+    text-decoration: none;
+    margin-bottom: 8px;
+    letter-spacing: .67px;
+
+    &:hover,
+    &:focus {
+        color: $wakeSysBlue;
+    }
+}
+
+.footerEmailLink {
+    margin-bottom: 40px;
+}
+
+.footerSocialMediaLink {
+    margin-right: 8px;
+}
+
+.footerBottom {
+    background-color: $intoDarkness;
+    padding: 20px;
+    box-sizing: border-box;
+
+    @include breakpointBig {}
+}
+
+.footerBottomSectionWrapper {
+    align-items: center;
+    margin: 0 auto;
+}
+
+.footerBottomLink {
+    font-size: $fontSizeSmall;
+    color: #E6E7F0;
+    text-decoration: none;
+    transition: color $standardTransition;
+    letter-spacing: .67px;
+
+    @include breakpointBig {
+        margin-right: 40px;
+    }
+
+    &:hover,
+    &:focus {
+        color: darken($lightGray, 20%);
+        text-decoration: underline;
+    }
+}
+
+.footerBottomLogo {
+    margin-top: 4px;
+}
