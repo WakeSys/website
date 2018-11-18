@@ -17,8 +17,8 @@
 }
 
 .ownerVisualTriangle {
+    display: none;
     position: absolute;
-    display: block;
     width: 100%;
     height: 410px;
     background-image: url('../assets/owner-visual-triangle.svg');
@@ -28,6 +28,7 @@
     transform: translateX(15%);
 
     @include breakpointBig {
+        display: block;
         width: 582px;
         margin-top: 10%;
     }

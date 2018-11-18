@@ -1,0 +1,45 @@
+@import '../constants';
+@import '../mixins';
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpointBig {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+.contactFormHeadline {
+    width: 100%;
+}
+
+.contactFormInput {
+    flex-basis: calc(50% - 8px);
+}
+
+.contactFormTextArea {
+    width: 100%;
+    height: 120px;
+    border-radius: $borderRadius / 2;
+    padding: 10px;
+    margin-bottom: 20px;
+    appearance: none;
+    border: 1px solid $grayShade200;
+    outline: none;
+    transition: border $standardTransition;
+    box-sizing: border-box;
+    line-height: 1.5;
+
+    &:focus {
+        border: 1px solid $wakeSysBlue;
+        outline: none;
+    }
+
+    &::placeholder {
+        color: $grayShade300;
+    }
+}

@@ -23,9 +23,13 @@
 }
 
 .sectionIntroduction {
-  align-items: flex-end;
   justify-content: space-around;
-  margin-bottom: 250px;
+  margin-bottom: 40px;
+
+  @include breakpointBig {
+    align-items: flex-end;
+    margin-bottom: 250px;
+  }
 }
 
 .sectionOwner {
@@ -42,4 +46,26 @@
   .content {
     margin-bottom: 50px;
   }
+}
+
+.sectionUpgrade {
+  flex-direction: column;
+  align-items: center;
+  background-color: $grayShade100;
+  margin: 0;
+  border-top: 1px solid $grayShade200;
+  padding: 40px 20px;
+}
+
+.sectionUpgradeHeadline {
+  text-align: center;
+}
+
+.sectionUpgradeSubHeadline {
+  text-align: center;
+  color: $grayWeather;
+}
+
+.contactFormOverlay {
+  width: 660px;
 }

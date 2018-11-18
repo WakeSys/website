@@ -22,7 +22,7 @@
     font-size: 25px;
     font-weight: $fontWeightBold;
     color: $grayWeather;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     letter-spacing: .77px;
 }
 
@@ -37,6 +37,7 @@
 .topic {
     display: block;
     position: relative;
+    width: calc(100% - 45px);
     margin-bottom: 30px;
     font-size: $fontSizeDefault;
     font-weight: $fontWeightLight;

@@ -5,6 +5,10 @@
     border-top: 1px solid $grayShade200;
 }
 
+.footerSectionWrapper {
+    max-width: 960px;
+}
+
 .footerContent {
     display: flex;
     flex-direction: column;
@@ -65,6 +69,7 @@
 
 .footerBottomSectionWrapper {
     align-items: center;
+    max-width: 960px;
     margin: 0 auto;
 }
 

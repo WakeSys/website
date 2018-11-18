@@ -39,7 +39,7 @@ const NAVIGATION_LIST = [
 ];
 
 export class BasicTemplate extends React.Component<IBasicTemplateProps> {
-  state: IBasicTemplateState = { isOverlayOpen: false };
+  public state: IBasicTemplateState = { isOverlayOpen: false };
 
   public render() {
     const { children } = this.props;
