@@ -8,14 +8,7 @@ const styles = require('./contactForm.module.scss');
 export class ContactForm extends React.Component {
   public render() {
     return (
-      <form
-        name="contact"
-        data-netlify="true"
-        className={styles.contactForm}
-        onSubmit={this.onFormSubmission}
-        action="/success"
-        method="post"
-      >
+      <form name="contact" method="POST" netlify className={styles.contactForm}>
         <Headline className={styles.contactFormHeadline} type="h2">
           Request your free Wakesys demo
         </Headline>
@@ -32,8 +25,4 @@ export class ContactForm extends React.Component {
       </form>
     );
   }
-
-  private onFormSubmission = (evnt: React.SyntheticEvent<HTMLFormElement>) => {
-    evnt.preventDefault();
-  };
 }
