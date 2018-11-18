@@ -1,0 +1,14 @@
+@import '../mixins';
+
+.userStoriesTeaser {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+
+    @include breakpointBig {
+        margin: 80px auto;
+        box-sizing: border-box;
+        padding: 0 40px;
+    }
+}
