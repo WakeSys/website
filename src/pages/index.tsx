@@ -77,6 +77,11 @@ interface IIndexPage {
 
 export default class IndexPage extends React.Component<{}, IIndexPage> {
   public state: IIndexPage = { isOverlayOpen: false };
+
+  public ownerNode = React.createRef<HTMLDivElement>();
+  private staffNode = React.createRef<HTMLDivElement>();
+  private customerNode = React.createRef<HTMLDivElement>();
+
   public render() {
     return (
       <BasicTemplate>
@@ -95,14 +100,29 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
         <SectionWrapper className={styles.sectionIntroduction}>
           <div>
             <Headline type="topic">discover our features</Headline>
-            <SectionElement headline="For the Owner" description="Control and streamline your operations" type="owner" />
-            <SectionElement headline="For your staff" description="Speed-up and optimize operations" type="staff" />
-            <SectionElement headline="For your customers" description="Let them do most operations themselves" type="customer" />
+            <SectionElement
+              onClick={() => this.scrollTo(this.ownerNode)}
+              headline="For the Owner"
+              description="Control and streamline your operations"
+              type="owner"
+            />
+            <SectionElement
+              onClick={() => this.scrollTo(this.staffNode)}
+              headline="For your staff"
+              description="Speed-up and optimize operations"
+              type="staff"
+            />
+            <SectionElement
+              onClick={() => this.scrollTo(this.customerNode)}
+              headline="For your customers"
+              description="Let them do most operations themselves"
+              type="customer"
+            />
           </div>
           <IntroductionVisual />
         </SectionWrapper>
         <SectionWrapper className={styles.sectionOwner}>
-          <div className={styles.content}>
+          <div ref={this.ownerNode} className={styles.content}>
             <Headline type="h2">For the owner</Headline>
             <FeatureList featureList={featureList} />
             <Button onClick={this.openOverlay} label="Get in touch" />
@@ -111,7 +131,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
         </SectionWrapper>
         <SectionWrapper className={styles.sectionStaff}>
           <StaffVisual />
-          <div className={styles.content}>
+          <div ref={this.staffNode} className={styles.content}>
             <Headline type="h2">For the staff</Headline>
             <AccordionFeatureListItem label="At the Pro-Shop" featureList={featureList} />
             <AccordionFeatureListItem label="At the Kiosk" featureList={featureList} />
@@ -126,7 +146,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
           </div>
         </SectionWrapper>
         <SectionWrapper className={styles.sectionCustomer}>
-          <div className={styles.content}>
+          <div ref={this.customerNode} className={styles.content}>
             <Headline type="h2">For your customers</Headline>
             <FeatureList featureList={featureList} />
             <Button onClick={this.openOverlay} label="Get in touch" />
@@ -164,5 +184,15 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
     this.setState({
       isOverlayOpen: true
     });
+  };
+
+  private scrollTo = node => {
+    if (node) {
+      const elementTop = node.current.offsetTop - 50;
+      window.scrollTo({
+        top: elementTop,
+        behavior: 'smooth'
+      });
+    }
   };
 }
