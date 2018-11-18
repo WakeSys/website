@@ -13,6 +13,11 @@ import { IFeatureListItemProps } from '../components/featureListItem/featureList
 import { AccordionFeatureListItem } from '../components/accordionFeatureListItem/accordionFeatureListItem';
 import { StaffVisual } from '../components/staffVisual/staffVisual';
 import { CustomerVisual } from '../components/customerVisual/customerVisual';
+import { UserStoriesTeaser } from '../components/userStoriesTeaser/userStoriesTeaser';
+
+const area47Logo = require('../components/assets/area47.png');
+const twpLogo = require('../components/assets/twp.png');
+const liquidLeisureLogo = require('../components/assets/liquid-leisure.png');
 
 const styles = require('./Index.module.scss');
 
@@ -43,6 +48,24 @@ const featureList: IFeatureListItemProps[] = [
   },
   {
     label: 'Customization'
+  }
+];
+
+const REFERENCES = [
+  {
+    imageUrl: liquidLeisureLogo,
+    altAttribute: 'liquid leisure - logo',
+    youtubeId: 'BsuGRTDEUGM'
+  },
+  {
+    imageUrl: twpLogo,
+    altAttribute: 'bal',
+    youtubeId: 'BsuGRTDEUGM'
+  },
+  {
+    imageUrl: area47Logo,
+    altAttribute: 'area47 - logo',
+    youtubeId: 'BsuGRTDEUGM'
   }
 ];
 
@@ -103,6 +126,7 @@ export default class IndexPage extends React.Component {
           </div>
           <CustomerVisual />
         </SectionWrapper>
+        <UserStoriesTeaser headline="Some of our world-wide customers" subHeadline="The ideal solution for wakeboard cable parks of any size" reference={REFERENCES} />
       </BasicTemplate>
     );
   }
