@@ -23,9 +23,13 @@
 }
 
 .sectionIntroduction {
-  align-items: flex-end;
   justify-content: space-around;
-  margin-bottom: 250px;
+  margin-bottom: 40px;
+
+  @include breakpointBig {
+    align-items: flex-end;
+    margin-bottom: 250px;
+  }
 }
 
 .sectionOwner {
@@ -60,4 +64,8 @@
 .sectionUpgradeSubHeadline {
   text-align: center;
   color: $grayWeather;
+}
+
+.contactFormOverlay {
+  width: 660px;
 }

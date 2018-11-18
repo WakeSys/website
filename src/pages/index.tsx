@@ -15,6 +15,7 @@ import { StaffVisual } from '../components/staffVisual/staffVisual';
 import { CustomerVisual } from '../components/customerVisual/customerVisual';
 import { UserStoriesTeaser } from '../components/userStoriesTeaser/userStoriesTeaser';
 import { Overlay } from '../components/overlay/overlay';
+import { ContactForm } from '../components/contactForm/contactForm';
 
 const area47Logo = require('../components/assets/area47.png');
 const twpLogo = require('../components/assets/twp.png');
@@ -146,7 +147,9 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
           </Headline>
           <Button onClick={this.openOverlay} label="Get in touch" />
         </SectionWrapper>
-        {this.state.isOverlayOpen && <Overlay children={<div>swag all day</div>} onCloseClick={this.closeOverlay} />}
+        {this.state.isOverlayOpen && (
+          <Overlay className={styles.contactFormOverlay} children={<ContactForm />} onCloseClick={this.closeOverlay} />
+        )}
       </BasicTemplate>
     );
   }
