@@ -43,3 +43,21 @@
     margin-bottom: 50px;
   }
 }
+
+.sectionUpgrade {
+  flex-direction: column;
+  align-items: center;
+  background-color: $grayShade100;
+  margin: 0;
+  border-top: 1px solid $grayShade200;
+  padding: 40px 20px;
+}
+
+.sectionUpgradeHeadline {
+  text-align: center;
+}
+
+.sectionUpgradeSubHeadline {
+  text-align: center;
+  color: $grayWeather;
+}

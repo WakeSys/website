@@ -12,7 +12,7 @@ const styles = require('./footer.module.scss');
 export const Footer: React.SFC = () => {
   return (
     <footer className={styles.footer}>
-      <SectionWrapper>
+      <SectionWrapper className={styles.footerSectionWrapper}>
         <div className={styles.footerColumn}>
           <h3 className={styles.footerHeadline}>Company</h3>
           <Link className={styles.footerLink} to="/">

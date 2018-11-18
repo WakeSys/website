@@ -126,7 +126,20 @@ export default class IndexPage extends React.Component {
           </div>
           <CustomerVisual />
         </SectionWrapper>
-        <UserStoriesTeaser headline="Some of our world-wide customers" subHeadline="The ideal solution for wakeboard cable parks of any size" reference={REFERENCES} />
+        <UserStoriesTeaser
+          headline="Some of our world-wide customers"
+          subHeadline="The ideal solution for wakeboard cable parks of any size"
+          reference={REFERENCES}
+        />
+        <SectionWrapper fullWidth className={styles.sectionUpgrade}>
+          <Headline className={styles.sectionUpgradeHeadline} type="h2">
+            Ready to get WakeSys at your park?
+          </Headline>
+          <Headline className={styles.sectionUpgradeSubHeadline} type="h3">
+            request your free demo and guided walk-through today!
+          </Headline>
+          <Button label="Get in touch" />
+        </SectionWrapper>
       </BasicTemplate>
     );
   }
