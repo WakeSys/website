@@ -33,8 +33,16 @@ const NAVIGATION_LIST = [
     to: '/'
   },
   {
-    label: 'Other link',
-    to: '/other-link'
+    label: 'Aqua-park',
+    to: '/aqua-park'
+  },
+  {
+    label: 'Surf-park',
+    to: '/surf-park'
+  },
+  {
+    label: 'References',
+    to: '/references'
   }
 ];
 

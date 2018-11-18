@@ -15,10 +15,10 @@ export const Footer: React.SFC = () => {
       <SectionWrapper className={styles.footerSectionWrapper}>
         <div className={styles.footerColumn}>
           <h3 className={styles.footerHeadline}>Company</h3>
-          <Link className={styles.footerLink} to="/">
+          <Link className={styles.footerLink} to="/about">
             About us
           </Link>
-          <Link className={styles.footerLink} to="/">
+          <Link className={styles.footerLink} to="/references">
             References
           </Link>
         </div>
@@ -27,10 +27,10 @@ export const Footer: React.SFC = () => {
           <Link className={styles.footerLink} to="/">
             Full-size
           </Link>
-          <Link className={styles.footerLink} to="/">
+          <Link className={styles.footerLink} to="/aqua-park">
             Aqua-park
           </Link>
-          <Link className={styles.footerLink} to="/">
+          <Link className={styles.footerLink} to="/surf-park">
             Surf-park
           </Link>
         </div>
@@ -57,13 +57,13 @@ export const Footer: React.SFC = () => {
       <div className={styles.footerBottom}>
         <SectionWrapper className={styles.footerBottomSectionWrapper}>
           <div className={styles.footerBottomLinks}>
-            <Link className={styles.footerBottomLink} to="/">
+            <Link className={styles.footerBottomLink} to="/terms">
               Terms of service
             </Link>
-            <Link className={styles.footerBottomLink} to="/">
+            <Link className={styles.footerBottomLink} to="/policy">
               Privacy policy
             </Link>
-            <Link className={styles.footerBottomLink} to="/">
+            <Link className={styles.footerBottomLink} to="/imprint">
               Imprint
             </Link>
           </div>
