@@ -1,0 +1,34 @@
+@import '../constants';
+@import '../mixins';
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.inputLabel {
+    margin-bottom: 4px;
+    color: $coldGray;
+    font-weight: $fontWeightMedium;
+    font-size: $fontSizeSmall;
+    letter-spacing: .67px;
+}
+
+.input {
+    height: 30px;
+    border-radius: $borderRadius / 2;
+    padding: 5px 10px;
+    appearance: none;
+    border: 1px solid $grayShade200;
+    outline: none;
+    transition: border $standardTransition;
+
+    &:focus {
+        border: 1px solid $wakeSysBlue;
+    }
+
+    &::placeholder {
+        color: $grayShade300;
+    }
+}
