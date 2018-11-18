@@ -16,7 +16,7 @@
     font-size: $fontSizeDefault;
     font-weight: $fontWeightRegular;
     color: $intoDarkness;
-    letter-spacing: .6px;
+    letter-spacing: 0.6px;
     cursor: pointer;
     transition: color $standardTransition;
 
@@ -33,7 +33,7 @@
 .accordionFeatureListIcon {
     width: 15px;
     height: 15px;
-    color: $lightGray;
+    color: $grayShade200;
     transition: color $standardTransition;
 }
 

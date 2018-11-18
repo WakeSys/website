@@ -5,7 +5,6 @@ import * as classnames from 'classnames';
 import '../_constants.scss';
 
 const styles = require('./navigationItem.module.scss');
-const constants = require('../_constants.scss');
 
 export interface INavigationItem {
   to: string;

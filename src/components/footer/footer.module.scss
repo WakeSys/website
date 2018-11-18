@@ -2,7 +2,7 @@
 @import '../mixins';
 
 .footer {
-    border-top: 1px solid $lightGray;
+    border-top: 1px solid $grayShade200;
 }
 
 .footerContent {
@@ -29,7 +29,7 @@
     color: $coldGray;
     font-size: $fontSizeDefault;
     font-weight: $fontWeightBold;
-    letter-spacing: .67px;
+    letter-spacing: 0.67px;
     margin: 0;
     margin-bottom: 16px;
 }
@@ -41,7 +41,7 @@
     transition: color $standardTransition;
     text-decoration: none;
     margin-bottom: 8px;
-    letter-spacing: .67px;
+    letter-spacing: 0.67px;
 
     &:hover,
     &:focus {
@@ -59,10 +59,8 @@
 
 .footerBottom {
     background-color: $intoDarkness;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
-
-    @include breakpointBig {}
 }
 
 .footerBottomSectionWrapper {
@@ -72,10 +70,10 @@
 
 .footerBottomLink {
     font-size: $fontSizeSmall;
-    color: #E6E7F0;
+    color: #e6e7f0;
     text-decoration: none;
     transition: color $standardTransition;
-    letter-spacing: .67px;
+    letter-spacing: 0.67px;
 
     @include breakpointBig {
         margin-right: 40px;
@@ -83,7 +81,7 @@
 
     &:hover,
     &:focus {
-        color: darken($lightGray, 20%);
+        color: darken($grayShade200, 20%);
         text-decoration: underline;
     }
 }

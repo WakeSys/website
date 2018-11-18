@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Portal } from './portal';
+import * as classnames from 'classnames';
 
 const styles = require('./overlay.module.scss');
 
@@ -35,11 +36,12 @@ export class Overlay extends React.Component<IOverlay> {
   }
 
   render() {
+    const { className, children } = this.props;
     return (
       <Portal container={document.body}>
         <div className={styles.overlay}>
           <div className={styles.backdrop} onClick={this.closeByClick} />
-          <div className={styles.modal}>{this.props.children}</div>
+          <div className={classnames(styles.modal, className)}>{children}</div>
         </div>
       </Portal>
     );

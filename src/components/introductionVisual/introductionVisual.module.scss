@@ -21,7 +21,7 @@
     color: white;
     font-size: $fontSizeSmall;
     font-weight: $fontWeightBold;
-    letter-spacing: .6px;
+    letter-spacing: 0.6px;
     text-align: center;
     border-top-left-radius: $borderRadius;
     border-top-right-radius: $borderRadius;
@@ -37,27 +37,27 @@
 .introductionTickets {
     font-size: $fontSizeSmall;
     color: $wakeSysBlue;
-    letter-spacing: .6px;
+    letter-spacing: 0.6px;
     line-height: 1.8;
 }
 
 .introductionMembership {
     font-size: $fontSizeSmall;
     color: $bloodyRed;
-    letter-spacing: .6px;
+    letter-spacing: 0.6px;
     line-height: 1.8;
 }
 
 .introductionDivider {
     height: 2px;
     margin: 20px 0;
-    background-color: $lightGray;
+    background-color: $grayShade200;
 }
 
 .introductionTotal {
     color: $grayWeather;
     font-weight: $fontWeightBold;
-    letter-spacing: .6px;
+    letter-spacing: 0.6px;
     margin-bottom: 20px;
 }
 
