@@ -26,9 +26,12 @@
 .modal {
     position: relative;
     width: 960px;
+    padding: 32px;
     border-radius: $borderRadius;
     background-color: white;
     overflow: auto;
+    animation: slideIn $standardTransition;
+    will-change: transform;
 
     @include breakpointSmall {
         position: fixed;
@@ -40,5 +43,17 @@
         border-radius: 0;
         width: auto;
         max-height: 100%;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
