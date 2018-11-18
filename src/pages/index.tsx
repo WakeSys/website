@@ -147,7 +147,6 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
           </Headline>
           <Button onClick={this.openOverlay} label="Get in touch" />
         </SectionWrapper>
-        <ContactForm />
         {this.state.isOverlayOpen && (
           <Overlay className={styles.contactFormOverlay} children={<ContactForm />} onCloseClick={this.closeOverlay} />
         )}
