@@ -20,14 +20,15 @@
 
 .h2 {
     font-size: 25px;
-    font-weight: $fontWeightMedium;
+    font-weight: $fontWeightBold;
     color: $grayWeather;
     margin-bottom: 30px;
+    letter-spacing: .77px;
 }
 
 .h3 {
     color: $wakeSysBlue;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: $fontWeightLight;
     letter-spacing: .77px;
     margin-bottom: 20px;
