@@ -14,6 +14,7 @@ import { AccordionFeatureListItem } from '../components/accordionFeatureListItem
 import { StaffVisual } from '../components/staffVisual/staffVisual';
 import { CustomerVisual } from '../components/customerVisual/customerVisual';
 import { UserStoriesTeaser } from '../components/userStoriesTeaser/userStoriesTeaser';
+import { Overlay } from '../components/overlay/overlay';
 
 const area47Logo = require('../components/assets/area47.png');
 const twpLogo = require('../components/assets/twp.png');
@@ -69,7 +70,12 @@ const REFERENCES = [
   }
 ];
 
-export default class IndexPage extends React.Component {
+interface IIndexPage {
+  isOverlayOpen: boolean;
+}
+
+export default class IndexPage extends React.Component<{}, IIndexPage> {
+  public state: IIndexPage = { isOverlayOpen: false };
   public render() {
     return (
       <BasicTemplate>
@@ -83,7 +89,7 @@ export default class IndexPage extends React.Component {
             WakeSys is an enterprise software with an integrated online booking tool and point-of-sale system, tailor-made for wakeboard
             cable parks wanting to automate, track and simplify their operations.
           </Paragraph>
-          <Button buttonSize="big" label="Request free demo" />
+          <Button onClick={this.openOverlay} buttonSize="big" label="Request free demo" />
         </Header>
         <SectionWrapper className={styles.sectionIntroduction}>
           <div>
@@ -98,7 +104,7 @@ export default class IndexPage extends React.Component {
           <div className={styles.content}>
             <Headline type="h2">For the owner</Headline>
             <FeatureList featureList={featureList} />
-            <Button label="Get in touch" />
+            <Button onClick={this.openOverlay} label="Get in touch" />
           </div>
           <OwnerVisual />
         </SectionWrapper>
@@ -115,14 +121,14 @@ export default class IndexPage extends React.Component {
               label="At the starting dock"
               featureList={featureList}
             />
-            <Button label="Get in touch" />
+            <Button onClick={this.openOverlay} label="Get in touch" />
           </div>
         </SectionWrapper>
         <SectionWrapper className={styles.sectionCustomer}>
           <div className={styles.content}>
             <Headline type="h2">For your customers</Headline>
             <FeatureList featureList={featureList} />
-            <Button label="Get in touch" />
+            <Button onClick={this.openOverlay} label="Get in touch" />
           </div>
           <CustomerVisual />
         </SectionWrapper>
@@ -138,9 +144,22 @@ export default class IndexPage extends React.Component {
           <Headline className={styles.sectionUpgradeSubHeadline} type="h3">
             request your free demo and guided walk-through today!
           </Headline>
-          <Button label="Get in touch" />
+          <Button onClick={this.openOverlay} label="Get in touch" />
         </SectionWrapper>
+        {this.state.isOverlayOpen && <Overlay children={<div>swag all day</div>} onCloseClick={this.closeOverlay} />}
       </BasicTemplate>
     );
   }
+
+  private closeOverlay = () => {
+    this.setState({
+      isOverlayOpen: false
+    });
+  };
+
+  private openOverlay = () => {
+    this.setState({
+      isOverlayOpen: true
+    });
+  };
 }
