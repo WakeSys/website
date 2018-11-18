@@ -39,10 +39,12 @@
     box-shadow: $boxShadowBig;
 
     @include breakpointBig {
-        width: 70%;
-        margin-left: 5%;
+        width: 60%;
+        margin-left: 15%;
+        margin-top: 4%;
     }
 }
+
 
 .ownerVisualSteps {
     display: none;

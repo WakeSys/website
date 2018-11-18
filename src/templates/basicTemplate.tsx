@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import { TopBar } from '../components/topBar/topBar';
 import { Overlay } from '../components/overlay/overlay';
 import { Footer } from '../components/footer/footer';
+import { ContactForm } from '../components/contactForm/contactForm';
 
 const styles = require('./basicTemplate.module.scss');
 
@@ -58,7 +59,9 @@ export class BasicTemplate extends React.Component<IBasicTemplateProps> {
           meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
         />
         <TopBar navigationList={NAVIGATION_LIST} label="Free trial" openOverlay={this.openOverlay} />
-        {this.state.isOverlayOpen && <Overlay children={<div>swag all day</div>} onCloseClick={this.closeOverlay} />}
+        {this.state.isOverlayOpen && (
+          <Overlay className={styles.basicTemplateOverlay} children={<ContactForm />} onCloseClick={this.closeOverlay} />
+        )}
         {children}
         <Footer />
       </>
