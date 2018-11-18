@@ -1,0 +1,87 @@
+@import '../constants';
+@import '../mixins';
+
+
+.referenceTileList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+
+    @include breakpointBig {
+        flex-direction: row;
+    }
+}
+
+.referenceTile {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 180px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    background-color: $grayShade100;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    
+    &:hover,
+    &:focus {
+        .referenceTileImage {
+            transform: scale(1.08);
+        }
+    }
+    
+    @include breakpointBig {
+        width: 180px;
+        margin-right: 20px;
+        margin-bottom: 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.referenceTileOverlay {
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.referenceTileButton {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    font-size: 10px;
+    color: $intoDarkness;
+    font-weight: $fontWeightBold;
+    letter-spacing: .67px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    bottom: 5px;
+    left: 5px;
+}
+
+.referenceTileIconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    margin-right: 8px;
+    background-color: $youtubeRed;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    .referenceTileIcon {
+        height: 12px;
+        color: white;
+    }
+}
+
+.referenceTileImage {
+    align-self: center;
+    transition: transform $standardTransition;
+}
