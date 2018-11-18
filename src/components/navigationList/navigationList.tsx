@@ -16,7 +16,7 @@ interface INavigationListState {
 }
 
 export class NavigationList extends React.Component<INavigationListProps, INavigationListState> {
-  state: INavigationListState = { isMenuButtonActive: false, isMenuVisible: true };
+  public state: INavigationListState = { isMenuButtonActive: false, isMenuVisible: true };
 
   public render() {
     const { navigationList } = this.props;
