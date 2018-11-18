@@ -3,10 +3,19 @@
 .sectionElement {
     display: flex;
     align-items: center;
+    padding: 12px 30px 12px 5px;
     margin-bottom: 32px;
+    cursor: pointer;
+    transition: background-color $standardTransition;
 
     &:last-child {
         margin-bottom: 0;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: $grayShade100;
+        border-radius: $borderRadius;
     }
 }
 

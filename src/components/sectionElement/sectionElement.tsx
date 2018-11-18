@@ -8,12 +8,13 @@ interface ISectionElementProps {
   headline: string;
   description: string;
   type: keyof IIconListProps;
+  onClick?: () => void;
 }
 
-export const SectionElement: React.SFC<ISectionElementProps> = ({ type, headline, description }) => {
+export const SectionElement: React.SFC<ISectionElementProps> = ({ type, headline, description, onClick }) => {
   const Icon = IconList[type];
   return (
-    <div className={styles.sectionElement}>
+    <div className={styles.sectionElement} onClick={onClick}>
       <div className={styles.sectionElementIcon}>
         <Icon />
       </div>
