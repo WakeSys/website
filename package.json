@@ -8,7 +8,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "gatsby": "^2.0.0-rc.10",
+    "gatsby": "2.4.0",
     "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-sass": "^2.0.0-rc.2",
     "gatsby-plugin-typescript": "^2.0.0-rc.3",
