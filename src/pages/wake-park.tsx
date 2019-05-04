@@ -94,7 +94,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
           <Button onClick={this.openOverlay} buttonSize="big" label="Request free demo" buttonType="inverse" />
         </Header>
         <SectionWrapper>
-          <AccordionFeatureListItem label="At the Pro-Shop and its super long as fuck meeeen" featureList={featureList}>
+          <AccordionFeatureListItem label="At the Pro-Shop" featureList={featureList}>
             <FeatureList featureList={featureList} />
           </AccordionFeatureListItem>
         </SectionWrapper>
