@@ -1,24 +1,28 @@
-import * as React from 'react';
-import * as classnames from 'classnames';
+import React from 'react';
+import classNames from 'classnames';
 
 const styles = require('./button.module.scss');
 
 type ButtonSize = 'small' | 'big';
 
+type ButtonType = 'primary' | 'secondary' | 'inverse';
+
 interface IButton extends React.HTMLProps<HTMLButtonElement> {
   buttonSize?: ButtonSize;
   className?: string;
   label: string;
+  buttonType: ButtonType;
 }
 
-export const Button: React.SFC<IButton> = ({ className, label, buttonSize, ...buttonProps }) => {
+export const Button: React.FunctionComponent<IButton> = ({ className, label, buttonSize, buttonType, ...buttonProps }) => {
   return (
     <button
-      className={classnames(styles.button, className, {
-        [styles.buttonSmall]: buttonSize === 'small',
-        [styles.buttonBig]: buttonSize === 'big'
-      })}
       {...buttonProps}
+      className={classNames(styles.button, className, {
+        [styles.buttonSmall]: buttonSize === 'small',
+        [styles.buttonBig]: buttonSize === 'big',
+        [styles.inverse]: buttonType === 'inverse'
+      })}
     >
       {label}
     </button>

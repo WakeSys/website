@@ -4,13 +4,13 @@
 .button {
     display: block;
     width: 100%;
-    padding: 14px 20px;
+    padding: 14px 30px;
     background-color: $wakeSysBlue;
-    border-radius: $borderRadius;
+    border-radius: 50px;
     font-family: $fontFamily;
     font-weight: $fontWeightMedium;
     font-size: $fontSizeDefault;
-    letter-spacing: .67px;
+    letter-spacing: 1.67px;
     color: white;
     cursor: pointer;
     border: none;
@@ -33,5 +33,19 @@
 }
 
 .buttonBig {
-    padding: 20px 30px;
+    @include breakpointBig {
+        padding: 24px 48px;
+    }
+}
+
+.inverse {
+    background-color: white;
+    color: rgba($wakeSysBlue, .8);
+
+
+    &:hover,
+    &:focus {
+        background-color: lighten($wakeSysBlue, 1%);
+        color: white;
+    }
 }
