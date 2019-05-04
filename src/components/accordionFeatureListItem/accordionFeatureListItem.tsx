@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { Icon } from '../icon/icon';
 import { chevronDown, chevronUp } from '../icon/iconList';
 import { FeatureList } from '../featureList/featureList';
 import { IFeatureListItemProps } from '../featureListItem/featureListItem';
-import * as classnames from 'classnames';
+import classNames from 'classnames';
 
 const styles = require('./accordionFeatureListItem.module.scss');
 
@@ -13,36 +13,34 @@ interface IAccordionFeatureListItemProps {
   className?: string;
 }
 
-interface IAccordionFeatureListItemState {
-  isExpanded: boolean;
-}
+export const AccordionFeatureListItem: React.FunctionComponent<IAccordionFeatureListItemProps> = ({
+  label,
+  featureList,
+  className,
+  children
+}) => {
+  const [isExpanded, setIsExpanded] = useState(false);
 
-export class AccordionFeatureListItem extends React.Component<IAccordionFeatureListItemProps, IAccordionFeatureListItemState> {
-  state: IAccordionFeatureListItemState = { isExpanded: false };
-
-  public render() {
-    const { label, featureList, className } = this.props;
-    return (
-      <>
-        <button type="button" className={classnames(styles.accordionFeatureListItem, className)} onClick={this.toggleAccordion}>
-          <span className={styles.accordionFeatureListLabel}>{label}</span>
-          <Icon className={styles.accordionFeatureListIcon} icon={this.state.isExpanded ? chevronUp : chevronDown} />
-        </button>
-        {this.state.isExpanded && (
-          <FeatureList
-            className={classnames({
-              [styles.isActive]: this.state.isExpanded
+  return (
+    <div className={styles.root}>
+      <button type="button" className={classNames(styles.accordionFeatureListItem, className)} onClick={() => setIsExpanded(!isExpanded)}>
+        <span className={styles.accordionFeatureListLabel}>{label}</span>
+        <div className={styles.expandSection}>
+          <span className={styles.expandInfoText}>See all features</span>
+          <div
+            className={classNames(styles.expandIcon, {
+              [styles.active]: isExpanded
             })}
-            featureList={featureList}
           />
-        )}
-      </>
-    );
-  }
-
-  private toggleAccordion = () => {
-    this.setState({
-      isExpanded: !this.state.isExpanded
-    });
-  };
-}
+        </div>
+      </button>
+      <div
+        className={classNames(styles.content, {
+          [styles.contentExpanded]: isExpanded
+        })}
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
