@@ -8,19 +8,19 @@
 }
 
 .h1 {
-    font-size: 32px;
+    font-size: calc(22px + (56 - 36) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
     font-weight: $fontWeightBold;
-    color: $wakeSysBlue;
-    letter-spacing: 1.5px;
-
-    @include breakpointBig {
-        font-size: 42px;
-    }
+    color: white;
+    letter-spacing: 1.7px;
+    margin-bottom: 18px;
+    text-align: center;
+    text-shadow: 0 2px 20px rgba(black, .08)
 }
 
 .h2 {
-    font-size: 25px;
-    font-weight: $fontWeightBold;
+    font-size: 36px;
+    font-weight: $fontWeightLight;
     color: $grayWeather;
     margin-bottom: 20px;
     letter-spacing: .77px;
