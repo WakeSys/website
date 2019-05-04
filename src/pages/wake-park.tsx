@@ -1,0 +1,199 @@
+import * as React from 'react';
+import { BasicTemplate } from '../templates/basicTemplate';
+import { Header, HeaderType } from '../components/header/header';
+import { Headline } from '../components/headline/headline';
+import { Button } from '../components/button/button';
+import { Paragraph, ParagraphAlignment } from '../components/paragraph/paragraph';
+import { SectionElement } from '../components/sectionElement/sectionElement';
+import { SectionWrapper } from '../components/sectionWrapper/sectionWrapper';
+import { IntroductionVisual } from '../components/introductionVisual/introductionVisual';
+import { OwnerVisual } from '../components/ownerVisual/ownerVisual';
+import { FeatureList } from '../components/featureList/featureList';
+import { IFeatureListItemProps } from '../components/featureListItem/featureListItem';
+import { AccordionFeatureListItem } from '../components/accordionFeatureListItem/accordionFeatureListItem';
+import { StaffVisual } from '../components/staffVisual/staffVisual';
+import { CustomerVisual } from '../components/customerVisual/customerVisual';
+import { UserStoriesTeaser } from '../components/userStoriesTeaser/userStoriesTeaser';
+import { Overlay } from '../components/overlay/overlay';
+import { ContactForm } from '../components/contactForm/contactForm';
+
+const area47Logo = require('../components/assets/area47.png');
+const twpLogo = require('../components/assets/twp.png');
+const liquidLeisureLogo = require('../components/assets/liquid-leisure.png');
+
+const styles = require('./Index.module.scss');
+
+const featureList: IFeatureListItemProps[] = [
+  {
+    label: 'Modular cable park solution'
+  },
+  {
+    label: 'Support available 7 days a week'
+  },
+  {
+    label: 'Automated processes and operations'
+  },
+  {
+    label: 'Automated invoicing'
+  },
+  {
+    label: 'Automated retargeting'
+  },
+  {
+    label: 'RFID access control'
+  },
+  {
+    label: 'Staff control'
+  },
+  {
+    label: 'Detailed statistics'
+  },
+  {
+    label: 'Customization'
+  }
+];
+
+const REFERENCES = [
+  {
+    imageUrl: liquidLeisureLogo,
+    altAttribute: 'liquid leisure - logo',
+    youtubeId: 'BsuGRTDEUGM'
+  },
+  {
+    imageUrl: twpLogo,
+    altAttribute: 'bal',
+    youtubeId: 'BsuGRTDEUGM'
+  },
+  {
+    imageUrl: area47Logo,
+    altAttribute: 'area47 - logo',
+    youtubeId: 'BsuGRTDEUGM'
+  }
+];
+
+interface IIndexPage {
+  isOverlayOpen: boolean;
+}
+
+export default class IndexPage extends React.Component<{}, IIndexPage> {
+  public state: IIndexPage = { isOverlayOpen: false };
+
+  public ownerNode = React.createRef<HTMLDivElement>();
+  private staffNode = React.createRef<HTMLDivElement>();
+  private customerNode = React.createRef<HTMLDivElement>();
+
+  public render() {
+    return (
+      <BasicTemplate>
+        <Header className={styles.test} type={HeaderType.BLUE}>
+          <Headline type="h1">WakeSys for Wake Parks</Headline>
+          <Paragraph className={styles.headerParagraph} isInverse isInHeader alignment={ParagraphAlignment.CENTER}>
+            WakeSys is an enterprise software with an integrated online booking tool and point-of-sale system, tailor-made for wakeboard
+            cable parks wanting to automate, track and simplify their operations.
+          </Paragraph>
+          <Button onClick={this.openOverlay} buttonSize="big" label="Request free demo" buttonType="inverse" />
+        </Header>
+        <SectionWrapper>
+          <AccordionFeatureListItem label="At the Pro-Shop and its super long as fuck meeeen" featureList={featureList}>
+            <FeatureList featureList={featureList} />
+          </AccordionFeatureListItem>
+        </SectionWrapper>
+        <SectionWrapper className={styles.sectionIntroduction}>
+          <div>
+            <Headline type="topic">discover our features</Headline>
+            <SectionElement
+              onClick={() => this.scrollTo(this.ownerNode)}
+              headline="For the Owner"
+              description="Control and streamline your operations"
+              type="owner"
+            />
+            <SectionElement
+              onClick={() => this.scrollTo(this.staffNode)}
+              headline="For your staff"
+              description="Speed-up and optimize operations"
+              type="staff"
+            />
+            <SectionElement
+              onClick={() => this.scrollTo(this.customerNode)}
+              headline="For your customers"
+              description="Let them do most operations themselves"
+              type="customer"
+            />
+          </div>
+          <IntroductionVisual />
+        </SectionWrapper>
+        <SectionWrapper className={styles.sectionOwner}>
+          <div ref={this.ownerNode} className={styles.content}>
+            <Headline type="h2">For the owner</Headline>
+            <FeatureList featureList={featureList} />
+            <Button onClick={this.openOverlay} label="Get in touch" />
+          </div>
+          <OwnerVisual />
+        </SectionWrapper>
+        <SectionWrapper className={styles.sectionStaff}>
+          <StaffVisual />
+          <div ref={this.staffNode} className={styles.content}>
+            <Headline type="h2">For the staff</Headline>
+            <AccordionFeatureListItem label="At the Pro-Shop" featureList={featureList} />
+            <AccordionFeatureListItem label="At the Kiosk" featureList={featureList} />
+            <AccordionFeatureListItem label="At the cash register" featureList={featureList} />
+            <AccordionFeatureListItem label="At the rental equipment" featureList={featureList} />
+            <AccordionFeatureListItem
+              className={styles.indexAccordionFeatureListItem}
+              label="At the starting dock"
+              featureList={featureList}
+            />
+            <Button onClick={this.openOverlay} label="Get in touch" />
+          </div>
+        </SectionWrapper>
+        <SectionWrapper className={styles.sectionCustomer}>
+          <div ref={this.customerNode} className={styles.content}>
+            <Headline type="h2">For your customers</Headline>
+            <FeatureList featureList={featureList} />
+            <Button onClick={this.openOverlay} label="Get in touch" />
+          </div>
+          <CustomerVisual />
+        </SectionWrapper>
+        <UserStoriesTeaser
+          headline="Some of our world-wide customers"
+          subHeadline="The ideal solution for wakeboard cable parks of any size"
+          reference={REFERENCES}
+        />
+        <SectionWrapper fullWidth className={styles.sectionUpgrade}>
+          <Headline className={styles.sectionUpgradeHeadline} type="h2">
+            Ready to get WakeSys at your park?
+          </Headline>
+          <Headline className={styles.sectionUpgradeSubHeadline} type="h3">
+            request your free demo and guided walk-through today!
+          </Headline>
+          <Button onClick={this.openOverlay} label="Get in touch" />
+        </SectionWrapper>
+        {this.state.isOverlayOpen && (
+          <Overlay className={styles.contactFormOverlay} children={<ContactForm />} onCloseClick={this.closeOverlay} />
+        )}
+      </BasicTemplate>
+    );
+  }
+
+  private closeOverlay = () => {
+    this.setState({
+      isOverlayOpen: false
+    });
+  };
+
+  private openOverlay = () => {
+    this.setState({
+      isOverlayOpen: true
+    });
+  };
+
+  private scrollTo = node => {
+    if (node) {
+      const elementTop = node.current.offsetTop - 50;
+      window.scrollTo({
+        top: elementTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+}
