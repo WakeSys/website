@@ -1,13 +1,32 @@
-import * as React from 'react';
-import * as classnames from 'classnames';
+import React from 'react';
+import classNames from 'classnames';
 
 const styles = require('./paragraph.module.scss');
+
+export enum ParagraphAlignment {
+  CENTER,
+  RIGHT
+}
 
 interface IParagraphProps {
   children: React.ReactNode;
   className?: string;
+  isInverse?: boolean;
+  alignment?: ParagraphAlignment;
+  isInHeader?: boolean;
 }
 
-export const Paragraph: React.SFC<IParagraphProps> = ({ children, className }) => {
-  return <p className={classnames(className, styles.paragraph)}>{children}</p>;
+export const Paragraph: React.FunctionComponent<IParagraphProps> = ({ children, className, isInverse, alignment, isInHeader }) => {
+  return (
+    <p
+      className={classNames(className, styles.paragraph, {
+        [styles.isInverse]: isInverse,
+        [styles.center]: alignment === ParagraphAlignment.CENTER,
+        [styles.right]: alignment === ParagraphAlignment.RIGHT,
+        [styles.isInHeader]: isInHeader
+      })}
+    >
+      {children}
+    </p>
+  );
 };
