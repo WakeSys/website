@@ -30,15 +30,15 @@ export const indexPageQuery = graphql`
 
 const NAVIGATION_LIST = [
   {
-    label: 'Full-size',
-    to: '/'
+    label: 'Wakeboard Parks',
+    to: '/wake-park'
   },
   {
-    label: 'Aqua-park',
+    label: 'Aqua Parks',
     to: '/aqua-park'
   },
   {
-    label: 'Surf-park',
+    label: 'Surf Parks',
     to: '/surf-park'
   },
   {

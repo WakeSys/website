@@ -5,19 +5,37 @@
 }
 
 .navigationLinkItem {
-  color: $intoDarkness;
-  font-weight: $fontWeightBold;
-  color: $intoDarkness;
+  color: white;
   text-decoration: none;
   letter-spacing: .67px;
   transition: color $standardTransition;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+
+    top: 28px;
+    left: 0;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 200ms ease-in;
+  }
 
   &:hover,
   &:focus {
-    color: $wakeSysBlue;
+    &:after {
+      background-color: white;
+      transform: scaleX(1);
+    }
   }
 
   &[aria-current="page"] {
-    color: $wakeSysBlue;
+    &:after {
+      background-color: white;
+      transform: scaleX(1);
+    }
   }
 }

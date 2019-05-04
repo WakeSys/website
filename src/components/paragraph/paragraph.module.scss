@@ -2,10 +2,29 @@
 
 .paragraph {
     color: $intoDarkness;
-    font-size: $fontSizeSmall;
-    font-weight: $fontWeightRegular;
+    font-size: $fontSizeDefault;
+    font-weight: $fontWeightLight;
     letter-spacing: .6px;
     line-height: 1.75;
     margin: 0;
     margin-bottom: 30px;
+
+    &.isInverse {
+        color: white
+    }
+}
+
+.isInHeader {
+    max-width: 960px;
+    line-height: 1.9;
+    letter-spacing: .9px;
+    font-size: calc(16px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
 }

@@ -1,4 +1,9 @@
 @import '../constants';
+@import '../mixins';
+
+.root {
+    width: 100%;
+}
 
 .accordionFeatureListItem {
     margin-bottom: 25px;
@@ -9,6 +14,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    min-height: 60px;
     padding: 0;
     border: none;
     background-color: transparent;
@@ -19,15 +25,26 @@
     letter-spacing: 0.6px;
     cursor: pointer;
     transition: color $standardTransition;
+    border-bottom: 1px solid #E1E1E1;
+    letter-spacing: .78px;
+
+
 
     &:hover,
     &:focus {
-        color: $wakeSysBlue;
+        color: lighten($intoDarkness, 15%);
 
-        .accordionFeatureListIcon {
-            color: $wakeSysBlue;
+        .expandSection {
+            background-color: darken(#F8F8F8, 2%);
         }
     }
+}
+
+.accordionFeatureListLabel {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: $fontWeightMedium;
+    text-align: left;
 }
 
 .accordionFeatureListIcon {
@@ -50,5 +67,84 @@
     100% {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+.expandSection {
+    display: flex;
+    align-items: center;
+    background: #F8F8F8;
+    padding: 10px;
+    border-radius: 50px;
+    transition: background-color 200ms ease-in;
+
+    @include breakpointBig {
+        padding: 8px 20px;
+    }
+}
+
+
+.expandIcon {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+
+    &.active {
+        &:before {
+            transform: translatey(-50%) rotate(-90deg);
+            opacity: 0;
+        }
+
+        &:after {
+            transform: translatey(-50%) rotate(0);
+        }
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        background-color: #A9A8A8;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transition: transform 200ms ease-in-out, opacity 200ms ease-in;
+        will-change: transform;
+        width: 100%;
+        height: 3px;
+    }
+
+    &:before {
+        transform: translatey(-50%);
+    }
+
+    &:after {
+        transform: translatey(-50%) rotate(90deg);
+    }
+
+}
+
+.content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 500ms ease-in-out;
+    will-change: max-height;
+}
+
+.contentExpanded {
+    display: block;
+    max-height: 350px;
+}
+
+.expandInfoText {
+    display: none;
+    color: #A9A8A8;
+    font-size: $fontSizeDefault;
+    font-weight: $fontWeightLight;
+    margin-right: 10px;
+
+    @include breakpointBig {
+        display: inline;
     }
 }

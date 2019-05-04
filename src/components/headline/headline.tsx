@@ -5,18 +5,20 @@ const styles = require('./headline.module.scss');
 
 interface IHeadlineProps {
   type: 'h1' | 'h2' | 'h3' | 'h4' | 'topic';
+  inverse?: boolean;
   children: React.ReactNode;
   className?: string;
   noMargin?: boolean;
 }
 
-export const Headline: React.SFC<IHeadlineProps> = ({ type, children, className, noMargin }) => {
+export const Headline: React.SFC<IHeadlineProps> = ({ type, children, className, noMargin, inverse }) => {
   switch (type) {
     case 'h1':
       return (
         <h1
           className={classnames(styles.headline, styles.h1, className, {
-            [styles.withoutMargin]: noMargin
+            [styles.withoutMargin]: noMargin,
+            [styles.inverse]: inverse
           })}
         >
           {children}

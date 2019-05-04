@@ -1,6 +1,23 @@
 @import '../components/constants';
 @import '../components/mixins';
 
+
+.header {
+  align-items: flex-start;
+
+  @include breakpointBig {
+    padding: 10vh;
+  }
+
+  div {
+    max-width: 750px;
+  }
+}
+
+.headline {
+  text-align: left;
+}
+
 .subhealine {
   text-align: center;
 
@@ -13,13 +30,6 @@
   @include breakpointBig {
     width: 400px;
   }
-}
-
-.headerParagraph {
-  max-width: 520px;
-  text-align: center;
-  line-height: 1.9;
-  letter-spacing: .9px;
 }
 
 .sectionIntroduction {
