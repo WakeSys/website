@@ -4,10 +4,35 @@ import { Header, HeaderAlignment } from '../components/header/header';
 import { Headline } from '../components/headline/headline';
 import { Paragraph } from '../components/paragraph/paragraph';
 import { Button } from '../components/button/button';
+import { TrustSection, Items } from '../components/trustSection/trustSection';
+import { SectionWrapper } from '../components/sectionWrapper/sectionWrapper';
 
 const styles = require('./Index.module.scss');
 
 const startpageVisual = require('../components/assets/startpage-visual.png');
+const partnerRixen = require('../components/assets/partner-rixen-logo.png');
+const partnerSesitec = require('../components/assets/partner-sesitec-logo.png');
+const partnerWakeParx = require('../components/assets/partner-wakeparx-logo.png');
+const partnerWakeStation = require('../components/assets/partner-wakestation-logo.png');
+
+const partners: Items[] = [
+  {
+    imageUrl: partnerSesitec as string,
+    altAttr: 'Sesitec logo'
+  },
+  {
+    imageUrl: partnerRixen as string,
+    altAttr: 'Rixen logo'
+  },
+  {
+    imageUrl: partnerWakeParx as string,
+    altAttr: 'WakeParx logo'
+  },
+  {
+    imageUrl: partnerWakeStation as string,
+    altAttr: 'WakeStation logo'
+  }
+];
 
 const IndexPage: React.FunctionComponent = () => {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
@@ -24,6 +49,7 @@ const IndexPage: React.FunctionComponent = () => {
         </Paragraph>
         <Button onClick={() => setIsOverlayOpen(true)} buttonSize="big" label="Request free demo" buttonType="inverse" />
       </Header>
+      <TrustSection label="Our partners:" items={partners} />
     </BasicTemplate>
   );
 };
