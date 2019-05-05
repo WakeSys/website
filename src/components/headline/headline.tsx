@@ -9,16 +9,19 @@ interface IHeadlineProps {
   children: React.ReactNode;
   className?: string;
   noMargin?: boolean;
+  alignment?: 'center' | 'right';
 }
 
-export const Headline: React.SFC<IHeadlineProps> = ({ type, children, className, noMargin, inverse }) => {
+export const Headline: React.FunctionComponent<IHeadlineProps> = ({ type, children, className, noMargin, inverse, alignment }) => {
   switch (type) {
     case 'h1':
       return (
         <h1
           className={classnames(styles.headline, styles.h1, className, {
             [styles.withoutMargin]: noMargin,
-            [styles.inverse]: inverse
+            [styles.inverse]: inverse,
+            [styles.center]: alignment === 'center',
+            [styles.right]: alignment === 'right'
           })}
         >
           {children}
@@ -28,7 +31,9 @@ export const Headline: React.SFC<IHeadlineProps> = ({ type, children, className,
       return (
         <h2
           className={classnames(styles.headline, styles.h2, className, {
-            [styles.withoutMargin]: noMargin
+            [styles.withoutMargin]: noMargin,
+            [styles.center]: alignment === 'center',
+            [styles.right]: alignment === 'right'
           })}
         >
           {children}
@@ -38,7 +43,9 @@ export const Headline: React.SFC<IHeadlineProps> = ({ type, children, className,
       return (
         <h3
           className={classnames(styles.headline, styles.h3, className, {
-            [styles.withoutMargin]: noMargin
+            [styles.withoutMargin]: noMargin,
+            [styles.center]: alignment === 'center',
+            [styles.right]: alignment === 'right'
           })}
         >
           {children}
@@ -48,7 +55,9 @@ export const Headline: React.SFC<IHeadlineProps> = ({ type, children, className,
       return (
         <span
           className={classnames(styles.headline, styles.topic, className, {
-            [styles.withoutMargin]: noMargin
+            [styles.withoutMargin]: noMargin,
+            [styles.center]: alignment === 'center',
+            [styles.right]: alignment === 'right'
           })}
         >
           {children}
@@ -58,7 +67,9 @@ export const Headline: React.SFC<IHeadlineProps> = ({ type, children, className,
       return (
         <h3
           className={classnames(styles.headline, styles.h4, className, {
-            [styles.withoutMargin]: noMargin
+            [styles.withoutMargin]: noMargin,
+            [styles.center]: alignment === 'center',
+            [styles.right]: alignment === 'right'
           })}
         >
           {children}

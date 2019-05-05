@@ -19,11 +19,15 @@
 }
 
 .h2 {
-    font-size: 36px;
+    font-size: 28px;
     font-weight: $fontWeightLight;
     color: $grayWeather;
     margin-bottom: 20px;
     letter-spacing: .77px;
+
+    @include breakpointBig {
+        font-size: 38px;
+    }
 }
 
 .h3 {
@@ -31,7 +35,11 @@
     font-size: 16px;
     font-weight: $fontWeightLight;
     letter-spacing: .77px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+
+    @include breakpointBig {
+        font-size: 18px;
+    }
 }
 
 .topic {
@@ -67,4 +75,12 @@
 
 .withoutMargin {
     margin: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
 }
