@@ -6,6 +6,10 @@ import { Paragraph } from '../components/paragraph/paragraph';
 import { Button } from '../components/button/button';
 import { TrustSection, Items } from '../components/trustSection/trustSection';
 import { SectionWrapper } from '../components/sectionWrapper/sectionWrapper';
+import { ProductCard, Color } from '../components/productCard/productCard';
+import { Grid } from '../components/grid/grid';
+import { GridItem } from '../components/grid/gridItem';
+import { Route } from '../constants';
 
 const styles = require('./Index.module.scss');
 
@@ -50,6 +54,25 @@ const IndexPage: React.FunctionComponent = () => {
         <Button onClick={() => setIsOverlayOpen(true)} buttonSize="big" label="Request free demo" buttonType="inverse" />
       </Header>
       <TrustSection label="Our partners:" items={partners} />
+      <SectionWrapper alignment="column">
+        <Headline type="h2" alignment="center" noMargin>
+          Discover our products
+        </Headline>
+        <Headline type="h3" alignment="center">
+          The ideal solution for watersports and outdoor parks of any size
+        </Headline>
+        <Grid>
+          <GridItem start={1} span={4}>
+            <ProductCard link={Route.WAKEPARK} productType={Color.BLUE} productName="Wake Parks" />
+          </GridItem>
+          <GridItem start={5} span={4}>
+            <ProductCard link={Route.AQUAPARK} productType={Color.GREEN} productName="Aqua Parks" />
+          </GridItem>
+          <GridItem start={9} span={4}>
+            <ProductCard link={Route.SURFPARK} productType={Color.PURPLE} productName="Surf Parks" />
+          </GridItem>
+        </Grid>
+      </SectionWrapper>
     </BasicTemplate>
   );
 };
