@@ -18,3 +18,9 @@
 .sectionWrapperFullwidth {
     max-width: 100%;
 }
+
+.alignmentColumn {
+    @include breakpointBig {
+        flex-direction: column;
+    }
+}

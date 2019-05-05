@@ -7,13 +7,15 @@ interface ISectionWrapperProps {
   children: React.ReactNode;
   className?: string;
   fullWidth?: boolean;
+  alignment?: 'column';
 }
 
-export const SectionWrapper: React.SFC<ISectionWrapperProps> = ({ children, className, fullWidth }) => {
+export const SectionWrapper: React.SFC<ISectionWrapperProps> = ({ children, className, fullWidth, alignment }) => {
   return (
     <div
       className={classnames(styles.sectionWrapper, className, {
-        [styles.sectionWrapperFullwidth]: fullWidth
+        [styles.sectionWrapperFullwidth]: fullWidth,
+        [styles.alignmentColumn]: alignment === 'column'
       })}
     >
       {children}
