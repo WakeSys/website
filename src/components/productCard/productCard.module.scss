@@ -1,0 +1,70 @@
+@import '../constants';
+@import '../mixins';
+
+.root {
+    display: block;
+    height: 300px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: $boxShadowSoft;
+    overflow: hidden;
+    text-decoration: none;
+    transition: box-shadow $standardTransition;
+    margin-bottom: 30px;
+
+    @include breakpointBig {
+        margin-bottom: 0;
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        box-shadow: $boxShadowBig;
+
+        .productName {
+            color: rgba(white, .8);
+        }
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: $fontWeightBold;
+    color: white;
+    height: 240px;
+}
+
+.productName {
+    letter-spacing: .8px;
+    transition: color $standardTransition;
+}
+
+.blue {
+    background-image: linear-gradient(-141deg, #4A90E2 0%, #88BEFC 96%);
+}
+
+.green {
+    background-image: linear-gradient(-141deg, #4AE2BD 0%, #68CFD3 96%);
+}
+
+.purple {
+    background-image: linear-gradient(-141deg, #4D7ADC 0%, #C055FF 96%);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    box-sizing: border-box;
+    color: #A9A8A8;
+    height: 60px;
+    letter-spacing: .8px;
+}
