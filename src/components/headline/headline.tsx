@@ -32,6 +32,7 @@ export const Headline: React.FunctionComponent<IHeadlineProps> = ({ type, childr
         <h2
           className={classnames(styles.headline, styles.h2, className, {
             [styles.withoutMargin]: noMargin,
+            [styles.inverse]: inverse,
             [styles.center]: alignment === 'center',
             [styles.right]: alignment === 'right'
           })}
@@ -44,6 +45,7 @@ export const Headline: React.FunctionComponent<IHeadlineProps> = ({ type, childr
         <h3
           className={classnames(styles.headline, styles.h3, className, {
             [styles.withoutMargin]: noMargin,
+            [styles.inverse]: inverse,
             [styles.center]: alignment === 'center',
             [styles.right]: alignment === 'right'
           })}
@@ -69,7 +71,8 @@ export const Headline: React.FunctionComponent<IHeadlineProps> = ({ type, childr
           className={classnames(styles.headline, styles.h4, className, {
             [styles.withoutMargin]: noMargin,
             [styles.center]: alignment === 'center',
-            [styles.right]: alignment === 'right'
+            [styles.right]: alignment === 'right',
+            [styles.inverse]: inverse
           })}
         >
           {children}

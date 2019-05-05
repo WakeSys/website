@@ -10,6 +10,7 @@ import { ProductCard, Color } from '../components/productCard/productCard';
 import { Grid } from '../components/grid/grid';
 import { GridItem } from '../components/grid/gridItem';
 import { Route } from '../constants';
+import { VisualSection } from '../components/visualSection/visualSection';
 
 const styles = require('./Index.module.scss');
 
@@ -18,6 +19,7 @@ const partnerRixen = require('../components/assets/partner-rixen-logo.png');
 const partnerSesitec = require('../components/assets/partner-sesitec-logo.png');
 const partnerWakeParx = require('../components/assets/partner-wakeparx-logo.png');
 const partnerWakeStation = require('../components/assets/partner-wakestation-logo.png');
+const aboutUsVisual = require('../components/assets/startpage-wave-visual.png');
 
 const partners: Items[] = [
   {
@@ -72,6 +74,19 @@ const IndexPage: React.FunctionComponent = () => {
             <ProductCard link={Route.SURFPARK} productType={Color.PURPLE} productName="Surf Parks" />
           </GridItem>
         </Grid>
+      </SectionWrapper>
+      <SectionWrapper fullWidth alignment="column">
+        <VisualSection visual={aboutUsVisual}>
+          <Headline inverse type="h2">
+            What is the product about?
+          </Headline>
+          <Paragraph isInverse>
+            WakeSys makes your business run smoothly: We provide an end-to-end solution with dedicated interfaces for the owner, the staff
+            members and the customers digitizing all your operations. Buy tickets, sign waivers, manage group bookings, setup up events and
+            manage customer profiles 24/7 from your preferred device.
+          </Paragraph>
+          <Button buttonType="inverse" label="Request free demo" />
+        </VisualSection>
       </SectionWrapper>
     </BasicTemplate>
   );
