@@ -11,6 +11,7 @@ import { Grid } from '../components/grid/grid';
 import { GridItem } from '../components/grid/gridItem';
 import { Route } from '../constants';
 import { VisualSection } from '../components/visualSection/visualSection';
+import { ReferenceTileList } from '../components/referenceTile/referenceTileList';
 
 const styles = require('./Index.module.scss');
 
@@ -20,6 +21,10 @@ const partnerSesitec = require('../components/assets/partner-sesitec-logo.png');
 const partnerWakeParx = require('../components/assets/partner-wakeparx-logo.png');
 const partnerWakeStation = require('../components/assets/partner-wakestation-logo.png');
 const aboutUsVisual = require('../components/assets/startpage-wave-visual.png');
+
+const area47Logo = require('../components/assets/area47.png');
+const twpLogo = require('../components/assets/twp.png');
+const liquidLeisureLogo = require('../components/assets/liquid-leisure.png');
 
 const partners: Items[] = [
   {
@@ -37,6 +42,24 @@ const partners: Items[] = [
   {
     imageUrl: partnerWakeStation as string,
     altAttr: 'WakeStation logo'
+  }
+];
+
+const REFERENCES = [
+  {
+    imageUrl: liquidLeisureLogo,
+    altAttribute: 'liquid leisure - logo',
+    youtubeId: 'BsuGRTDEUGM'
+  },
+  {
+    imageUrl: twpLogo,
+    altAttribute: 'bal',
+    youtubeId: 'BsuGRTDEUGM'
+  },
+  {
+    imageUrl: area47Logo,
+    altAttribute: 'area47 - logo',
+    youtubeId: 'BsuGRTDEUGM'
   }
 ];
 
@@ -87,6 +110,24 @@ const IndexPage: React.FunctionComponent = () => {
           </Paragraph>
           <Button buttonType="inverse" label="Request free demo" />
         </VisualSection>
+      </SectionWrapper>
+      <SectionWrapper alignment="column">
+        <Headline type="h2" alignment="center">
+          Some of our world wide customers
+        </Headline>
+        <Headline type="h3" alignment="center">
+          Used by the finest wake parks, aqua parks and surf parks in the world
+        </Headline>
+        <ReferenceTileList reference={REFERENCES} />
+      </SectionWrapper>
+      <SectionWrapper fullWidth className={styles.sectionUpgrade}>
+        <Headline type="h2" alignment="center">
+          Ready to get WakeSys at your park?
+        </Headline>
+        <Headline className={styles.sectionUpgradeSubHeadline} type="h3">
+          request your free demo and guided walk-through today!
+        </Headline>
+        <Button onClick={() => setIsOverlayOpen(true)} label="Get in touch" buttonType="primary" />
       </SectionWrapper>
     </BasicTemplate>
   );

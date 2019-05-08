@@ -93,11 +93,6 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
           </Paragraph>
           <Button onClick={this.openOverlay} buttonSize="big" label="Request free demo" buttonType="inverse" />
         </Header>
-        <SectionWrapper>
-          <AccordionFeatureListItem label="At the Pro-Shop" featureList={featureList}>
-            <FeatureList featureList={featureList} />
-          </AccordionFeatureListItem>
-        </SectionWrapper>
         <SectionWrapper className={styles.sectionIntroduction}>
           <div>
             <Headline type="topic">discover our features</Headline>
@@ -117,7 +112,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
               onClick={() => this.scrollTo(this.customerNode)}
               headline="For your customers"
               description="Let them do most operations themselves"
-              type="customer"
+              type="wakepark"
             />
           </div>
           <IntroductionVisual />
