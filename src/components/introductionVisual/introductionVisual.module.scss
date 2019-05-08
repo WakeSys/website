@@ -17,8 +17,11 @@
 .introductionWrapper {
     display: flex;
     flex-direction: column;
+    align-self: center;
     padding: 20px;
     box-sizing: border-box;
+    max-width: 300px;
+    width: 100%;
 }
 
 .introductionTickets {
