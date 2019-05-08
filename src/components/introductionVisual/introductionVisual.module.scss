@@ -6,25 +6,12 @@
     flex-direction: column;
     margin-top: 50px;
     background-color: white;
-    box-shadow: $boxShadowBig;
     border-bottom-left-radius: $borderRadius;
     border-bottom-right-radius: $borderRadius;
 
     @include breakpointBig {
         width: 260px;
     }
-}
-
-.introductionBadge {
-    padding: 4px 0;
-    background-color: $sunShine;
-    color: white;
-    font-size: $fontSizeSmall;
-    font-weight: $fontWeightBold;
-    letter-spacing: 0.6px;
-    text-align: center;
-    border-top-left-radius: $borderRadius;
-    border-top-right-radius: $borderRadius;
 }
 
 .introductionWrapper {

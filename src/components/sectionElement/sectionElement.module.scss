@@ -15,7 +15,7 @@
     &:hover,
     &:focus {
         background-color: $grayShade100;
-        border-radius: $borderRadius;
+        border-radius: 50px;
     }
 }
 
@@ -30,10 +30,12 @@
     background-color: white;
     box-shadow: 0 5px 10px 0 rgba(black, 0.2);
     outline: none;
+    flex-shrink: 0;
 }
 
 .sectionElementDescription {
-    color: $intoDarkness;
-    font-size: $fontSizeSmall;
+    color: $grayWeather;
+    font-size: $fontSizeDefault;
+    font-weight: $fontWeightLight;
     letter-spacing: 0.6px;
 }
