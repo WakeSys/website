@@ -3,6 +3,10 @@
 
 .root {
     width: 100%;
+
+    @include breakpointBig {
+        width: 80%;
+    }
 }
 
 .accordionFeatureListItem {
@@ -47,12 +51,6 @@
     text-align: left;
 }
 
-.accordionFeatureListIcon {
-    width: 15px;
-    height: 15px;
-    color: $grayShade200;
-    transition: color $standardTransition;
-}
 
 .isActive {
     animation: slideOut 200ms ease-in forwards;
@@ -86,8 +84,8 @@
 
 .expandIcon {
     position: relative;
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
     cursor: pointer;
 
     &.active {
@@ -112,7 +110,7 @@
         transition: transform 200ms ease-in-out, opacity 200ms ease-in;
         will-change: transform;
         width: 100%;
-        height: 3px;
+        height: 2px;
     }
 
     &:before {
@@ -134,7 +132,7 @@
 
 .contentExpanded {
     display: block;
-    max-height: 350px;
+    max-height: 800px;
 }
 
 .expandInfoText {

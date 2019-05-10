@@ -3,7 +3,6 @@
 
 .button {
     display: block;
-    width: 100%;
     padding: 14px 30px;
     background-color: $wakeSysBlue;
     border-radius: 50px;
@@ -48,4 +47,8 @@
         background-color: lighten($wakeSysBlue, 1%);
         color: white;
     }
+}
+
+.gutter {
+    margin-bottom: 40px;
 }
