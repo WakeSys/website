@@ -25,11 +25,13 @@
     top: 0;
     right: 0;
     z-index: -1;
-    transform: translateX(15%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
 
     @include breakpointBig {
-        display: block;
-        width: 582px;
+        display: inline-block;
+        width: 80%;
         margin-top: 10%;
     }
 }
@@ -37,9 +39,10 @@
 .ownerVisualImage {
     width: 100%;
     box-shadow: $boxShadowBig;
+    border-radius: $borderRadius;
 
     @include breakpointBig {
-        width: 60%;
+        width: 58%;
         margin-left: 15%;
         margin-top: 4%;
     }
@@ -53,10 +56,15 @@
         position: absolute;
         display: flex;
         width: 64%;
-        top: -35%;
-        right: -9%;
+        height: 544px;
+        top: -32%;
+        right: -6%;
         z-index: -1;
         will-change: transform;
+    }
+
+    svg {
+        width: 100%;
     }
 }
 

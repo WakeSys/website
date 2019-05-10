@@ -1,0 +1,12 @@
+@import '../mixins';
+
+.root {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.root>* {
+    @include breakpointBig {
+        width: calc(33.3% - 20px);
+    }
+}

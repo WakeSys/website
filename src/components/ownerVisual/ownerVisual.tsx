@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 const styles = require('./ownerVisual.module.scss');
-const ownerVisualReports = require('../assets/owner-visual-reports-visual2x.png');
+const ownerVisualReports = require('../assets/for-the-owner-visual-2x.png');
 
 export const OwnerVisual: React.SFC = () => {
   return (
@@ -9,7 +9,7 @@ export const OwnerVisual: React.SFC = () => {
       <div className={styles.ownerVisualTriangle} />
       <img className={styles.ownerVisualImage} src={ownerVisualReports} alt="user interface of reports view for the owner" />
       <div className={styles.ownerVisualSteps}>
-        <svg width="465px" height="731px" viewBox="0 0 465 731" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 465 731" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g transform="translate(-515.000000, -405.000000)">
               <g transform="translate(516.000000, 405.000000)">

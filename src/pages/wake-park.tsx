@@ -16,6 +16,9 @@ import { CustomerVisual } from '../components/customerVisual/customerVisual';
 import { UserStoriesTeaser } from '../components/userStoriesTeaser/userStoriesTeaser';
 import { Overlay } from '../components/overlay/overlay';
 import { ContactForm } from '../components/contactForm/contactForm';
+import { GridItem } from '../components/grid/gridItem';
+import { Grid } from '../components/grid/grid';
+import { Content } from '../components/content/content';
 
 const area47Logo = require('../components/assets/area47.png');
 const twpLogo = require('../components/assets/twp.png');
@@ -23,33 +26,54 @@ const liquidLeisureLogo = require('../components/assets/liquid-leisure.png');
 
 const styles = require('./Index.module.scss');
 
-const featureList: IFeatureListItemProps[] = [
+const HARDWARE_INSTALLATION: IFeatureListItemProps[] = [
   {
-    label: 'Modular cable park solution'
+    label: 'iPads for registration and waiver signature'
   },
   {
-    label: 'Support available 7 days a week'
+    label: 'Touch PC for shop operations'
   },
   {
-    label: 'Automated processes and operations'
+    label: 'Scanner and operator screen at starting dock'
   },
   {
-    label: 'Automated invoicing'
+    label: 'Turnstiles for access control (optional)'
   },
   {
-    label: 'Automated retargeting'
+    label: 'Kitchen PC with order tracking (optional)'
+  },
+  {
+    label: 'Payment devices for payments with prepaid (optional)'
+  }
+];
+
+const IN_THE_SYSTEM: IFeatureListItemProps[] = [
+  {
+    label: 'Digitized operations including customer profile, waivers, tickets, shift reporting and invoicing'
   },
   {
     label: 'RFID access control'
   },
   {
-    label: 'Staff control'
+    label: 'Cable tracking & cable maintenance'
   },
   {
-    label: 'Detailed statistics'
+    label: 'Lake rentals & events'
   },
   {
-    label: 'Customization'
+    label: 'Branded gift cards & RFID wristbands'
+  },
+  {
+    label: 'Detailed statistics and reports'
+  },
+  {
+    label: 'Customer feedback evaluation'
+  },
+  {
+    label: 'Support available 7 days a week'
+  },
+  {
+    label: 'New features from season to season'
   }
 ];
 
@@ -118,14 +142,30 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
           <IntroductionVisual />
         </SectionWrapper>
         <SectionWrapper className={styles.sectionOwner}>
-          <div ref={this.ownerNode} className={styles.content}>
+          <div ref={this.ownerNode} />
+          <Content size="40">
             <Headline type="h2">For the owner</Headline>
-            <FeatureList featureList={featureList} />
-            <Button onClick={this.openOverlay} label="Get in touch" />
-          </div>
+            <Paragraph>
+              With WakeSys, we digitize your operations and save you precious time. All your data is only a few clicks away, at any time,
+              wherever you are.
+            </Paragraph>
+            <div ref={this.ownerNode} />
+            <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" />
+          </Content>
+
           <OwnerVisual />
         </SectionWrapper>
-        <SectionWrapper className={styles.sectionStaff}>
+        <SectionWrapper alignment="column">
+          <AccordionFeatureListItem label="HARDWARE INSTALLATION">
+            <FeatureList featureList={HARDWARE_INSTALLATION} />
+            <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
+          </AccordionFeatureListItem>
+          <AccordionFeatureListItem label="In the system">
+            <FeatureList featureList={IN_THE_SYSTEM} />
+            <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
+          </AccordionFeatureListItem>
+        </SectionWrapper>
+        {/* <SectionWrapper className={styles.sectionStaff}>
           <StaffVisual />
           <div ref={this.staffNode} className={styles.content}>
             <Headline type="h2">For the staff</Headline>
@@ -162,7 +202,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
             request your free demo and guided walk-through today!
           </Headline>
           <Button onClick={this.openOverlay} label="Get in touch" />
-        </SectionWrapper>
+        </SectionWrapper> */}
         {this.state.isOverlayOpen && (
           <Overlay className={styles.contactFormOverlay} children={<ContactForm />} onCloseClick={this.closeOverlay} />
         )}

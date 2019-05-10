@@ -12,6 +12,7 @@ import { GridItem } from '../components/grid/gridItem';
 import { Route } from '../constants';
 import { VisualSection } from '../components/visualSection/visualSection';
 import { ReferenceTileList } from '../components/referenceTile/referenceTileList';
+import { TileList } from '../components/tileList/tileList';
 
 const styles = require('./Index.module.scss');
 
@@ -86,17 +87,11 @@ const IndexPage: React.FunctionComponent = () => {
         <Headline type="h3" alignment="center">
           The ideal solution for watersports and outdoor parks of any size
         </Headline>
-        <Grid>
-          <GridItem start={1} span={4}>
-            <ProductCard link={Route.WAKEPARK} productType={Color.BLUE} productName="Wake Parks" />
-          </GridItem>
-          <GridItem start={5} span={4}>
-            <ProductCard link={Route.AQUAPARK} productType={Color.GREEN} productName="Aqua Parks" />
-          </GridItem>
-          <GridItem start={9} span={4}>
-            <ProductCard link={Route.SURFPARK} productType={Color.PURPLE} productName="Surf Parks" />
-          </GridItem>
-        </Grid>
+        <TileList>
+          <ProductCard link={Route.WAKEPARK} productType={Color.BLUE} productName="Wake Parks" />
+          <ProductCard link={Route.AQUAPARK} productType={Color.GREEN} productName="Aqua Parks" />
+          <ProductCard link={Route.SURFPARK} productType={Color.PURPLE} productName="Surf Parks" />
+        </TileList>
       </SectionWrapper>
       <SectionWrapper fullWidth alignment="column">
         <VisualSection visual={aboutUsVisual}>

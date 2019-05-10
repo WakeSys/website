@@ -1,0 +1,65 @@
+@import '../mixins';
+
+
+.root {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.ninety {
+    @include breakpointBig {
+        width: 90%;
+    }
+}
+
+.eighty {
+    @include breakpointBig {
+        width: 80%;
+    }
+}
+
+.seventy {
+    @include breakpointBig {
+        width: 70%;
+    }
+}
+
+.sixty {
+    @include breakpointBig {
+        width: 60%;
+    }
+}
+
+.fivty {
+    @include breakpointBig {
+        width: 50%;
+    }
+}
+
+.fourty {
+    @include breakpointBig {
+        width: 40%;
+    }
+}
+
+.thirty {
+    @include breakpointBig {
+        width: 30%;
+    }
+}
+
+.twenty {
+    @include breakpointBig {
+        width: 20%;
+    }
+}
+
+.ten {
+    @include breakpointBig {
+        width: 10%;
+    }
+}

@@ -12,16 +12,18 @@ interface IButton extends React.HTMLProps<HTMLButtonElement> {
   className?: string;
   label: string;
   buttonType: ButtonType;
+  gutter?: boolean;
 }
 
-export const Button: React.FunctionComponent<IButton> = ({ className, label, buttonSize, buttonType, ...buttonProps }) => {
+export const Button: React.FunctionComponent<IButton> = ({ className, label, buttonSize, buttonType, gutter, ...buttonProps }) => {
   return (
     <button
       {...buttonProps}
       className={classNames(styles.button, className, {
         [styles.buttonSmall]: buttonSize === 'small',
         [styles.buttonBig]: buttonSize === 'big',
-        [styles.inverse]: buttonType === 'inverse'
+        [styles.inverse]: buttonType === 'inverse',
+        [styles.gutter]: gutter
       })}
     >
       {label}
