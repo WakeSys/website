@@ -4,7 +4,7 @@ import * as classnames from 'classnames';
 const styles = require('./headline.module.scss');
 
 interface IHeadlineProps {
-  type: 'h1' | 'h2' | 'h3' | 'h4' | 'topic';
+  type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'topic';
   inverse?: boolean;
   children: React.ReactNode;
   className?: string;
@@ -65,10 +65,24 @@ export const Headline: React.FunctionComponent<IHeadlineProps> = ({ type, childr
           {children}
         </span>
       );
-    default:
+
+    case 'h4':
       return (
         <h3
           className={classnames(styles.headline, styles.h4, className, {
+            [styles.withoutMargin]: noMargin,
+            [styles.center]: alignment === 'center',
+            [styles.right]: alignment === 'right',
+            [styles.inverse]: inverse
+          })}
+        >
+          {children}
+        </h3>
+      );
+    default:
+      return (
+        <h3
+          className={classnames(styles.headline, styles.h5, className, {
             [styles.withoutMargin]: noMargin,
             [styles.center]: alignment === 'center',
             [styles.right]: alignment === 'right',

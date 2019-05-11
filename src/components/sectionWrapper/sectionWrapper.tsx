@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as classnames from 'classnames';
+import React from 'react';
+import classNames from 'classnames';
 
 const styles = require('./sectionWrapper.module.scss');
 
@@ -8,17 +8,41 @@ interface ISectionWrapperProps {
   className?: string;
   fullWidth?: boolean;
   alignment?: 'column';
+  withBackground?: boolean;
+  visual?: string;
+  boxed?: boolean;
 }
 
-export const SectionWrapper: React.SFC<ISectionWrapperProps> = ({ children, className, fullWidth, alignment }) => {
+export const SectionWrapper: React.SFC<ISectionWrapperProps> = ({
+  children,
+  className,
+  fullWidth,
+  alignment,
+  withBackground,
+  visual,
+  boxed
+}) => {
   return (
     <div
-      className={classnames(styles.sectionWrapper, className, {
+      className={classNames(styles.sectionWrapper, className, {
         [styles.sectionWrapperFullwidth]: fullWidth,
-        [styles.alignmentColumn]: alignment === 'column'
+        [styles.alignmentColumn]: alignment === 'column',
+        [styles.withBackground]: withBackground,
+        [styles.visual]: visual
       })}
+      style={{ backgroundImage: `url(${visual})` }}
     >
-      {children}
+      {fullWidth ? (
+        <div
+          className={classNames(styles.wrapper, {
+            [styles.boxed]: boxed
+          })}
+        >
+          {children}
+        </div>
+      ) : (
+        children
+      )}
     </div>
   );
 };

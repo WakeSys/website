@@ -5,9 +5,10 @@ const styles = require('./content.module.scss');
 
 interface Props {
   size: '100' | '90' | '80' | '70' | '60' | '50' | '40' | '30' | '20' | '10';
+  alignment?: 'center';
 }
 
-export const Content: React.FunctionComponent<Props> = ({ children, size }) => {
+export const Content: React.FunctionComponent<Props> = ({ children, size, alignment }) => {
   return (
     <div
       className={classNames(styles.root, {
@@ -20,7 +21,8 @@ export const Content: React.FunctionComponent<Props> = ({ children, size }) => {
         [styles.fourty]: size === '40',
         [styles.thirty]: size === '30',
         [styles.twenty]: size === '20',
-        [styles.ten]: size === '10'
+        [styles.ten]: size === '10',
+        [styles.alignment]: alignment === 'center'
       })}
     >
       {children}

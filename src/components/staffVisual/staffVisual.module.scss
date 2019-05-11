@@ -2,6 +2,10 @@
 @import '../mixins';
 
 
+.root {
+    margin-bottom: 80px;
+}
+
 .staffVisualImageWrapper {
     margin-bottom: 20px;
 
@@ -21,6 +25,8 @@
 
     @include breakpointBig {
         display: block;
+        width: 40%;
+        height: 400px;
     }
 }
 

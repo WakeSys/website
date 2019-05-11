@@ -77,6 +77,121 @@ const IN_THE_SYSTEM: IFeatureListItemProps[] = [
   }
 ];
 
+const ONBOARDING: IFeatureListItemProps[] = [
+  {
+    label: 'Onsite training prior to go live with test scenarios'
+  },
+  {
+    label: 'Facebook exchange group for live support'
+  }
+];
+
+const SELL_AND_REFUND: IFeatureListItemProps[] = [
+  {
+    label: 'Tickets'
+  },
+  {
+    label: 'Rental equipment'
+  },
+  {
+    label: 'Year passes & memberships'
+  },
+  {
+    label: '10-packs & punch cards'
+  },
+  {
+    label: 'Gift cards'
+  },
+  {
+    label: 'Events'
+  },
+  {
+    label: 'Group bookings'
+  },
+  {
+    label: 'RFID wristbands'
+  },
+  {
+    label: 'Prepaid credit (optional)'
+  }
+];
+
+const MANAGE: IFeatureListItemProps[] = [
+  {
+    label: 'Events'
+  },
+  {
+    label: 'Group bookings'
+  },
+  {
+    label: 'Opening hours'
+  },
+  {
+    label: 'Waivers'
+  }
+];
+
+const AT_THE_KIOSK: IFeatureListItemProps[] = [
+  {
+    label: 'Sell shop items like clothing, equipment, food and beverages'
+  },
+  {
+    label: 'RFID wristband integration'
+  },
+  {
+    label: 'Touch screen terminal to quickly select food and beverages'
+  },
+  {
+    label: 'Compatible with different taxes for take-away / to eat at the location'
+  },
+  {
+    label: 'Manage products with refundable deposit'
+  },
+  {
+    label: 'Edit all relevant product details, such as the retail price and the maximum discountable amount'
+  }
+];
+
+const AT_THE_RENTAL_EQUIPMENT_HANDOUT: IFeatureListItemProps[] = [
+  {
+    label: 'RFID wristband integration'
+  },
+  {
+    label: 'Know which customer has which equipment'
+  },
+  {
+    label: 'Know which equipment was not given back'
+  },
+  {
+    label: 'Know which customer used which material, and use this information for marketing purposes'
+  },
+  {
+    label: 'Detailed customer information: Name, age, profile picture, waiver validity, etc.'
+  },
+  {
+    label: 'Rental equipment status (booked/available)'
+  }
+];
+
+const AT_THE_STARTING_DOCK: IFeatureListItemProps[] = [
+  {
+    label: 'Detailed customer information every time a customer touches the RFID reader'
+  },
+  {
+    label: 'Lap counter and lap limit'
+  },
+  {
+    label: 'Pause all tickets when the cable is stopped for maintenance'
+  },
+  {
+    label: 'Overview of all customers with a membership'
+  },
+  {
+    label:
+      'Overview of all customers that are currently on the water and  all customers that already have a ticket but have not started riding yet'
+  }
+];
+
 const REFERENCES = [
   {
     imageUrl: liquidLeisureLogo,
@@ -149,10 +264,8 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
               With WakeSys, we digitize your operations and save you precious time. All your data is only a few clicks away, at any time,
               wherever you are.
             </Paragraph>
-            <div ref={this.ownerNode} />
             <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" />
           </Content>
-
           <OwnerVisual />
         </SectionWrapper>
         <SectionWrapper alignment="column">
@@ -165,23 +278,48 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
             <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
           </AccordionFeatureListItem>
         </SectionWrapper>
-        {/* <SectionWrapper className={styles.sectionStaff}>
-          <StaffVisual />
-          <div ref={this.staffNode} className={styles.content}>
+        <SectionWrapper className={styles.sectionStaff} withBackground fullWidth boxed>
+          <Content size="60">
+            <StaffVisual />
+          </Content>
+          <Content size="40">
+            <div ref={this.staffNode} />
             <Headline type="h2">For the staff</Headline>
-            <AccordionFeatureListItem label="At the Pro-Shop" featureList={featureList} />
-            <AccordionFeatureListItem label="At the Kiosk" featureList={featureList} />
-            <AccordionFeatureListItem label="At the cash register" featureList={featureList} />
-            <AccordionFeatureListItem label="At the rental equipment" featureList={featureList} />
-            <AccordionFeatureListItem
-              className={styles.indexAccordionFeatureListItem}
-              label="At the starting dock"
-              featureList={featureList}
-            />
-            <Button onClick={this.openOverlay} label="Get in touch" />
-          </div>
+            <Paragraph>
+              Your customer is at the heart of our system. 95% of the most common operations are available within one click in our intuitive
+              and easy-to-use interface any staff member can handle.
+            </Paragraph>
+            <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
+          </Content>
+          <Content size="80" />
+          <AccordionFeatureListItem label="Onboarding">
+            <FeatureList featureList={ONBOARDING} />
+            <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
+          </AccordionFeatureListItem>
+          <AccordionFeatureListItem label="At the cash register">
+            <Headline type="h5">Sell and refund:</Headline>
+            <FeatureList featureList={SELL_AND_REFUND} />
+            <Headline type="h5">Manage:</Headline>
+            <FeatureList featureList={MANAGE} />
+            <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
+          </AccordionFeatureListItem>
+          <AccordionFeatureListItem label="At the kiosk">
+            <FeatureList featureList={AT_THE_KIOSK} />
+            <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
+          </AccordionFeatureListItem>
+          <AccordionFeatureListItem label="At the rental equiptment handout">
+            <FeatureList featureList={AT_THE_RENTAL_EQUIPMENT_HANDOUT} />
+            <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
+          </AccordionFeatureListItem>
+          <AccordionFeatureListItem label="At the starting dock">
+            <FeatureList featureList={AT_THE_STARTING_DOCK} />
+            <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
+          </AccordionFeatureListItem>
         </SectionWrapper>
-        <SectionWrapper className={styles.sectionCustomer}>
+        {/* <SectionWrapper alignment="column" withBackground fullWidth>
+          
+        </SectionWrapper> */}
+        {/* <SectionWrapper className={styles.sectionCustomer}>
           <div ref={this.customerNode} className={styles.content}>
             <Headline type="h2">For your customers</Headline>
             <FeatureList featureList={featureList} />
