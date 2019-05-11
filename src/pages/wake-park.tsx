@@ -266,7 +266,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
       <BasicTemplate>
         <Header className={styles.test} type={HeaderType.BLUE}>
           <Headline type="h1">WakeSys for Wake Parks</Headline>
-          <Paragraph className={styles.headerParagraph} isInverse isInHeader alignment={ParagraphAlignment.CENTER}>
+          <Paragraph isInverse isInHeader alignment={ParagraphAlignment.CENTER}>
             WakeSys is an enterprise software with an integrated online booking tool and point-of-sale system, tailor-made for wakeboard
             cable parks wanting to automate, track and simplify their operations.
           </Paragraph>
