@@ -12,17 +12,15 @@ import { FeatureList } from '../components/featureList/featureList';
 import { IFeatureListItemProps } from '../components/featureListItem/featureListItem';
 import { AccordionFeatureListItem } from '../components/accordionFeatureListItem/accordionFeatureListItem';
 import { StaffVisual } from '../components/staffVisual/staffVisual';
-import { CustomerVisual } from '../components/customerVisual/customerVisual';
-import { UserStoriesTeaser } from '../components/userStoriesTeaser/userStoriesTeaser';
 import { Overlay } from '../components/overlay/overlay';
 import { ContactForm } from '../components/contactForm/contactForm';
-import { GridItem } from '../components/grid/gridItem';
-import { Grid } from '../components/grid/grid';
 import { Content } from '../components/content/content';
+import { ReferenceTileList } from '../components/referenceTile/referenceTileList';
 
 const area47Logo = require('../components/assets/area47.png');
 const twpLogo = require('../components/assets/twp.png');
 const liquidLeisureLogo = require('../components/assets/liquid-leisure.png');
+const customerVisual = require('../components/assets/wakepark-customer-visual.png');
 
 const styles = require('./Index.module.scss');
 
@@ -192,6 +190,48 @@ const AT_THE_STARTING_DOCK: IFeatureListItemProps[] = [
   }
 ];
 
+const ONLINE_OR_ON_THE_SPOT: IFeatureListItemProps[] = [
+  {
+    label: 'Register and receive customer account '
+  },
+  {
+    label: 'View, book and pay tickets, group bookings and events'
+  },
+  {
+    label: 'Sign waivers and accept terms & conditions'
+  },
+  {
+    label: 'Invite group participants and manage the booking'
+  },
+  {
+    label: 'Add minors and family members'
+  },
+  {
+    label: 'Check-in groups for fast pass'
+  },
+  {
+    label: 'Buy memberships, year passes, and 10-packs'
+  },
+  {
+    label: 'Buy and redeem gift cards'
+  },
+  {
+    label: 'Add prepaid credit'
+  },
+  {
+    label: 'Pay with credit card, PayPal, iDeal, Bancontact and prepaid'
+  },
+  {
+    label: 'Use WakeSys in 7+ languages (EN,DE, FR, NL, ES, IT, PL, THAI)'
+  },
+  {
+    label: 'Receive notification emails & feedback form'
+  },
+  {
+    label: 'Responsive interface for smartphone, PC and tablet'
+  }
+];
+
 const REFERENCES = [
   {
     imageUrl: liquidLeisureLogo,
@@ -278,12 +318,12 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
             <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
           </AccordionFeatureListItem>
         </SectionWrapper>
+        <div ref={this.staffNode} />
         <SectionWrapper className={styles.sectionStaff} withBackground fullWidth boxed>
           <Content size="60">
             <StaffVisual />
           </Content>
           <Content size="40">
-            <div ref={this.staffNode} />
             <Headline type="h2">For the staff</Headline>
             <Paragraph>
               Your customer is at the heart of our system. 95% of the most common operations are available within one click in our intuitive
@@ -291,7 +331,6 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
             </Paragraph>
             <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
           </Content>
-          <Content size="80" />
           <AccordionFeatureListItem label="Onboarding">
             <FeatureList featureList={ONBOARDING} />
             <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
@@ -316,31 +355,47 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
             <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
           </AccordionFeatureListItem>
         </SectionWrapper>
-        {/* <SectionWrapper alignment="column" withBackground fullWidth>
-          
-        </SectionWrapper> */}
-        {/* <SectionWrapper className={styles.sectionCustomer}>
-          <div ref={this.customerNode} className={styles.content}>
-            <Headline type="h2">For your customers</Headline>
-            <FeatureList featureList={featureList} />
-            <Button onClick={this.openOverlay} label="Get in touch" />
-          </div>
-          <CustomerVisual />
+        <SectionWrapper fullWidth alignment="column" visual={customerVisual}>
+          <Content size="100" alignment="center" minHeight smallWidth>
+            <Headline inverse type="h2">
+              For your customers
+            </Headline>
+            <Paragraph isInverse alignment={ParagraphAlignment.CENTER}>
+              Let your customers book and manage their bookings the most convenient and fastest way possible with all data available on the
+              go on their smartphones.
+            </Paragraph>
+            <Button buttonType="inverse" label="Get in touch" />
+          </Content>
         </SectionWrapper>
-        <UserStoriesTeaser
-          headline="Some of our world-wide customers"
-          subHeadline="The ideal solution for wakeboard cable parks of any size"
-          reference={REFERENCES}
-        />
-        <SectionWrapper fullWidth className={styles.sectionUpgrade}>
-          <Headline className={styles.sectionUpgradeHeadline} type="h2">
-            Ready to get WakeSys at your park?
+        <SectionWrapper alignment="column">
+          <AccordionFeatureListItem label="Online or on the spot">
+            <FeatureList featureList={ONLINE_OR_ON_THE_SPOT} />
+            <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
+          </AccordionFeatureListItem>
+        </SectionWrapper>
+
+        <SectionWrapper alignment="column">
+          <Headline type="h2" alignment="center">
+            Some of our world wide customers
           </Headline>
-          <Headline className={styles.sectionUpgradeSubHeadline} type="h3">
-            request your free demo and guided walk-through today!
+          <Headline type="h3" alignment="center">
+            The ideal solution for wake parks of any size
           </Headline>
-          <Button onClick={this.openOverlay} label="Get in touch" />
-        </SectionWrapper> */}
+          <ReferenceTileList reference={REFERENCES} />
+        </SectionWrapper>
+
+        <SectionWrapper fullWidth withBackground>
+          <Content size="100" alignment="center">
+            <Headline type="h2" alignment="center">
+              Ready to get WakeSys at your park?
+            </Headline>
+            <Headline className={styles.sectionUpgradeSubHeadline} type="h3">
+              request your free demo and guided walk-through today!
+            </Headline>
+            <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" />
+          </Content>
+        </SectionWrapper>
+
         {this.state.isOverlayOpen && (
           <Overlay className={styles.contactFormOverlay} children={<ContactForm />} onCloseClick={this.closeOverlay} />
         )}

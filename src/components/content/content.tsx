@@ -6,9 +6,11 @@ const styles = require('./content.module.scss');
 interface Props {
   size: '100' | '90' | '80' | '70' | '60' | '50' | '40' | '30' | '20' | '10';
   alignment?: 'center';
+  minHeight?: boolean;
+  smallWidth?: boolean;
 }
 
-export const Content: React.FunctionComponent<Props> = ({ children, size, alignment }) => {
+export const Content: React.FunctionComponent<Props> = ({ children, size, alignment, minHeight, smallWidth }) => {
   return (
     <div
       className={classNames(styles.root, {
@@ -22,7 +24,9 @@ export const Content: React.FunctionComponent<Props> = ({ children, size, alignm
         [styles.thirty]: size === '30',
         [styles.twenty]: size === '20',
         [styles.ten]: size === '10',
-        [styles.alignment]: alignment === 'center'
+        [styles.alignment]: alignment === 'center',
+        [styles.minHeight]: minHeight,
+        [styles.smallWidth]: smallWidth
       })}
     >
       {children}
