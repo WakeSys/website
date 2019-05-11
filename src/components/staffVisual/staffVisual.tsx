@@ -5,7 +5,7 @@ const staffVisual = require('../assets/staff-visual-2x.png');
 
 export const StaffVisual: React.SFC = () => {
   return (
-    <div>
+    <div className={styles.root}>
       <div className={styles.staffVisualImageWrapper}>
         <img className={styles.staffVisualImage} src={staffVisual} alt="User interface for the staff" />
       </div>

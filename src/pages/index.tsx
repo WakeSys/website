@@ -2,17 +2,15 @@ import React, { useState } from 'react';
 import { BasicTemplate } from '../templates/basicTemplate';
 import { Header, HeaderAlignment } from '../components/header/header';
 import { Headline } from '../components/headline/headline';
-import { Paragraph } from '../components/paragraph/paragraph';
+import { Paragraph, ParagraphAlignment } from '../components/paragraph/paragraph';
 import { Button } from '../components/button/button';
 import { TrustSection, Items } from '../components/trustSection/trustSection';
 import { SectionWrapper } from '../components/sectionWrapper/sectionWrapper';
 import { ProductCard, Color } from '../components/productCard/productCard';
-import { Grid } from '../components/grid/grid';
-import { GridItem } from '../components/grid/gridItem';
 import { Route } from '../constants';
-import { VisualSection } from '../components/visualSection/visualSection';
 import { ReferenceTileList } from '../components/referenceTile/referenceTileList';
 import { TileList } from '../components/tileList/tileList';
+import { Content } from '../components/content/content';
 
 const styles = require('./Index.module.scss');
 
@@ -93,18 +91,18 @@ const IndexPage: React.FunctionComponent = () => {
           <ProductCard link={Route.SURFPARK} productType={Color.PURPLE} productName="Surf Parks" />
         </TileList>
       </SectionWrapper>
-      <SectionWrapper fullWidth alignment="column">
-        <VisualSection visual={aboutUsVisual}>
+      <SectionWrapper fullWidth alignment="column" visual={aboutUsVisual}>
+        <Content size="100" alignment="center">
           <Headline inverse type="h2">
             What is the product about?
           </Headline>
-          <Paragraph isInverse>
+          <Paragraph isInverse alignment={ParagraphAlignment.CENTER}>
             WakeSys makes your business run smoothly: We provide an end-to-end solution with dedicated interfaces for the owner, the staff
             members and the customers digitizing all your operations. Buy tickets, sign waivers, manage group bookings, setup up events and
             manage customer profiles 24/7 from your preferred device.
           </Paragraph>
           <Button buttonType="inverse" label="Request free demo" />
-        </VisualSection>
+        </Content>
       </SectionWrapper>
       <SectionWrapper alignment="column">
         <Headline type="h2" alignment="center">
@@ -115,14 +113,16 @@ const IndexPage: React.FunctionComponent = () => {
         </Headline>
         <ReferenceTileList reference={REFERENCES} />
       </SectionWrapper>
-      <SectionWrapper fullWidth className={styles.sectionUpgrade}>
-        <Headline type="h2" alignment="center">
-          Ready to get WakeSys at your park?
-        </Headline>
-        <Headline className={styles.sectionUpgradeSubHeadline} type="h3">
-          request your free demo and guided walk-through today!
-        </Headline>
-        <Button onClick={() => setIsOverlayOpen(true)} label="Get in touch" buttonType="primary" />
+      <SectionWrapper fullWidth withBackground>
+        <Content size="100" alignment="center">
+          <Headline type="h2" alignment="center">
+            Ready to get WakeSys at your park?
+          </Headline>
+          <Headline className={styles.sectionUpgradeSubHeadline} type="h3">
+            request your free demo and guided walk-through today!
+          </Headline>
+          <Button onClick={() => setIsOverlayOpen(true)} label="Get in touch" buttonType="primary" />
+        </Content>
       </SectionWrapper>
     </BasicTemplate>
   );
