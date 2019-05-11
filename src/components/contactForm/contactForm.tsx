@@ -22,6 +22,11 @@ export class ContactForm extends React.Component {
           name="comment"
           placeholder="Tell us a bit about your park. Is it Fullsize or Two-tower? Is it already open or when are you planning to open it?"
         />
+        <p className="hidden">
+          <label>
+            Don’t fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
         <Button label="Send message" type="submit" buttonType="primary" />
       </form>
     );
