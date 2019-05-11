@@ -92,7 +92,7 @@ const IndexPage: React.FunctionComponent = () => {
         </TileList>
       </SectionWrapper>
       <SectionWrapper fullWidth alignment="column" visual={aboutUsVisual}>
-        <Content size="100" alignment="center">
+        <Content size="100" alignment="center" smallWidth minHeight>
           <Headline inverse type="h2">
             What is the product about?
           </Headline>
