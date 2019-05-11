@@ -22,7 +22,7 @@ export class ContactForm extends React.Component {
           name="comment"
           placeholder="Tell us a bit about your park. Is it Fullsize or Two-tower? Is it already open or when are you planning to open it?"
         />
-        <Button label="Send message" type="submit" />
+        <Button label="Send message" type="submit" buttonType="primary" />
       </form>
     );
   }
