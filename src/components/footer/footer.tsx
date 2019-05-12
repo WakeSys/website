@@ -6,6 +6,7 @@ import { Logo } from '../logo/logo';
 import { SectionWrapper } from '../sectionWrapper/sectionWrapper';
 import { Icon } from '../icon/icon';
 import { facebookSign, instagramSign } from '../icon/iconList';
+import { Route } from '../../constants';
 
 const styles = require('./footer.module.scss');
 
@@ -18,20 +19,17 @@ export const Footer: React.SFC = () => {
           <Link className={styles.footerLink} to="/about">
             About us
           </Link>
-          <Link className={styles.footerLink} to="/references">
-            References
-          </Link>
         </div>
         <div className={styles.footerColumn}>
           <h3 className={styles.footerHeadline}>Products</h3>
-          <Link className={styles.footerLink} to="/">
-            Full-size
+          <Link className={styles.footerLink} to={Route.WAKEPARK}>
+            Wake Parks
           </Link>
-          <Link className={styles.footerLink} to="/aqua-park">
-            Aqua-park
+          <Link className={styles.footerLink} to={Route.AQUAPARK}>
+            Aqua Parks
           </Link>
-          <Link className={styles.footerLink} to="/surf-park">
-            Surf-park
+          <Link className={styles.footerLink} to={Route.SURFPARK}>
+            Surf parks
           </Link>
         </div>
         <div className={styles.footerColumn}>
