@@ -17,12 +17,12 @@ export const OwnerVisual: React.SFC<Props> = ({ type }) => {
         <svg viewBox="0 0 465 731" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient x1="-1.05314897%" y1="37.7331924%" x2="70.6521937%" y2="60.8264857%" id="linearGradient-1">
-              <stop stop-color="#4AE2BD" offset="0%" />
-              <stop stop-color="#68CFD3" offset="100%" />
+              <stop stopColor="#4AE2BD" offset="0%" />
+              <stop stopColor="#68CFD3" offset="100%" />
             </linearGradient>
             <linearGradient x1="-1.05314897%" y1="29.7170771%" x2="70.6521937%" y2="67.9013791%" id="linearGradient-2">
-              <stop stop-color="#4AE2BD" offset="0%" />
-              <stop stop-color="#68CFD3" offset="100%" />
+              <stop stopColor="#4AE2BD" offset="0%" />
+              <stop stopColor="#68CFD3" offset="100%" />
             </linearGradient>
           </defs>
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">

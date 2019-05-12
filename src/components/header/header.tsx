@@ -36,24 +36,24 @@ export const Header: React.FunctionComponent<IHeaderProps> = ({
       case HeaderType.BLUE: {
         return (
           <linearGradient x1="-1.05314897%" y1="37.0166678%" x2="70.6521937%" y2="61.4588787%" id="linearGradient-1">
-            <stop stop-color="#4A90E2" offset="0%" />
-            <stop stop-color="#88BEFC" offset="100%" />
+            <stop stopColor="#4A90E2" offset="0%" />
+            <stop stopColor="#88BEFC" offset="100%" />
           </linearGradient>
         );
       }
       case HeaderType.GREEN: {
         return (
           <linearGradient x1="-1.05314897%" y1="37.0166678%" x2="70.6521937%" y2="61.4588787%" id="linearGradient-1">
-            <stop stop-color="#4AE2BD" offset="0%" />
-            <stop stop-color="#68CFD3" offset="100%" />
+            <stop stopColor="#4AE2BD" offset="0%" />
+            <stop stopColor="#68CFD3" offset="100%" />
           </linearGradient>
         );
       }
       case HeaderType.PURPLE: {
         return (
           <linearGradient x1="-1.05314897%" y1="37.0166678%" x2="70.6521937%" y2="61.4588787%" id="linearGradient-1">
-            <stop stop-color="#4D7ADC" offset="0%" />
-            <stop stop-color="#C055FF" offset="100%" />
+            <stop stopColor="#4D7ADC" offset="0%" />
+            <stop stopColor="#C055FF" offset="100%" />
           </linearGradient>
         );
       }
