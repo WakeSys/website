@@ -14,8 +14,11 @@ import { FeatureList } from '../components/featureList/featureList';
 import { IFeatureListItemProps } from '../components/featureListItem/featureListItem';
 import { StaffVisual } from '../components/staffVisual/staffVisual';
 import { ProductType } from '../constants';
+import { CustomerVisual } from '../components/customerVisual/customerVisual';
 
 const styles = require('./Index.module.scss');
+
+const customerVisual = require('../components/assets/aqua-park-customer-visual.png');
 
 const HARDWARE_INSTALLATION: IFeatureListItemProps[] = [
   {
@@ -131,6 +134,48 @@ const AT_THE_KIOSK: IFeatureListItemProps[] = [
   }
 ];
 
+const ONLINE_OR_ON_THE_SPOT: IFeatureListItemProps[] = [
+  {
+    label: 'Register and receive customer account'
+  },
+  {
+    label: 'View, book and pay tickets, group bookings and events'
+  },
+  {
+    label: 'Sign waivers and accept terms & conditions'
+  },
+  {
+    label: 'Invite group participants'
+  },
+  {
+    label: 'Manage group bookings (replace or add participants)'
+  },
+  {
+    label: 'Add minors or family members'
+  },
+  {
+    label: 'Check-in groups to receive fast pass'
+  },
+  {
+    label: 'Buy memberships, year passes, and 10-packs'
+  },
+  {
+    label: 'Buy and redeem gift cards'
+  },
+  {
+    label: 'Pay with credit card, PayPal, iDeal, Bancontact and prepaid'
+  },
+  {
+    label: 'Use WakeSys in 7+ languages (EN,DE, FR, NL, ES, IT, PL, THAI)'
+  },
+  {
+    label: 'Receive notification emails & feedback form'
+  },
+  {
+    label: 'Responsive interface for smartphone, PC and tablet'
+  }
+];
+
 const AquaPark: React.FunctionComponent = () => {
   const ownerNode = useRef<HTMLDivElement>(null);
   const staffNode = useRef<HTMLDivElement>(null);
@@ -235,6 +280,26 @@ const AquaPark: React.FunctionComponent = () => {
         </AccordionFeatureListItem>
         <AccordionFeatureListItem label="At the kiosk">
           <FeatureList featureList={AT_THE_KIOSK} />
+          <Button onClick={openOverlay} label="Get in touch" buttonType="primary" gutter />
+        </AccordionFeatureListItem>
+      </SectionWrapper>
+      <SectionWrapper>
+        <div ref={customerNode} />
+        <Content size="40">
+          <Headline type="h2">For your customers</Headline>
+          <Paragraph>
+            Hosting a party at your favorite aqua park and not in the mood for organizing back and forth with your friends? With WakeSys,
+            you book the desired amount of participants and each participant signs up individually via an email link. Boom!
+          </Paragraph>
+          <Button onClick={openOverlay} label="Get in touch" buttonType="primary" />
+        </Content>
+        <Content size="40">
+          <CustomerVisual imageUrl={customerVisual} />
+        </Content>
+      </SectionWrapper>
+      <SectionWrapper alignment="column">
+        <AccordionFeatureListItem label="Online or on the spot">
+          <FeatureList featureList={ONLINE_OR_ON_THE_SPOT} />
           <Button onClick={openOverlay} label="Get in touch" buttonType="primary" gutter />
         </AccordionFeatureListItem>
       </SectionWrapper>
