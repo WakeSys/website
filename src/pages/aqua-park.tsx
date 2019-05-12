@@ -315,7 +315,7 @@ const AquaPark: React.FunctionComponent = () => {
           <Button onClick={openOverlay} label="Get in touch" buttonType="primary" />
         </Content>
       </SectionWrapper>
-      {isOverlayOpen && <Overlay className={styles.contactFormOverlay} children={<ContactForm />} onCloseClick={closeOverlay} />}
+      {isOverlayOpen && <Overlay children={<ContactForm />} onCloseClick={closeOverlay} />}
     </BasicTemplate>
   );
 };
