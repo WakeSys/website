@@ -356,6 +356,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
             <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
           </AccordionFeatureListItem>
         </SectionWrapper>
+        <div ref={this.customerNode} />
         <SectionWrapper fullWidth alignment="column" visual={customerVisual}>
           <Content size="100" alignment="center" minHeight smallWidth>
             <Headline inverse type="h2">
@@ -390,9 +391,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
             <Headline type="h2" alignment="center">
               Ready to get WakeSys at your park?
             </Headline>
-            <Headline className={styles.sectionUpgradeSubHeadline} type="h3">
-              request your free demo and guided walk-through today!
-            </Headline>
+            <Paragraph alignment={ParagraphAlignment.CENTER}>request your free demo and guided walk-through today!</Paragraph>
             <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" />
           </Content>
         </SectionWrapper>

@@ -40,7 +40,9 @@
     }
 
     &::placeholder {
-        color: $grayShade300;
+        color: $coldGray;
+        font-weight: $fontWeightLight;
+        font-size: $fontSizeSmall;
     }
 }
 

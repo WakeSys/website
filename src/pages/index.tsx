@@ -11,6 +11,8 @@ import { Route } from '../constants';
 import { ReferenceTileList } from '../components/referenceTile/referenceTileList';
 import { TileList } from '../components/tileList/tileList';
 import { Content } from '../components/content/content';
+import { Overlay } from '../components/overlay/overlay';
+import { ContactForm } from '../components/contactForm/contactForm';
 
 const styles = require('./Index.module.scss');
 
@@ -64,6 +66,10 @@ const REFERENCES = [
 
 const IndexPage: React.FunctionComponent = () => {
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+
+  const closeOverlay = () => setIsOverlayOpen(false);
+  const openOverlay = () => setIsOverlayOpen(true);
+
   return (
     <BasicTemplate>
       <Header className={styles.header} backgroundImage={startpageVisual} alignment={HeaderAlignment.LEFT}>
@@ -101,7 +107,7 @@ const IndexPage: React.FunctionComponent = () => {
             members and the customers digitizing all your operations. Buy tickets, sign waivers, manage group bookings, setup up events and
             manage customer profiles 24/7 from your preferred device.
           </Paragraph>
-          <Button buttonType="inverse" label="Request free demo" />
+          <Button onClick={() => setIsOverlayOpen(true)} buttonType="inverse" label="Request free demo" />
         </Content>
       </SectionWrapper>
       <SectionWrapper alignment="column">
@@ -118,12 +124,11 @@ const IndexPage: React.FunctionComponent = () => {
           <Headline type="h2" alignment="center">
             Ready to get WakeSys at your park?
           </Headline>
-          <Headline className={styles.sectionUpgradeSubHeadline} type="h3">
-            request your free demo and guided walk-through today!
-          </Headline>
+          <Paragraph alignment={ParagraphAlignment.CENTER}>request your free demo and guided walk-through today!</Paragraph>
           <Button onClick={() => setIsOverlayOpen(true)} label="Get in touch" buttonType="primary" />
         </Content>
       </SectionWrapper>
+      {isOverlayOpen && <Overlay className={styles.contactFormOverlay} children={<ContactForm />} onCloseClick={closeOverlay} />}
     </BasicTemplate>
   );
 };

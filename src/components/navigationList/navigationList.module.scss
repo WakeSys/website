@@ -56,6 +56,7 @@
   &:after {
     content: '';
     animation: slideIn $standardTransition forwards;
+    border-radius: 0;
   }
 }
 

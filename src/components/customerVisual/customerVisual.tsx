@@ -1,12 +1,15 @@
 import * as React from 'react';
 
 const styles = require('./customerVisual.module.scss');
-const customerVisual = require('../assets/wakesys-customer-visual2x.jpg');
 
-export const CustomerVisual: React.SFC = () => {
+interface Props {
+  imageUrl: string;
+}
+
+export const CustomerVisual: React.FunctionComponent<Props> = ({ imageUrl }) => {
   return (
     <div className={styles.customerVisual}>
-      <img className={styles.customerVisualImage} src={customerVisual} />
+      <img className={styles.customerVisualImage} src={imageUrl} alt="mobile devices and smart watch with barcode" />
     </div>
   );
 };

@@ -4,11 +4,6 @@
 .customerVisual {
     position: relative;
     margin-top: 50px;
-
-    @include breakpointBig {
-        width: 50%;
-        margin: 0;
-    }
 }
 
 .customerVisualImage {
