@@ -7,8 +7,9 @@ const ownerVisualReports = require('../assets/for-the-owner-visual-2x.png');
 interface Props {
   type: ProductType;
 }
-
 export const OwnerVisual: React.SFC<Props> = ({ type }) => {
+  const shouldShowSmartDevices = type === ProductType.AQUAPARK || type === ProductType.SURFPARK;
+
   return (
     <div className={styles.ownerVisual}>
       <div className={styles.ownerVisualTriangle} />
@@ -49,7 +50,7 @@ export const OwnerVisual: React.SFC<Props> = ({ type }) => {
                 {/* RFID */}
 
                 {/* MOBILE WATCH STUFF */}
-                {type === ProductType.AQUAPARK && (
+                {shouldShowSmartDevices && (
                   <g id="mobile-devices" transform="translate(174.000000, 55.000000)">
                     <g
                       id="Group-2-Copy"
@@ -127,7 +128,7 @@ export const OwnerVisual: React.SFC<Props> = ({ type }) => {
                     <path
                       d="M35.042,9 L71.958,9 C73.6380502,9 75,10.3619498 75,12.042 L75,37 L32,37 L32,12.042 C32,10.3619498 33.3619498,9 35.042,9 Z"
                       id="Rectangle"
-                      fill="url(#linearGradient-2)"
+                      fill="url(#linearGradient-1)"
                     />
                     <circle id="Oval" fill="#768092" cx="53.5" cy="86.5" r="3.5" />
                     <rect id="Rectangle" fill="#768092" x="49" y="6" width="8" height="1" rx="0.5" />
