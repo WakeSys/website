@@ -9,8 +9,8 @@
 
 .inputLabel {
     margin-bottom: 4px;
-    color: $coldGray;
-    font-weight: $fontWeightMedium;
+    color: $grayWeather;
+    font-weight: $fontWeightLight;
     font-size: $fontSizeSmall;
     letter-spacing: .67px;
 }
@@ -29,6 +29,8 @@
     }
 
     &::placeholder {
-        color: $grayShade300;
+        color: $coldGray;
+        font-weight: $fontWeightLight;
+        font-size: $fontSizeSmall;
     }
 }

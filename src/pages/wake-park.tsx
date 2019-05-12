@@ -356,6 +356,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
             <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
           </AccordionFeatureListItem>
         </SectionWrapper>
+        <div ref={this.customerNode} />
         <SectionWrapper fullWidth alignment="column" visual={customerVisual}>
           <Content size="100" alignment="center" minHeight smallWidth>
             <Headline inverse type="h2">

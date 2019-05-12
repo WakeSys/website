@@ -255,6 +255,7 @@ const AquaPark: React.FunctionComponent = () => {
           <Button onClick={openOverlay} label="Get in touch" buttonType="primary" gutter />
         </AccordionFeatureListItem>
       </SectionWrapper>
+      <div ref={staffNode} />
       <SectionWrapper className={styles.sectionStaff} withBackground fullWidth boxed>
         <Content size="60">
           <StaffVisual type={ProductType.AQUAPARK} />

@@ -10,8 +10,8 @@ export class ContactForm extends React.Component {
     return (
       <form name="contact" method="POST" data-netlify="true" className={styles.contactForm} action="/success">
         <input type="hidden" name="form-name" value="contact" />
-        <Headline className={styles.contactFormHeadline} type="h2">
-          Request your free Wakesys demo
+        <Headline className={styles.contactFormHeadline} type="h3">
+          <strong>Request your free Wakesys demo</strong>
         </Headline>
         <Input className={styles.contactFormInput} htmlForLabel="name" label="Name" type="text" placeholder="Type your name" />
         <Input className={styles.contactFormInput} htmlForLabel="website" label="Your website" type="url" placeholder="Type your name" />
