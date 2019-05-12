@@ -9,3 +9,9 @@ export enum Route {
   PRIVACY_POLICY = '/policy',
   IMPRINT = '/imprint'
 }
+
+export enum ProductType {
+  WAKEPARK,
+  AQUAPARK,
+  SURFPARK
+}

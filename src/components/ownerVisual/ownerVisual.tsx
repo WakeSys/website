@@ -1,13 +1,8 @@
 import * as React from 'react';
+import { ProductType } from '../../constants';
 
 const styles = require('./ownerVisual.module.scss');
 const ownerVisualReports = require('../assets/for-the-owner-visual-2x.png');
-
-export enum ProductType {
-  WAKEPARK,
-  AQUAPARK,
-  SURFPARK
-}
 
 interface Props {
   type: ProductType;
