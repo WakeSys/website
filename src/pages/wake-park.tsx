@@ -7,7 +7,7 @@ import { Paragraph, ParagraphAlignment } from '../components/paragraph/paragraph
 import { SectionElement } from '../components/sectionElement/sectionElement';
 import { SectionWrapper } from '../components/sectionWrapper/sectionWrapper';
 import { IntroductionVisual } from '../components/introductionVisual/introductionVisual';
-import { OwnerVisual, ProductType } from '../components/ownerVisual/ownerVisual';
+import { OwnerVisual } from '../components/ownerVisual/ownerVisual';
 import { FeatureList } from '../components/featureList/featureList';
 import { IFeatureListItemProps } from '../components/featureListItem/featureListItem';
 import { AccordionFeatureListItem } from '../components/accordionFeatureListItem/accordionFeatureListItem';
@@ -16,6 +16,7 @@ import { Overlay } from '../components/overlay/overlay';
 import { ContactForm } from '../components/contactForm/contactForm';
 import { Content } from '../components/content/content';
 import { ReferenceTileList } from '../components/referenceTile/referenceTileList';
+import { ProductType } from '../constants';
 
 const area47Logo = require('../components/assets/area47.png');
 const twpLogo = require('../components/assets/twp.png');
@@ -321,7 +322,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
         <div ref={this.staffNode} />
         <SectionWrapper className={styles.sectionStaff} withBackground fullWidth boxed>
           <Content size="60">
-            <StaffVisual />
+            <StaffVisual type={ProductType.WAKEPARK} />
           </Content>
           <Content size="40">
             <Headline type="h2">For the staff</Headline>

@@ -8,10 +8,12 @@ import { SectionElement } from '../components/sectionElement/sectionElement';
 import { IntroductionVisual } from '../components/introductionVisual/introductionVisual';
 import { Button } from '../components/button/button';
 import { Content } from '../components/content/content';
-import { OwnerVisual, ProductType } from '../components/ownerVisual/ownerVisual';
+import { OwnerVisual } from '../components/ownerVisual/ownerVisual';
 import { AccordionFeatureListItem } from '../components/accordionFeatureListItem/accordionFeatureListItem';
 import { FeatureList } from '../components/featureList/featureList';
 import { IFeatureListItemProps } from '../components/featureListItem/featureListItem';
+import { StaffVisual } from '../components/staffVisual/staffVisual';
+import { ProductType } from '../constants';
 
 const styles = require('./Index.module.scss');
 
@@ -56,6 +58,79 @@ const IN_THE_SYSTEM: IFeatureListItemProps[] = [
     label: 'New features from season to season'
   }
 ];
+
+const ONBOARDING: IFeatureListItemProps[] = [
+  {
+    label: 'Remote or onsite training prior to go live with test scenarios'
+  },
+  {
+    label: 'Live support 7 days/week'
+  }
+];
+
+const SELL_AND_REFUND: IFeatureListItemProps[] = [
+  {
+    label: 'Tickets'
+  },
+  {
+    label: 'Rental equipment'
+  },
+  {
+    label: 'Group bookings'
+  },
+  {
+    label: 'Year passes & memberships'
+  },
+  {
+    label: '10-packs & punch cards'
+  },
+  {
+    label: 'Gift cards'
+  },
+  {
+    label: 'Events'
+  }
+];
+
+const MANAGE: IFeatureListItemProps[] = [
+  {
+    label: 'Group bookings via check-in onsite or fast pass'
+  },
+  {
+    label: 'Events'
+  },
+  {
+    label: 'Opening hours'
+  },
+  {
+    label: 'Waivers'
+  }
+];
+
+const VIEW: IFeatureListItemProps[] = [
+  {
+    label: 'Number of booked sessions per hour'
+  },
+  {
+    label: 'Group bookings by date, booking code or name'
+  },
+  {
+    label: 'Waiver validity'
+  }
+];
+
+const AT_THE_KIOSK: IFeatureListItemProps[] = [
+  {
+    label: 'Sell shop items like clothing, equipment, food and beverages'
+  },
+  {
+    label: 'Touch screen terminal to quickly select food and beverages'
+  },
+  {
+    label: 'Edit all relevant product details such as retail price and applicable discounts '
+  }
+];
+
 const AquaPark: React.FunctionComponent = () => {
   const ownerNode = useRef<HTMLDivElement>(null);
   const staffNode = useRef<HTMLDivElement>(null);
@@ -130,6 +205,36 @@ const AquaPark: React.FunctionComponent = () => {
         </AccordionFeatureListItem>
         <AccordionFeatureListItem label="In the system">
           <FeatureList featureList={IN_THE_SYSTEM} />
+          <Button onClick={openOverlay} label="Get in touch" buttonType="primary" gutter />
+        </AccordionFeatureListItem>
+      </SectionWrapper>
+      <SectionWrapper className={styles.sectionStaff} withBackground fullWidth boxed>
+        <Content size="60">
+          <StaffVisual type={ProductType.AQUAPARK} />
+        </Content>
+        <Content size="40">
+          <Headline type="h2">For the staff</Headline>
+          <Paragraph>
+            Your customer is at the heart of our system. 95% of the most common operations are available within one click in our intuitive
+            and easy-to-use interface any staff member can handle.
+          </Paragraph>
+          <Button onClick={openOverlay} label="Get in touch" buttonType="primary" gutter />
+        </Content>
+        <AccordionFeatureListItem label="Onboarding">
+          <FeatureList featureList={ONBOARDING} />
+          <Button onClick={openOverlay} label="Get in touch" buttonType="primary" gutter />
+        </AccordionFeatureListItem>
+        <AccordionFeatureListItem label="At the cash register">
+          <Headline type="h5">Sell and refund:</Headline>
+          <FeatureList featureList={SELL_AND_REFUND} />
+          <Headline type="h5">Manage:</Headline>
+          <FeatureList featureList={MANAGE} />
+          <Headline type="h5">View:</Headline>
+          <FeatureList featureList={VIEW} />
+          <Button onClick={openOverlay} label="Get in touch" buttonType="primary" gutter />
+        </AccordionFeatureListItem>
+        <AccordionFeatureListItem label="At the kiosk">
+          <FeatureList featureList={AT_THE_KIOSK} />
           <Button onClick={openOverlay} label="Get in touch" buttonType="primary" gutter />
         </AccordionFeatureListItem>
       </SectionWrapper>
