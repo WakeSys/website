@@ -7,7 +7,7 @@ import { Paragraph, ParagraphAlignment } from '../components/paragraph/paragraph
 import { SectionElement } from '../components/sectionElement/sectionElement';
 import { SectionWrapper } from '../components/sectionWrapper/sectionWrapper';
 import { IntroductionVisual } from '../components/introductionVisual/introductionVisual';
-import { OwnerVisual } from '../components/ownerVisual/ownerVisual';
+import { OwnerVisual, ProductType } from '../components/ownerVisual/ownerVisual';
 import { FeatureList } from '../components/featureList/featureList';
 import { IFeatureListItemProps } from '../components/featureListItem/featureListItem';
 import { AccordionFeatureListItem } from '../components/accordionFeatureListItem/accordionFeatureListItem';
@@ -306,7 +306,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
             </Paragraph>
             <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" />
           </Content>
-          <OwnerVisual />
+          <OwnerVisual type={ProductType.WAKEPARK} />
         </SectionWrapper>
         <SectionWrapper alignment="column">
           <AccordionFeatureListItem label="HARDWARE INSTALLATION">
