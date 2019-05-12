@@ -6,6 +6,11 @@ import { Paragraph, ParagraphAlignment } from '../components/paragraph/paragraph
 import { Button } from '../components/button/button';
 import { Overlay } from '../components/overlay/overlay';
 import { ContactForm } from '../components/contactForm/contactForm';
+import { SectionWrapper } from '../components/sectionWrapper/sectionWrapper';
+import { SectionElement } from '../components/sectionElement/sectionElement';
+import { IntroductionVisual } from '../components/introductionVisual/introductionVisual';
+
+const styles = require('./Index.module.scss');
 
 const SurfPark: React.FunctionComponent = () => {
   const ownerNode = useRef<HTMLDivElement>(null);
@@ -37,6 +42,30 @@ const SurfPark: React.FunctionComponent = () => {
         </Paragraph>
         <Button onClick={openOverlay} buttonSize="big" label="Request free demo" buttonType="inverse" />
       </Header>
+      <SectionWrapper className={styles.sectionIntroduction}>
+        <div>
+          <Headline type="topic">discover our features</Headline>
+          <SectionElement
+            onClick={() => scrollTo(ownerNode)}
+            headline="For the Owner"
+            description="Control and streamline your operations"
+            type="owner"
+          />
+          <SectionElement
+            onClick={() => scrollTo(staffNode)}
+            headline="For your staff"
+            description="Speed-up and optimize operations"
+            type="staff"
+          />
+          <SectionElement
+            onClick={() => scrollTo(customerNode)}
+            headline="For your customers"
+            description="Let them do most operations themselves"
+            type="surfpark"
+          />
+        </div>
+        <IntroductionVisual />
+      </SectionWrapper>
       {isOverlayOpen && <Overlay children={<ContactForm />} onCloseClick={closeOverlay} />}
     </BasicTemplate>
   );
