@@ -16,8 +16,11 @@ import { AccordionFeatureListItem } from '../components/accordionFeatureListItem
 import { FeatureList } from '../components/featureList/featureList';
 import { IFeatureListItemProps } from '../components/featureListItem/featureListItem';
 import { StaffVisual } from '../components/staffVisual/staffVisual';
+import { CustomerVisual } from '../components/customerVisual/customerVisual';
 
 const styles = require('./Index.module.scss');
+
+const customerVisual = require('../components/assets/surf-park-customer-visual.png');
 
 const HARDWARE_INSTALLATION: IFeatureListItemProps[] = [
   {
@@ -133,6 +136,48 @@ const AT_THE_KIOSK: IFeatureListItemProps[] = [
   }
 ];
 
+const ONLINE_OR_ON_THE_SPOT: IFeatureListItemProps[] = [
+  {
+    label: 'Register and receive customer account'
+  },
+  {
+    label: 'View, book and pay tickets, group bookings and events'
+  },
+  {
+    label: 'Sign waivers and accept terms & conditions'
+  },
+  {
+    label: 'Invite group participants'
+  },
+  {
+    label: 'Manage group bookings (replace or add participants)'
+  },
+  {
+    label: 'Add minors or family members'
+  },
+  {
+    label: 'Check-in groups to receive fast pass'
+  },
+  {
+    label: 'Buy memberships, year passes, and 10-packs'
+  },
+  {
+    label: 'Buy and redeem gift cards'
+  },
+  {
+    label: 'Pay with credit card, PayPal, iDeal, Bancontact and prepaid'
+  },
+  {
+    label: 'Use WakeSys in 7+ languages (EN,DE, FR, NL, ES, IT, PL, THAI)'
+  },
+  {
+    label: 'Receive notification emails & feedback form'
+  },
+  {
+    label: 'Responsive interface for smartphone, PC and tablet'
+  }
+];
+
 const SurfPark: React.FunctionComponent = () => {
   const ownerNode = useRef<HTMLDivElement>(null);
   const staffNode = useRef<HTMLDivElement>(null);
@@ -239,6 +284,35 @@ const SurfPark: React.FunctionComponent = () => {
           <FeatureList featureList={AT_THE_KIOSK} />
           <Button onClick={openOverlay} label="Get in touch" buttonType="primary" gutter />
         </AccordionFeatureListItem>
+      </SectionWrapper>
+      <SectionWrapper>
+        <div ref={customerNode} />
+        <Content size="40">
+          <Headline type="h2">For your customers</Headline>
+          <Paragraph>
+            Surfing is fun and so is booking your ticket: Select the preferred time, check out the amount of available slots and buy your
+            ticket immediately online. Before jumping in the water, show your booking or say your name and that’s it.
+          </Paragraph>
+          <Button onClick={openOverlay} label="Get in touch" buttonType="primary" />
+        </Content>
+        <Content size="40">
+          <CustomerVisual imageUrl={customerVisual} />
+        </Content>
+      </SectionWrapper>
+      <SectionWrapper alignment="column">
+        <AccordionFeatureListItem label="Online or on the spot">
+          <FeatureList featureList={ONLINE_OR_ON_THE_SPOT} />
+          <Button onClick={openOverlay} label="Get in touch" buttonType="primary" gutter />
+        </AccordionFeatureListItem>
+      </SectionWrapper>
+      <SectionWrapper fullWidth withBackground>
+        <Content size="100" alignment="center">
+          <Headline type="h2" alignment="center">
+            Ready to get WakeSys at your park?
+          </Headline>
+          <Paragraph alignment={ParagraphAlignment.CENTER}>request your free demo and guided walk-through today!</Paragraph>
+          <Button onClick={openOverlay} label="Get in touch" buttonType="primary" />
+        </Content>
       </SectionWrapper>
       {isOverlayOpen && <Overlay children={<ContactForm />} onCloseClick={closeOverlay} />}
     </BasicTemplate>
