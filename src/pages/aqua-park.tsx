@@ -15,6 +15,8 @@ import { IFeatureListItemProps } from '../components/featureListItem/featureList
 import { StaffVisual } from '../components/staffVisual/staffVisual';
 import { ProductType } from '../constants';
 import { CustomerVisual } from '../components/customerVisual/customerVisual';
+import { Overlay } from '../components/overlay/overlay';
+import { ContactForm } from '../components/contactForm/contactForm';
 
 const styles = require('./Index.module.scss');
 
@@ -303,6 +305,16 @@ const AquaPark: React.FunctionComponent = () => {
           <Button onClick={openOverlay} label="Get in touch" buttonType="primary" gutter />
         </AccordionFeatureListItem>
       </SectionWrapper>
+      <SectionWrapper fullWidth withBackground>
+        <Content size="100" alignment="center">
+          <Headline type="h2" alignment="center">
+            Ready to get WakeSys at your park?
+          </Headline>
+          <Paragraph alignment={ParagraphAlignment.CENTER}>request your free demo and guided walk-through today!</Paragraph>
+          <Button onClick={openOverlay} label="Get in touch" buttonType="primary" />
+        </Content>
+      </SectionWrapper>
+      {isOverlayOpen && <Overlay className={styles.contactFormOverlay} children={<ContactForm />} onCloseClick={closeOverlay} />}
     </BasicTemplate>
   );
 };

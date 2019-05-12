@@ -118,9 +118,7 @@ const IndexPage: React.FunctionComponent = () => {
           <Headline type="h2" alignment="center">
             Ready to get WakeSys at your park?
           </Headline>
-          <Headline className={styles.sectionUpgradeSubHeadline} type="h3">
-            request your free demo and guided walk-through today!
-          </Headline>
+          <Paragraph alignment={ParagraphAlignment.CENTER}>request your free demo and guided walk-through today!</Paragraph>
           <Button onClick={() => setIsOverlayOpen(true)} label="Get in touch" buttonType="primary" />
         </Content>
       </SectionWrapper>
