@@ -9,8 +9,56 @@ import { ContactForm } from '../components/contactForm/contactForm';
 import { SectionWrapper } from '../components/sectionWrapper/sectionWrapper';
 import { SectionElement } from '../components/sectionElement/sectionElement';
 import { IntroductionVisual } from '../components/introductionVisual/introductionVisual';
+import { Content } from '../components/content/content';
+import { OwnerVisual } from '../components/ownerVisual/ownerVisual';
+import { ProductType } from '../constants';
+import { AccordionFeatureListItem } from '../components/accordionFeatureListItem/accordionFeatureListItem';
+import { FeatureList } from '../components/featureList/featureList';
+import { IFeatureListItemProps } from '../components/featureListItem/featureListItem';
 
 const styles = require('./Index.module.scss');
+
+const HARDWARE_INSTALLATION: IFeatureListItemProps[] = [
+  {
+    label: 'iPads for registration and waiver signature'
+  },
+  {
+    label: 'Touch PC for shop operations'
+  },
+  {
+    label: 'Turnstiles for access control (optional)'
+  },
+  {
+    label: 'Kitchen PC with order tracking (optional)'
+  }
+];
+
+const IN_THE_SYSTEM: IFeatureListItemProps[] = [
+  {
+    label: 'Digitized operations including customer profile, waivers, tickets, shift reporting and invoicing'
+  },
+  {
+    label: 'Group bookings & events'
+  },
+  {
+    label: 'Mass cancellations and pro-rata ticket refund in case of bad weather or break-down'
+  },
+  {
+    label: 'Branded gift cards '
+  },
+  {
+    label: 'Detailed statistics and reports'
+  },
+  {
+    label: 'Customer feedback evaluation '
+  },
+  {
+    label: 'Support available 7 days a week'
+  },
+  {
+    label: 'New features from season to season'
+  }
+];
 
 const SurfPark: React.FunctionComponent = () => {
   const ownerNode = useRef<HTMLDivElement>(null);
@@ -65,6 +113,28 @@ const SurfPark: React.FunctionComponent = () => {
           />
         </div>
         <IntroductionVisual />
+      </SectionWrapper>
+      <SectionWrapper className={styles.sectionOwner}>
+        <div ref={ownerNode} />
+        <Content size="40">
+          <Headline type="h2">For the owner</Headline>
+          <Paragraph>
+            With WakeSys, we digitize your operations and save you precious time. All your data is only a few clicks away, at any time,
+            wherever you are.
+          </Paragraph>
+          <Button onClick={openOverlay} label="Get in touch" buttonType="primary" />
+        </Content>
+        <OwnerVisual type={ProductType.SURFPARK} />
+      </SectionWrapper>
+      <SectionWrapper alignment="column">
+        <AccordionFeatureListItem label="HARDWARE INSTALLATION">
+          <FeatureList featureList={HARDWARE_INSTALLATION} />
+          <Button onClick={openOverlay} label="Get in touch" buttonType="primary" gutter />
+        </AccordionFeatureListItem>
+        <AccordionFeatureListItem label="In the system">
+          <FeatureList featureList={IN_THE_SYSTEM} />
+          <Button onClick={openOverlay} label="Get in touch" buttonType="primary" gutter />
+        </AccordionFeatureListItem>
       </SectionWrapper>
       {isOverlayOpen && <Overlay children={<ContactForm />} onCloseClick={closeOverlay} />}
     </BasicTemplate>
