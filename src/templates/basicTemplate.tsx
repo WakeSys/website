@@ -6,6 +6,7 @@ import { TopBar } from '../components/topBar/topBar';
 import { Overlay } from '../components/overlay/overlay';
 import { Footer } from '../components/footer/footer';
 import { ContactForm } from '../components/contactForm/contactForm';
+import { Route } from '../constants';
 
 const styles = require('./basicTemplate.module.scss');
 
@@ -31,19 +32,15 @@ export const indexPageQuery = graphql`
 const NAVIGATION_LIST = [
   {
     label: 'Wakeboard Parks',
-    to: '/wake-park'
+    to: Route.WAKEPARK
   },
   {
     label: 'Aqua Parks',
-    to: '/aqua-park'
+    to: Route.AQUAPARK
   },
   {
     label: 'Surf Parks',
-    to: '/surf-park'
-  },
-  {
-    label: 'References',
-    to: '/references'
+    to: Route.SURFPARK
   }
 ];
 
