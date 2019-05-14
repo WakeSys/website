@@ -13,6 +13,7 @@
 }
 
 .featureListItemLabel {
+    width: calc(100% - 20px);
     font-family: $fontFamily;
     font-size: $fontSizeDefault;
     font-weight: $fontWeightRegular;
