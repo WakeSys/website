@@ -7,7 +7,8 @@ export enum HeaderType {
   VISUAL,
   BLUE,
   PURPLE,
-  GREEN
+  GREEN,
+  GREY
 }
 
 export enum HeaderAlignment {
@@ -68,7 +69,8 @@ export const Header: React.FunctionComponent<IHeaderProps> = ({
         [styles.visual]: type === HeaderType.VISUAL,
         [styles.blue]: type === HeaderType.BLUE,
         [styles.purple]: type === HeaderType.PURPLE,
-        [styles.green]: type === HeaderType.GREEN
+        [styles.green]: type === HeaderType.GREEN,
+        [styles.grey]: type === HeaderType.GREY
       })}
       style={image}
     >
