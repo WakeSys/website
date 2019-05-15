@@ -199,7 +199,7 @@ const SurfPark: React.FunctionComponent = () => {
   };
 
   return (
-    <BasicTemplate>
+    <BasicTemplate title="WakeSys Surf Parks - Online booking and management solutions for surf parks" metaDescription="WakeSys Surf Parks - We have a flawless solution for you that lets your customers book and ride in timed slots">>
       <Header type={HeaderType.PURPLE}>
         <Headline type="h1">Surf Parks</Headline>
         <Paragraph isInverse isInHeader alignment={ParagraphAlignment.CENTER}>

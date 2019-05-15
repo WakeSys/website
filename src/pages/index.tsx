@@ -71,7 +71,10 @@ const IndexPage: React.FunctionComponent = () => {
   const openOverlay = () => setIsOverlayOpen(true);
 
   return (
-    <BasicTemplate>
+    <BasicTemplate
+      title="WakeSys is an enterprise software - we provide a solution for wake parks, aqua parks and surf parks"
+      metaDescription="WakeSys -  integrated online booking tailor-made for parks in the water sports industry, wanting to automate, track and simplify their operations"
+    >
       <Header className={styles.header} backgroundImage={startpageVisual} alignment={HeaderAlignment.LEFT}>
         <Headline className={styles.headline} type="h1">
           WakeSys is an
@@ -125,7 +128,7 @@ const IndexPage: React.FunctionComponent = () => {
             Ready to get WakeSys at your park?
           </Headline>
           <Paragraph alignment={ParagraphAlignment.CENTER}>request your free demo and guided walk-through today!</Paragraph>
-          <Button onClick={() => setIsOverlayOpen(true)} label="Get in touch" buttonType="primary" />
+          <Button onClick={openOverlay} label="Get in touch" buttonType="primary" />
         </Content>
       </SectionWrapper>
       {isOverlayOpen && <Overlay className={styles.contactFormOverlay} children={<ContactForm />} onCloseClick={closeOverlay} />}
