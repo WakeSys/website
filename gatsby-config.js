@@ -9,9 +9,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-sitemap`
-    {
+    `gatsby-plugin-sitemap`, {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
@@ -24,7 +22,10 @@ module.exports = {
       options: {
         host: 'https://www.wakesys.com',
         sitemap: 'https://www.wakesys.com/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
+        policy: [{
+          userAgent: '*',
+          allow: '/'
+        }]
       }
     }
   ],
