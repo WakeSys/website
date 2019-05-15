@@ -264,7 +264,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
 
   public render() {
     return (
-      <BasicTemplate>
+      <BasicTemplate title="WakeSys Wake Parks - Online booking and management solutions for wakeboard cable parks" metaDescription="WakeSys Wake Parks - We provide a oftware solution to automate, track and simplify operations for wakeboard cable parks">
         <Header className={styles.test} type={HeaderType.BLUE}>
           <Headline type="h1">WakeSys for Wake Parks</Headline>
           <Paragraph isInverse isInHeader alignment={ParagraphAlignment.CENTER}>
