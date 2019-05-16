@@ -57,10 +57,16 @@ const IN_THE_SYSTEM: IFeatureListItemProps[] = [
     label: 'Cable tracking & cable maintenance'
   },
   {
+    label: 'Mass cancellations and pro-rata ticket refund in case of bad weather or cable break-down'
+  },
+  {
     label: 'Lake rentals & events'
   },
   {
-    label: 'Branded gift cards & RFID wristbands'
+    label: 'Branded gift cards'
+  },
+  {
+    label: 'Branded RFID wristbands'
   },
   {
     label: 'Detailed statistics and reports'
@@ -81,7 +87,7 @@ const ONBOARDING: IFeatureListItemProps[] = [
     label: 'Onsite training prior to go live with test scenarios'
   },
   {
-    label: 'Facebook exchange group for live support'
+    label: 'Live support 7 days/week'
   }
 ];
 
@@ -135,25 +141,25 @@ const AT_THE_KIOSK: IFeatureListItemProps[] = [
     label: 'Sell shop items like clothing, equipment, food and beverages'
   },
   {
-    label: 'RFID wristband integration'
+    label: 'RFID wristband integration for payment'
   },
   {
     label: 'Touch screen terminal to quickly select food and beverages'
   },
   {
-    label: 'Compatible with different taxes for take-away / to eat at the location'
-  },
-  {
     label: 'Manage products with refundable deposit'
   },
   {
-    label: 'Edit all relevant product details, such as the retail price and the maximum discountable amount'
+    label: 'Edit all relevant product details such as retail price and applicable discounts'
   }
 ];
 
 const AT_THE_RENTAL_EQUIPMENT_HANDOUT: IFeatureListItemProps[] = [
   {
     label: 'RFID wristband integration'
+  },
+  {
+    label: 'Rental equipment status (booked/available)'
   },
   {
     label: 'Know which customer has which equipment'
@@ -166,28 +172,21 @@ const AT_THE_RENTAL_EQUIPMENT_HANDOUT: IFeatureListItemProps[] = [
   },
   {
     label: 'Detailed customer information: Name, age, profile picture, waiver validity, etc.'
-  },
-  {
-    label: 'Rental equipment status (booked/available)'
   }
 ];
 
 const AT_THE_STARTING_DOCK: IFeatureListItemProps[] = [
   {
-    label: 'Detailed customer information every time a customer touches the RFID reader'
+    label: 'Customer information every time a customer touches the RFID reader'
+  },
+  {
+    label: 'See who currently is on the water and who has a ticket but has not started riding yet'
   },
   {
     label: 'Lap counter and lap limit'
   },
   {
     label: 'Pause all tickets when the cable is stopped for maintenance'
-  },
-  {
-    label: 'Overview of all customers with a membership'
-  },
-  {
-    label:
-      'Overview of all customers that are currently on the water and  all customers that already have a ticket but have not started riding yet'
   }
 ];
 
@@ -264,12 +263,15 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
 
   public render() {
     return (
-      <BasicTemplate title="WakeSys Wake Parks - Online booking and management solutions for wakeboard cable parks" metaDescription="WakeSys Wake Parks - We provide a oftware solution to automate, track and simplify operations for wakeboard cable parks">
+      <BasicTemplate
+        title="WakeSys Wake Parks - Online booking and management solutions for wakeboard cable parks"
+        metaDescription="WakeSys Wake Parks - We provide a oftware solution to automate, track and simplify operations for wakeboard cable parks"
+      >
         <Header className={styles.test} type={HeaderType.BLUE}>
           <Headline type="h1">WakeSys for Wake Parks</Headline>
           <Paragraph isInverse isInHeader alignment={ParagraphAlignment.CENTER}>
-            WakeSys is an enterprise software with an integrated online booking tool and point-of-sale system, tailor-made for wakeboard
-            cable parks wanting to automate, track and simplify their operations.
+            WakeSys enterprise software is made for full-size and two-tower wake parks. Access control, waiver management, lake rentals and
+            cable tracking are just a few of our key features.
           </Paragraph>
           <Button onClick={this.openOverlay} buttonSize="big" label="Request free demo" buttonType="inverse" />
         </Header>
@@ -310,7 +312,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
           <OwnerVisual type={ProductType.WAKEPARK} />
         </SectionWrapper>
         <SectionWrapper alignment="column">
-          <AccordionFeatureListItem label="HARDWARE INSTALLATION">
+          <AccordionFeatureListItem label="HARDWARE INSTALLED FOR YOU">
             <FeatureList featureList={HARDWARE_INSTALLATION} />
             <Button onClick={this.openOverlay} label="Get in touch" buttonType="primary" gutter />
           </AccordionFeatureListItem>
@@ -363,8 +365,8 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
               For your customers
             </Headline>
             <Paragraph isInverse alignment={ParagraphAlignment.CENTER}>
-              Let your customers book and manage their bookings the most convenient and fastest way possible with all data available on the
-              go on their smartphones.
+              et your customers book and manage their bookings the most convenient and fastest way possible with all data available on the
+              go from their smartphones.
             </Paragraph>
             <Button buttonType="inverse" label="Get in touch" />
           </Content>

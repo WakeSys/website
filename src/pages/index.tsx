@@ -81,7 +81,7 @@ const IndexPage: React.FunctionComponent = () => {
           <br /> enterprise software
         </Headline>
         <Paragraph isInHeader isInverse>
-          with integrated online booking tailor-made for parks in the watersports industry, wanting to automate, track and simplify their
+          with integrated online booking tailor-made for parks in the water sports industry, wanting to automate, track and simplify their
           operations.
         </Paragraph>
         <Button onClick={() => setIsOverlayOpen(true)} buttonSize="big" label="Request free demo" buttonType="inverse" />
@@ -92,12 +92,12 @@ const IndexPage: React.FunctionComponent = () => {
           Discover our products
         </Headline>
         <Headline type="h3" alignment="center">
-          The ideal solution for watersports and outdoor parks of any size
+          The ideal solution for water sports and outdoor parks of any size
         </Headline>
         <TileList>
-          <ProductCard link={Route.WAKEPARK} productType={Color.BLUE} productName="Wake Parks" />
           <ProductCard link={Route.AQUAPARK} productType={Color.GREEN} productName="Aqua Parks" />
           <ProductCard link={Route.SURFPARK} productType={Color.PURPLE} productName="Surf Parks" />
+          <ProductCard link={Route.WAKEPARK} productType={Color.BLUE} productName="Wake Parks" />
         </TileList>
       </SectionWrapper>
       <SectionWrapper fullWidth alignment="column" visual={aboutUsVisual}>
@@ -108,7 +108,10 @@ const IndexPage: React.FunctionComponent = () => {
           <Paragraph isInverse alignment={ParagraphAlignment.CENTER}>
             WakeSys makes your business run smoothly: We provide an end-to-end solution with dedicated interfaces for the owner, the staff
             members and the customers digitizing all your operations. Buy tickets, sign waivers, manage group bookings, setup up events and
-            manage customer profiles 24/7 from your preferred device.
+            manage customer profiles 24/7 from your preferred device. Our solution has been developed with passion and deep thought: With
+            just a few clicks and a super intuitive interface you are enabled to do whatever you need in a very short amount of time. Hassle
+            free operations do not only run in the cloud but also require the right equipment. At WakeSys, we also take care of the hardware
+            you need and help you keep it up and running.
           </Paragraph>
           <Button onClick={() => setIsOverlayOpen(true)} buttonType="inverse" label="Request free demo" />
         </Content>

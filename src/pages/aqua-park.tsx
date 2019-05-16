@@ -200,7 +200,10 @@ const AquaPark: React.FunctionComponent = () => {
   };
 
   return (
-    <BasicTemplate title="WakeSys Aqua Parks - Online booking and management solutions for aqua parks" metaDescription="WakeSys Aqua Parks - With WakeSys we can help you to bring a large amount of people on the water with fast passes">
+    <BasicTemplate
+      title="WakeSys Aqua Parks - Online booking and management solutions for aqua parks"
+      metaDescription="WakeSys Aqua Parks - With WakeSys we can help you to bring a large amount of people on the water with fast passes"
+    >
       <Header type={HeaderType.GREEN}>
         <Headline type="h1">Aqua Parks</Headline>
         <Paragraph isInverse isInHeader alignment={ParagraphAlignment.CENTER}>
