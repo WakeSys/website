@@ -12,6 +12,7 @@ interface IInputProps {
   value?: string;
   className?: string;
   inputClassName?: string;
+  name?: string;
   onChange?: (event: React.SyntheticEvent<HTMLInputElement>) => void;
   onKeyPress?: (event: React.SyntheticEvent<HTMLInputElement>) => void;
 }
