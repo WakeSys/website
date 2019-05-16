@@ -22,14 +22,14 @@ export const Footer: React.SFC = () => {
         </div>
         <div className={styles.footerColumn}>
           <h3 className={styles.footerHeadline}>Products</h3>
-          <Link className={styles.footerLink} to={Route.WAKEPARK}>
-            Wake Parks
-          </Link>
           <Link className={styles.footerLink} to={Route.AQUAPARK}>
             Aqua Parks
           </Link>
           <Link className={styles.footerLink} to={Route.SURFPARK}>
-            Surf parks
+            Surf Parks
+          </Link>
+          <Link className={styles.footerLink} to={Route.WAKEPARK}>
+            Wake Parks
           </Link>
         </div>
         <div className={styles.footerColumn}>

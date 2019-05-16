@@ -2,18 +2,32 @@ import * as React from 'react';
 import { ProductType } from '../../constants';
 
 const styles = require('./staffVisual.module.scss');
-const staffVisual = require('../assets/staff-visual-2x.png');
+const wakeParkVisual = require('../assets/staff-visual-2x.png');
+const aquaParkVisual = require('../assets/aqua-park-staff-visual.png');
+const surfParkVisual = require('../assets/surf-park-staff-visual.png');
 
 interface Props {
   type: ProductType;
 }
 
 export const StaffVisual: React.FunctionComponent<Props> = ({ type }) => {
+  const renderVisual = () => {
+    switch (type) {
+      case ProductType.AQUAPARK: {
+        return <img className={styles.staffVisualImage} src={aquaParkVisual} alt="Check In interface for the staff" />;
+      }
+      case ProductType.SURFPARK: {
+        return <img className={styles.staffVisualImage} src={surfParkVisual} alt="Booking interface for the staff" />;
+      }
+      default: {
+        return <img className={styles.staffVisualImage} src={wakeParkVisual} alt="User interface for the staff" />;
+      }
+    }
+  };
+
   return (
     <div className={styles.root}>
-      <div className={styles.staffVisualImageWrapper}>
-        <img className={styles.staffVisualImage} src={staffVisual} alt="User interface for the staff" />
-      </div>
+      <div className={styles.staffVisualImageWrapper}>{renderVisual()}</div>
       {type === ProductType.WAKEPARK && (
         <div className={styles.staffVisualIllustration}>
           <svg viewBox="0 0 269 374">

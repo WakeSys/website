@@ -27,16 +27,16 @@ export const indexPageQuery = graphql`
 
 const NAVIGATION_LIST = [
   {
-    label: 'Wakeboard Parks',
-    to: Route.WAKEPARK
-  },
-  {
     label: 'Aqua Parks',
     to: Route.AQUAPARK
   },
   {
     label: 'Surf Parks',
     to: Route.SURFPARK
+  },
+  {
+    label: 'Wakeboard Parks',
+    to: Route.WAKEPARK
   }
 ];
 
