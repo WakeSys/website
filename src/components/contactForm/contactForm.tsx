@@ -13,13 +13,13 @@ export class ContactForm extends React.Component {
         <Headline className={styles.contactFormHeadline} type="h3">
           <strong>Request your free Wakesys demo</strong>
         </Headline>
-        <Input className={styles.contactFormInput} htmlForLabel="name" label="Name" type="text" placeholder="Type your name" />
-        <Input className={styles.contactFormInput} htmlForLabel="website" label="Your website" type="url" placeholder="Type your name" />
-        <Input className={styles.contactFormInput} htmlForLabel="email" label="E-Mail" type="email" placeholder="your@mail.com" />
-        <Input className={styles.contactFormInput} htmlForLabel="phone" label="Phone or Skype" type="tel" />
+        <Input className={styles.contactFormInput} htmlForLabel="name" label="Name" type="text" placeholder="Type your name" name="name"/>
+        <Input className={styles.contactFormInput} htmlForLabel="website" label="Your website" type="url" placeholder="Type your name" name="website"/>
+        <Input className={styles.contactFormInput} htmlForLabel="email" label="E-Mail" type="email" placeholder="your@mail.com" name="email"/>
+        <Input className={styles.contactFormInput} htmlForLabel="phone" label="Phone or Skype" type="tel" name="phone"/>
         <textarea
           className={styles.contactFormTextArea}
-          name="comment"
+          name="message"
           placeholder="Tell us a bit about your park. Is it Fullsize or Two-tower? Is it already open or when are you planning to open it?"
         />
         <p className={styles.hidden}>
