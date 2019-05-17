@@ -21,7 +21,7 @@ import { ProductType } from '../constants';
 const area47Logo = require('../components/assets/area47.png');
 const twpLogo = require('../components/assets/twp.png');
 const liquidLeisureLogo = require('../components/assets/liquid-leisure.png');
-const customerVisual = require('../components/assets/wakepark-customer-visual.png');
+const customerVisual = require('../components/assets/wakepark-customer-visual.webp');
 
 const styles = require('./Index.module.scss');
 
@@ -365,7 +365,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
               For your customers
             </Headline>
             <Paragraph isInverse alignment={ParagraphAlignment.CENTER}>
-              et your customers book and manage their bookings the most convenient and fastest way possible with all data available on the
+              Let your customers book and manage their bookings the most convenient and fastest way possible with all data available on the
               go from their smartphones.
             </Paragraph>
             <Button buttonType="inverse" label="Get in touch" />
