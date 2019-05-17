@@ -16,7 +16,7 @@ import { ContactForm } from '../components/contactForm/contactForm';
 
 const styles = require('./Index.module.scss');
 
-const startpageVisual = require('../components/assets/startpage-visual.png');
+const startpageVisual = require('../components/assets/startpage-visual.webp');
 const partnerRixen = require('../components/assets/partner-rixen-logo.png');
 const partnerSesitec = require('../components/assets/partner-sesitec-logo.png');
 const partnerWakeParx = require('../components/assets/partner-wakeparx-logo.png');
