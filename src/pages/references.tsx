@@ -161,11 +161,6 @@ const REFERENCES_FULL_SIZE = [
     href: 'http://www.wakeupcable.be/'
   },
   {
-    imageUrl: wasserskiWinterberg,
-    altAttribute: 'Wasserski Winterberg - logo',
-    href: 'https://www.wasserski-winterberg.de/'
-  },
-  {
     imageUrl: wakePark,
     altAttribute: 'Wake Park - logo',
     href: 'https://wake-park.nl/'
