@@ -249,7 +249,7 @@ const AquaPark: React.FunctionComponent = () => {
         <OwnerVisual type={ProductType.AQUAPARK} />
       </SectionWrapper>
       <SectionWrapper alignment="column">
-        <AccordionFeatureListItem label="HARDWARE INSTALLATION">
+        <AccordionFeatureListItem label="HARDWARE INSTALLED FOR YOU">
           <FeatureList featureList={HARDWARE_INSTALLATION} />
           <Button onClick={openOverlay} label="Get in touch" buttonType="primary" gutter />
         </AccordionFeatureListItem>

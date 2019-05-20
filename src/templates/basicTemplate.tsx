@@ -27,6 +27,10 @@ export const indexPageQuery = graphql`
 
 const NAVIGATION_LIST = [
   {
+    label: 'Wakeboard Parks',
+    to: Route.WAKEPARK
+  },
+  {
     label: 'Aqua Parks',
     to: Route.AQUAPARK
   },
@@ -35,8 +39,8 @@ const NAVIGATION_LIST = [
     to: Route.SURFPARK
   },
   {
-    label: 'Wakeboard Parks',
-    to: Route.WAKEPARK
+    label: 'References',
+    to: Route.REFERENCES
   }
 ];
 

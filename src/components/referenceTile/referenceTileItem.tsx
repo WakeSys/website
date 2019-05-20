@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import YouTube from 'react-youtube';
 
 import { Overlay } from '../overlay/overlay';
@@ -11,6 +11,7 @@ export interface IReferenceTileProps {
   imageUrl: string;
   altAttribute: string;
   youtubeId?: string;
+  href?: string;
 }
 
 interface IYoutube {
@@ -25,49 +26,48 @@ interface IReferenceTileState {
   isOverlayVisible: boolean;
 }
 
-export class ReferenceTileItem extends React.Component<IReferenceTileProps, IReferenceTileState> {
-  public state = {
-    isOverlayVisible: false
+export const ReferenceTileItem: React.FunctionComponent<IReferenceTileProps> = ({ imageUrl, altAttribute, youtubeId, href }) => {
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+
+  const onOpenOverlayClick = () => {
+    setIsOverlayVisible(true);
   };
 
-  public render() {
-    const { imageUrl, altAttribute, youtubeId } = this.props;
-    const opts: IYoutube = {
-      height: '540',
-      width: '100%',
-      playerVars: {
-        autoplay: 1
-      }
-    };
-    return (
-      <>
-        <div onClick={this.onOpenOverlayClick} className={styles.referenceTile}>
+  const onCloseByClick = () => {
+    setIsOverlayVisible(false);
+  };
+
+  const opts: IYoutube = {
+    height: '540',
+    width: '100%',
+    playerVars: {
+      autoplay: 1
+    }
+  };
+  return (
+    <>
+      {youtubeId ? (
+        <div onClick={onOpenOverlayClick} className={styles.referenceTile}>
           <img className={styles.referenceTileImage} src={imageUrl} alt={altAttribute} />
-          <button className={styles.referenceTileButton}>
-            <span className={styles.referenceTileIconWrapper}>
-              <Icon className={styles.referenceTileIcon} icon={play} />
-            </span>
-            Watch video
-          </button>
+          {youtubeId && (
+            <button className={styles.referenceTileButton}>
+              <span className={styles.referenceTileIconWrapper}>
+                <Icon className={styles.referenceTileIcon} icon={play} />
+              </span>
+              Watch video
+            </button>
+          )}
         </div>
-        {this.state.isOverlayVisible && (
-          <Overlay onCloseClick={this.onCloseByClick} className={styles.referenceTileOverlay}>
-            <YouTube opts={opts} videoId="BsuGRTDEUGM" />
-          </Overlay>
-        )}
-      </>
-    );
-  }
-
-  private onOpenOverlayClick = () => {
-    this.setState({
-      isOverlayVisible: true
-    });
-  };
-
-  private onCloseByClick = () => {
-    this.setState({
-      isOverlayVisible: false
-    });
-  };
-}
+      ) : (
+        <a href={href} className={styles.referenceTile} target="_blank" rel="noopener noreferrer">
+          <img className={styles.referenceTileImage} src={imageUrl} alt={altAttribute} />
+        </a>
+      )}
+      {isOverlayVisible && (
+        <Overlay onCloseClick={onCloseByClick} className={styles.referenceTileOverlay}>
+          <YouTube opts={opts} videoId={youtubeId} onEnd={() => setIsOverlayVisible(false)} />
+        </Overlay>
+      )}
+    </>
+  );
+};

@@ -18,10 +18,10 @@ import { Content } from '../components/content/content';
 import { ReferenceTileList } from '../components/referenceTile/referenceTileList';
 import { ProductType } from '../constants';
 
-const area47Logo = require('../components/assets/area47.png');
-const twpLogo = require('../components/assets/twp.png');
-const liquidLeisureLogo = require('../components/assets/liquid-leisure.png');
-const customerVisual = require('../components/assets/wakepark-customer-visual.webp');
+const area47 = require('../components/assets/references/area47.png');
+const wakeparadise = require('../components/assets/references/wakeparadise.png');
+const liquidleisure = require('../components/assets/references/liquidleisure.png');
+const customerVisual = require('../components/assets/wakepark-customer-visual.jpg');
 
 const styles = require('./Index.module.scss');
 
@@ -234,19 +234,19 @@ const ONLINE_OR_ON_THE_SPOT: IFeatureListItemProps[] = [
 
 const REFERENCES = [
   {
-    imageUrl: liquidLeisureLogo,
+    imageUrl: liquidleisure,
     altAttribute: 'liquid leisure - logo',
-    youtubeId: 'BsuGRTDEUGM'
+    youtubeId: 'UQOQeJFnkh0'
   },
   {
-    imageUrl: twpLogo,
-    altAttribute: 'bal',
-    youtubeId: 'BsuGRTDEUGM'
+    imageUrl: wakeparadise,
+    altAttribute: 'wakeparadise - logo',
+    youtubeId: 'UQOQeJFnkh0'
   },
   {
-    imageUrl: area47Logo,
+    imageUrl: area47,
     altAttribute: 'area47 - logo',
-    youtubeId: 'BsuGRTDEUGM'
+    youtubeId: 'A6GOvi84so0'
   }
 ];
 
