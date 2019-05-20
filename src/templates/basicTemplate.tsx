@@ -49,7 +49,11 @@ export const BasicTemplate: React.FunctionComponent<Props> = ({ children, title,
 
   return (
     <>
-      <Helmet title={title} meta={[{ name: 'description', content: metaDescription }]} />
+      <Helmet
+        title={title}
+        meta={[{ name: 'description', content: metaDescription }]}
+        link={[{ rel: 'icon', type: 'image/png', href: require('../components/assets/favicon.png') }]}
+      />
       <TopBar navigationList={NAVIGATION_LIST} label="Free trial" openOverlay={() => setIsOverlayOpen(true)} />
       {isOverlayOpen && (
         <Overlay className={styles.basicTemplateOverlay} children={<ContactForm />} onCloseClick={() => setIsOverlayOpen(false)} />
