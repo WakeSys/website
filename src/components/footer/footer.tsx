@@ -16,20 +16,23 @@ export const Footer: React.SFC = () => {
       <SectionWrapper className={styles.footerSectionWrapper}>
         <div className={styles.footerColumn}>
           <h3 className={styles.footerHeadline}>Company</h3>
-          <Link className={styles.footerLink} to="/about">
+          <Link className={styles.footerLink} to={Route.REFERENCES}>
+            References
+          </Link>
+          <Link className={styles.footerLink} to={Route.ABOUT_US}>
             About us
           </Link>
         </div>
         <div className={styles.footerColumn}>
           <h3 className={styles.footerHeadline}>Products</h3>
+          <Link className={styles.footerLink} to={Route.WAKEPARK}>
+            Wake Parks
+          </Link>
           <Link className={styles.footerLink} to={Route.AQUAPARK}>
             Aqua Parks
           </Link>
           <Link className={styles.footerLink} to={Route.SURFPARK}>
             Surf Parks
-          </Link>
-          <Link className={styles.footerLink} to={Route.WAKEPARK}>
-            Wake Parks
           </Link>
         </div>
         <div className={styles.footerColumn}>

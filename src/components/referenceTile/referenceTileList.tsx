@@ -11,7 +11,13 @@ export const ReferenceTileList: React.SFC<IReferenceTileListProps> = ({ referenc
   return (
     <ul className={styles.referenceTileList}>
       {reference.map(item => (
-        <ReferenceTileItem key={item.imageUrl} imageUrl={item.imageUrl} altAttribute={item.altAttribute} youtubeId={item.youtubeId} />
+        <ReferenceTileItem
+          key={item.imageUrl}
+          imageUrl={item.imageUrl}
+          altAttribute={item.altAttribute}
+          youtubeId={item.youtubeId}
+          href={item.href}
+        />
       ))}
     </ul>
   );

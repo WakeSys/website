@@ -16,25 +16,25 @@ import { ContactForm } from '../components/contactForm/contactForm';
 
 const styles = require('./Index.module.scss');
 
-const startpageVisual = require('../components/assets/startpage-visual.webp');
+const startpageVisual = require('../components/assets/startpage-visual.jpg');
 const partnerRixen = require('../components/assets/partner-rixen-logo.png');
 const partnerSesitec = require('../components/assets/partner-sesitec-logo.png');
 const partnerWakeParx = require('../components/assets/partner-wakeparx-logo.png');
 const partnerWakeStation = require('../components/assets/partner-wakestation-logo.png');
 const aboutUsVisual = require('../components/assets/startpage-wave-visual.png');
 
-const area47Logo = require('../components/assets/area47.png');
-const twpLogo = require('../components/assets/twp.png');
-const liquidLeisureLogo = require('../components/assets/liquid-leisure.png');
+const wakeparadise = require('../components/assets/references/wakeparadise.png');
+const liquidleisure = require('../components/assets/references/liquidleisure.png');
+const area47 = require('../components/assets/references/area47.png');
 
 const partners: Items[] = [
   {
-    imageUrl: partnerSesitec as string,
-    altAttr: 'Sesitec logo'
-  },
-  {
     imageUrl: partnerRixen as string,
     altAttr: 'Rixen logo'
+  },
+  {
+    imageUrl: partnerSesitec as string,
+    altAttr: 'Sesitec logo'
   },
   {
     imageUrl: partnerWakeParx as string,
@@ -48,19 +48,19 @@ const partners: Items[] = [
 
 const REFERENCES = [
   {
-    imageUrl: liquidLeisureLogo,
+    imageUrl: liquidleisure,
     altAttribute: 'liquid leisure - logo',
-    youtubeId: 'BsuGRTDEUGM'
+    youtubeId: 'UQOQeJFnkh0'
   },
   {
-    imageUrl: twpLogo,
-    altAttribute: 'bal',
-    youtubeId: 'BsuGRTDEUGM'
+    imageUrl: wakeparadise,
+    altAttribute: 'wakeparadise - logo',
+    youtubeId: 'UQOQeJFnkh0'
   },
   {
-    imageUrl: area47Logo,
+    imageUrl: area47,
     altAttribute: 'area47 - logo',
-    youtubeId: 'BsuGRTDEUGM'
+    youtubeId: 'A6GOvi84so0'
   }
 ];
 
@@ -95,9 +95,9 @@ const IndexPage: React.FunctionComponent = () => {
           The ideal solution for water sports and outdoor parks of any size
         </Headline>
         <TileList>
+          <ProductCard link={Route.WAKEPARK} productType={Color.BLUE} productName="Wake Parks" />
           <ProductCard link={Route.AQUAPARK} productType={Color.GREEN} productName="Aqua Parks" />
           <ProductCard link={Route.SURFPARK} productType={Color.PURPLE} productName="Surf Parks" />
-          <ProductCard link={Route.WAKEPARK} productType={Color.BLUE} productName="Wake Parks" />
         </TileList>
       </SectionWrapper>
       <SectionWrapper fullWidth alignment="column" visual={aboutUsVisual}>
@@ -108,10 +108,7 @@ const IndexPage: React.FunctionComponent = () => {
           <Paragraph isInverse alignment={ParagraphAlignment.CENTER}>
             WakeSys makes your business run smoothly: We provide an end-to-end solution with dedicated interfaces for the owner, the staff
             members and the customers digitizing all your operations. Buy tickets, sign waivers, manage group bookings, setup up events and
-            manage customer profiles 24/7 from your preferred device. Our solution has been developed with passion and deep thought: With
-            just a few clicks and a super intuitive interface you are enabled to do whatever you need in a very short amount of time. Hassle
-            free operations do not only run in the cloud but also require the right equipment. At WakeSys, we also take care of the hardware
-            you need and help you keep it up and running.
+            manage customer profiles 24/7 from your preferred device.
           </Paragraph>
           <Button onClick={() => setIsOverlayOpen(true)} buttonType="inverse" label="Request free demo" />
         </Content>
