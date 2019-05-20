@@ -55,7 +55,7 @@ const REFERENCES = [
   {
     imageUrl: wakeparadise,
     altAttribute: 'wakeparadise - logo',
-    youtubeId: 'UQOQeJFnkh0'
+    youtubeId: 'xU9Xz-DPxhQ'
   },
   {
     imageUrl: area47,

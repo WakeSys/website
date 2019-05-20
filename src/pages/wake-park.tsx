@@ -241,7 +241,7 @@ const REFERENCES = [
   {
     imageUrl: wakeparadise,
     altAttribute: 'wakeparadise - logo',
-    youtubeId: 'UQOQeJFnkh0'
+    youtubeId: 'xU9Xz-DPxhQ'
   },
   {
     imageUrl: area47,
@@ -297,7 +297,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
               type="wakepark"
             />
           </div>
-          <IntroductionVisual />
+          <IntroductionVisual tickets="$ 2000" label="Memberships: $ 549,00" total="$ 2549,00" />
         </SectionWrapper>
         <SectionWrapper className={styles.sectionOwner}>
           <div ref={this.ownerNode} />
