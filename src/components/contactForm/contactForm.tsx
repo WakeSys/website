@@ -32,7 +32,7 @@ export class ContactForm extends React.Component {
         />
         <Input className={styles.contactFormInput} htmlForLabel="phone" label="Phone or Skype" type="text" name="phone" /> */}
         <label>
-          Your name: <input type="text" name="name" />
+          Your name: <input name="message" />
         </label>
         <label>
           Your website: <input type="url" name="website" />
