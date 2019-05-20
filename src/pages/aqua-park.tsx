@@ -234,7 +234,7 @@ const AquaPark: React.FunctionComponent = () => {
             type="aquarpark"
           />
         </div>
-        <IntroductionVisual />
+        <IntroductionVisual tickets="$ 3500" label="Events $5000" total="$ 8500" />
       </SectionWrapper>
       <SectionWrapper className={styles.sectionOwner}>
         <div ref={ownerNode} />

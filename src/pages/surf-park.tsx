@@ -233,7 +233,7 @@ const SurfPark: React.FunctionComponent = () => {
             type="surfpark"
           />
         </div>
-        <IntroductionVisual />
+        <IntroductionVisual tickets="$ 250" label="10 Passes $1500" total="1750" />
       </SectionWrapper>
       <SectionWrapper className={styles.sectionOwner}>
         <div ref={ownerNode} />

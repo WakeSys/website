@@ -297,7 +297,7 @@ export default class IndexPage extends React.Component<{}, IIndexPage> {
               type="wakepark"
             />
           </div>
-          <IntroductionVisual />
+          <IntroductionVisual tickets="$ 2000" label="Memberships: $ 549,00" total="$ 2549,00" />
         </SectionWrapper>
         <SectionWrapper className={styles.sectionOwner}>
           <div ref={this.ownerNode} />
