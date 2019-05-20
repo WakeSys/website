@@ -27,7 +27,8 @@ export const Input: React.SFC<IInputProps> = ({
   className,
   inputClassName,
   onChange,
-  onKeyPress
+  onKeyPress,
+  name
 }) => {
   return (
     <div className={classnames(styles.inputWrapper, className)}>
@@ -38,7 +39,7 @@ export const Input: React.SFC<IInputProps> = ({
         id={htmlForLabel}
         type={type}
         value={value}
-        name={htmlForLabel}
+        name={name}
         autoFocus={autoFocus}
         className={classnames(styles.input, inputClassName)}
         placeholder={placeholder}
