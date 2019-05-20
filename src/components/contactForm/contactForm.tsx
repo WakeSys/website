@@ -8,11 +8,12 @@ const styles = require('./contactForm.module.scss');
 export class ContactForm extends React.Component {
   public render() {
     return (
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" method="POST" data-netlify="true" className={styles.contactForm} action="/success">
+        <input type="hidden" name="form-name" value="contact" />
         <Headline className={styles.contactFormHeadline} type="h3">
           <strong>Request your free Wakesys demo</strong>
         </Headline>
-        {/* <Input className={styles.contactFormInput} htmlForLabel="name" label="Name" type="text" placeholder="Type your name" name="name" />
+        <Input className={styles.contactFormInput} htmlForLabel="name" label="Name" type="text" placeholder="Type your name" name="name" />
         <Input
           className={styles.contactFormInput}
           htmlForLabel="website"
@@ -29,17 +30,7 @@ export class ContactForm extends React.Component {
           placeholder="your@mail.com"
           name="email"
         />
-        <Input className={styles.contactFormInput} htmlForLabel="phone" label="Phone or Skype" type="text" name="phone" /> */}
-        <p>
-          <label>
-            Your Name: <input type="text" name="name" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Email: <input type="email" name="email" />
-          </label>
-        </p>
+        <Input className={styles.contactFormInput} htmlForLabel="phone" label="Phone or Skype" type="text" name="phone" />
         <textarea
           className={styles.contactFormTextArea}
           name="message"
