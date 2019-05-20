@@ -13,14 +13,14 @@ export class ContactForm extends React.Component {
         <Headline className={styles.contactFormHeadline} type="h3">
           <strong>Request your free Wakesys demo</strong>
         </Headline>
-        <Input className={styles.contactFormInput} htmlForLabel="name" label="Name" type="text" placeholder="Type your name" name="text" />
+        <Input className={styles.contactFormInput} htmlForLabel="name" label="Name" type="text" placeholder="Type your name" name="name" />
         <Input
           className={styles.contactFormInput}
           htmlForLabel="website"
           label="Your website"
           type="url"
           placeholder="Type your name"
-          name="url"
+          name="website"
         />
         <Input
           className={styles.contactFormInput}
@@ -30,7 +30,7 @@ export class ContactForm extends React.Component {
           placeholder="your@mail.com"
           name="email"
         />
-        <Input className={styles.contactFormInput} htmlForLabel="phone" label="Phone or Skype" type="tel" name="text" />
+        <Input className={styles.contactFormInput} htmlForLabel="phone" label="Phone or Skype" type="text" name="phone" />
         <textarea
           className={styles.contactFormTextArea}
           name="message"
