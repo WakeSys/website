@@ -6,18 +6,6 @@ const TestForm: React.FunctionComponent = () => {
     <form name="test-contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
       <input type="hidden" name="bot-field" />
       <input type="hidden" name="form-name" value="test-contact" />
-      {/* <div className="field half first">
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" />
-      </div>
-      <div className="field half">
-        <label htmlFor="email">Email</label>
-        <input type="text" name="email" id="email" />
-      </div>
-      <div className="field">
-        <label htmlFor="message">Message</label>
-        <textarea name="message" id="message" />
-      </div> */}
 
       <Input htmlForLabel="name" label="Name" type="text" placeholder="Type your name" name="name" />
       <Input htmlForLabel="website" label="Your website" type="url" placeholder="Type your name" name="website" />
