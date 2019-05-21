@@ -13,10 +13,6 @@
     }
 }
 
-.contactFormHeadline {
-    width: 100%;
-}
-
 .contactFormInput {
     flex-basis: calc(50% - 8px);
 }
@@ -44,8 +40,4 @@
         font-weight: $fontWeightLight;
         font-size: $fontSizeSmall;
     }
-}
-
-.hidden {
-    display: none;
 }
