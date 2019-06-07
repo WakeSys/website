@@ -59,6 +59,13 @@ const pentasi = require('../components/assets/references/pentasi.png');
 const alta = require('../components/assets/references/alta.png');
 const konex = require('../components/assets/references/konex.png');
 
+const cambridgeaquapark = require('../components/assets/references/cambrige-aqua-park.png');
+const spoton = require('../components/assets/references/spoton.png');
+const pembrookshire = require('../components/assets/references/pembrookshire.png');
+const northhampton = require('../components/assets/references/northhampton.png');
+
+const surfLangenfeld = require('../components/assets/references/surf-langenfeld.png');
+
 const REFERENCES_FULL_SIZE = [
   {
     imageUrl: liquidLeisure,
@@ -199,6 +206,11 @@ const REFERENCES_FULL_SIZE = [
     imageUrl: wakeparkBrombachsee,
     altAttribute: 'Wakepark Brombachsee - logo',
     href: 'https://www.wakepark-brombachsee.de'
+  },
+  {
+    imageUrl: wasserskiLangenfeld,
+    altAttribute: 'wasserski langenfeld - logo',
+    href: 'https://www.wasserski-langenfeld.de'
   }
 ];
 
@@ -247,6 +259,67 @@ const REFERENCES_TWO_TOWER = [
     imageUrl: ldbwakeschool,
     altAttribute: 'ldbwakeschool - logo',
     href: 'https://www.ldbwakeschool.co.uk/'
+  }
+];
+
+const REFERENCES_AQUA_PARKS = [
+  {
+    imageUrl: twincable,
+    altAttribute: 'twin cable beckum - logo',
+    href: 'https://www.twincable-beckum.de/'
+  },
+  {
+    imageUrl: nonaadventurepark,
+    altAttribute: 'Nona adventure park - logo',
+    href: 'https://www.nonaadventurepark.com/'
+  },
+  {
+    imageUrl: triolago,
+    altAttribute: 'triolago - logo',
+    href: 'http://www.wakepark-triolago.de/'
+  },
+  {
+    imageUrl: stawiki,
+    altAttribute: 'stawiki - logo',
+    href: 'http://wake-zone.pl/'
+  },
+  {
+    imageUrl: cambridgeaquapark,
+    altAttribute: 'cambridgeaquapark - logo',
+    href: 'https://cambridgeaquapark.com/'
+  },
+  {
+    imageUrl: spoton,
+    altAttribute: 'spoton wake - logo',
+    href: 'https://www.spotonwake.co.uk/'
+  },
+  {
+    imageUrl: pembrookshire,
+    altAttribute: 'pembrookshire - logo',
+    href: 'https://www.pembrokeshirewakepark.co.uk/aquaparkwales'
+  },
+  {
+    imageUrl: northhampton,
+    altAttribute: 'northhampton - logo',
+    href: 'https://www.northamptonaquapark.co.uk/'
+  }
+];
+
+const REFERENCES_SURF_PARKS = [
+  {
+    imageUrl: surfLangenfeld,
+    altAttribute: 'surf langenfeld - logo',
+    href: 'https://www.surf-langenfeld.de'
+  },
+  {
+    imageUrl: iwpphuket,
+    altAttribute: 'IWP - logo',
+    href: 'http://www.iwpphuket.com/'
+  },
+  {
+    imageUrl: wakeparadise,
+    altAttribute: 'wakeparadise - logo',
+    youtubeId: 'xU9Xz-DPxhQ'
   }
 ];
 
@@ -322,6 +395,20 @@ const References: React.FunctionComponent = () => {
           Two-Tower Wakeboard Parks using WakeSys
         </Headline>
         <ReferenceTileList reference={REFERENCES_TWO_TOWER} />
+      </SectionWrapper>
+      <SectionWrapper alignment="column" withBackground fullWidth>
+        <Content size="100">
+          <Headline type="h2" alignment="center">
+            Aqua Parks using WakeSys
+          </Headline>
+          <ReferenceTileList reference={REFERENCES_AQUA_PARKS} />
+        </Content>
+      </SectionWrapper>
+      <SectionWrapper alignment="column">
+        <Headline type="h2" alignment="center">
+          Surf Parks using WakeSys
+        </Headline>
+        <ReferenceTileList reference={REFERENCES_SURF_PARKS} />
       </SectionWrapper>
       <SectionWrapper alignment="column" withBackground fullWidth>
         <Content size="100">
