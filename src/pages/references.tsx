@@ -26,17 +26,24 @@ const stawiki = require('../components/assets/references/stawiki.png');
 const hannams = require('../components/assets/references/hannams.png');
 const twpPattaya = require('../components/assets/references/pattaya.png');
 const wakeAndGroove = require('../components/assets/references/wakeandgroove.png');
-const roseland = require('../components/assets/references/roseland.png');
 const twincable = require('../components/assets/references/twincable.png');
 const toeppersee = require('../components/assets/references/toeppersee.png');
 const wakeupcable = require('../components/assets/references/wakeupcable.png');
-const wasserskiWinterberg = require('../components/assets/references/wasserski-winterberg.png');
 const wakePark = require('../components/assets/references/wake-park.png');
 const nextLevelRide = require('../components/assets/references/nextlevelrideaustin.png');
 const iwpphuket = require('../components/assets/references/iwpphuket.png');
 const dock5 = require('../components/assets/references/dock5.png');
 const texasskiranch = require('../components/assets/references/texasskiranch.png');
 const wakeparkBrombachsee = require('../components/assets/references/wakepark-brombachsee.png');
+const roseland = require('../components/assets/references/roseland.png');
+const wakehouse = require('../components/assets/references/wakehouse.png');
+const esctwp = require('../components/assets/references/esctwp.png');
+const lunarcablepark = require('../components/assets/references/lunar.png');
+const champagnewakepark = require('../components/assets/references/champagnewakepark.png');
+const wildwakepark = require('../components/assets/references/wildwakepark.png');
+const tng = require('../components/assets/references/TNG.png');
+const trophylakes = require('../components/assets/references/trophylakes.png');
+const kuwaittourism = require('../components/assets/references/kuwaittourism.png');
 
 const valleywakepark = require('../components/assets/references/valleywakepark.png');
 const wakeandski = require('../components/assets/references/wakeandski.png');
@@ -194,6 +201,56 @@ const REFERENCES_FULL_SIZE = [
     imageUrl: wasserskiLangenfeld,
     altAttribute: 'wasserski langenfeld - logo',
     href: 'https://www.wasserski-langenfeld.de'
+  },
+  {
+    imageUrl: springlakes,
+    altAttribute: 'springlakes - logo',
+    href: 'https://www.springlakes.co.uk/'
+  },
+  {
+    imageUrl: roseland,
+    altAttribute: 'roseland - logo',
+    href: 'https://roselandwakepark.com/'
+  },
+  {
+    imageUrl: wakehouse,
+    altAttribute: 'wakehouse - logo',
+    href: 'https://wakehouse.com.au/'
+  },
+  {
+    imageUrl: esctwp,
+    altAttribute: 'thaiwakepark - logo',
+    href: 'https://www.thaiwakepark.com/'
+  },
+  {
+    imageUrl: lunarcablepark,
+    altAttribute: 'lunar - logo',
+    href: 'https://www.lunarcablepark.com/'
+  },
+  {
+    imageUrl: champagnewakepark,
+    altAttribute: 'champagne wakepark - logo',
+    href: 'https://champagnewakepark.com/'
+  },
+  {
+    imageUrl: wildwakepark,
+    altAttribute: 'wild wakepark - logo',
+    href: 'https://www.wildwakepark.de/'
+  },
+  {
+    imageUrl: tng,
+    altAttribute: 'tng cablepark - logo',
+    href: 'http://www.tngcablepark.com/'
+  },
+  {
+    imageUrl: trophylakes,
+    altAttribute: 'trophy lakes - logo',
+    href: 'https://www.trophylakesports.com/'
+  },
+  {
+    imageUrl: kuwaittourism,
+    altAttribute: 'kuwait tourism wakepark - logo',
+    href: 'https://kuwaittourism.com/'
   }
 ];
 
