@@ -59,6 +59,8 @@ const cambridgeaquapark = require('../components/assets/references/cambrige-aqua
 const spoton = require('../components/assets/references/spoton.png');
 const pembrookshire = require('../components/assets/references/pembrookshire.png');
 const northhampton = require('../components/assets/references/northhampton.png');
+const charlestonquapark = require('../components/assets/references/charleston-aqua-park.png');
+const springlakes = require('../components/assets/references/springlakes.png');
 
 const surfLangenfeld = require('../components/assets/references/surf-langenfeld.png');
 
@@ -273,6 +275,16 @@ const REFERENCES_AQUA_PARKS = [
     imageUrl: northhampton,
     altAttribute: 'northhampton - logo',
     href: 'https://www.northamptonaquapark.co.uk/'
+  },
+  {
+    imageUrl: charlestonquapark,
+    altAttribute: 'charleston aqua park - logo',
+    href: 'https://www.charlestonaquapark.com/'
+  },
+  {
+    imageUrl: springlakes,
+    altAttribute: 'springlakes - logo',
+    href: 'https://www.springlakes.co.uk/'
   }
 ];
 
