@@ -26,22 +26,25 @@ const stawiki = require('../components/assets/references/stawiki.png');
 const hannams = require('../components/assets/references/hannams.png');
 const twpPattaya = require('../components/assets/references/pattaya.png');
 const wakeAndGroove = require('../components/assets/references/wakeandgroove.png');
-const roseland = require('../components/assets/references/roseland.png');
 const twincable = require('../components/assets/references/twincable.png');
-const twpKorat = require('../components/assets/references/korat.png');
 const toeppersee = require('../components/assets/references/toeppersee.png');
 const wakeupcable = require('../components/assets/references/wakeupcable.png');
-const wasserskiWinterberg = require('../components/assets/references/wasserski-winterberg.png');
 const wakePark = require('../components/assets/references/wake-park.png');
 const nextLevelRide = require('../components/assets/references/nextlevelrideaustin.png');
-const wakeparkJeziorsko = require('../components/assets/references/wakepark-jeziorsko.png');
 const iwpphuket = require('../components/assets/references/iwpphuket.png');
 const dock5 = require('../components/assets/references/dock5.png');
 const texasskiranch = require('../components/assets/references/texasskiranch.png');
-const nonaadventurepark = require('../components/assets/references/nonaadventurepark.png');
 const wakeparkBrombachsee = require('../components/assets/references/wakepark-brombachsee.png');
+const roseland = require('../components/assets/references/roseland.png');
+const wakehouse = require('../components/assets/references/wakehouse.png');
+const esctwp = require('../components/assets/references/esctwp.png');
+const lunarcablepark = require('../components/assets/references/lunar.png');
+const champagnewakepark = require('../components/assets/references/champagnewakepark.png');
+const wildwakepark = require('../components/assets/references/wildwakepark.png');
+const tng = require('../components/assets/references/TNG.png');
+const trophylakes = require('../components/assets/references/trophylakes.png');
+const kuwaittourism = require('../components/assets/references/kuwaittourism.png');
 
-const wakeupdocklands = require('../components/assets/references/wakeupdocklands.png');
 const valleywakepark = require('../components/assets/references/valleywakepark.png');
 const wakeandski = require('../components/assets/references/wakeandski.png');
 const wakeport = require('../components/assets/references/wakeport.png');
@@ -63,6 +66,8 @@ const cambridgeaquapark = require('../components/assets/references/cambrige-aqua
 const spoton = require('../components/assets/references/spoton.png');
 const pembrookshire = require('../components/assets/references/pembrookshire.png');
 const northhampton = require('../components/assets/references/northhampton.png');
+const charlestonquapark = require('../components/assets/references/charleston-aqua-park.png');
+const springlakes = require('../components/assets/references/springlakes.png');
 
 const surfLangenfeld = require('../components/assets/references/surf-langenfeld.png');
 
@@ -153,11 +158,6 @@ const REFERENCES_FULL_SIZE = [
     href: 'https://www.twincable-beckum.de/'
   },
   {
-    imageUrl: twpKorat,
-    altAttribute: 'twp korat - logo',
-    href: 'https://www.thaiwakepark.com/'
-  },
-  {
     imageUrl: toeppersee,
     altAttribute: 'Toeppersee Wakeboard - Wasserski- Freizeitanalge - logo',
     href: 'https://toeppersee.de/'
@@ -178,11 +178,6 @@ const REFERENCES_FULL_SIZE = [
     href: 'https://nextlevelrideaustin.com/'
   },
   {
-    imageUrl: wakeparkJeziorsko,
-    altAttribute: 'Wakepark Jeziorsko - logo',
-    href: '#'
-  },
-  {
     imageUrl: iwpphuket,
     altAttribute: 'IWP - logo',
     href: 'http://www.iwpphuket.com/'
@@ -198,11 +193,6 @@ const REFERENCES_FULL_SIZE = [
     href: 'https://www.texasskiranch.com/'
   },
   {
-    imageUrl: nonaadventurepark,
-    altAttribute: 'Nona adventure park - logo',
-    href: 'https://www.nonaadventurepark.com/'
-  },
-  {
     imageUrl: wakeparkBrombachsee,
     altAttribute: 'Wakepark Brombachsee - logo',
     href: 'https://www.wakepark-brombachsee.de'
@@ -211,15 +201,55 @@ const REFERENCES_FULL_SIZE = [
     imageUrl: wasserskiLangenfeld,
     altAttribute: 'wasserski langenfeld - logo',
     href: 'https://www.wasserski-langenfeld.de'
+  },
+  {
+    imageUrl: springlakes,
+    altAttribute: 'springlakes - logo',
+    href: 'https://www.springlakes.co.uk/'
+  },
+  {
+    imageUrl: roseland,
+    altAttribute: 'roseland - logo',
+    href: 'https://roselandwakepark.com/'
+  },
+  {
+    imageUrl: wakehouse,
+    altAttribute: 'wakehouse - logo',
+    href: 'https://wakehouse.com.au/'
+  },
+  {
+    imageUrl: esctwp,
+    altAttribute: 'thaiwakepark - logo',
+    href: 'https://www.thaiwakepark.com/'
+  },
+  {
+    imageUrl: lunarcablepark,
+    altAttribute: 'lunar - logo',
+    href: 'https://www.lunarcablepark.com/'
+  },
+  {
+    imageUrl: champagnewakepark,
+    altAttribute: 'champagne wakepark - logo',
+    href: 'https://champagnewakepark.com/'
+  },
+  {
+    imageUrl: wildwakepark,
+    altAttribute: 'wild wakepark - logo',
+    href: 'https://www.wildwakepark.de/'
+  },
+  {
+    imageUrl: tng,
+    altAttribute: 'tng cablepark - logo',
+    href: 'http://www.tngcablepark.com/'
+  },
+  {
+    imageUrl: kuwaittourism,
+    altAttribute: 'kuwait tourism wakepark - logo',
+    href: 'https://kuwaittourism.com/'
   }
 ];
 
 const REFERENCES_TWO_TOWER = [
-  {
-    imageUrl: wakeupdocklands,
-    altAttribute: 'wakeupdocklands - logo',
-    href: 'https://www.wakeupdocklands.com/'
-  },
   {
     imageUrl: valleywakepark,
     altAttribute: 'valleywakepark - logo',
@@ -259,6 +289,11 @@ const REFERENCES_TWO_TOWER = [
     imageUrl: ldbwakeschool,
     altAttribute: 'ldbwakeschool - logo',
     href: 'https://www.ldbwakeschool.co.uk/'
+  },
+  {
+    imageUrl: trophylakes,
+    altAttribute: 'trophy lakes - logo',
+    href: 'https://www.trophylakesports.com/'
   }
 ];
 
@@ -267,11 +302,6 @@ const REFERENCES_AQUA_PARKS = [
     imageUrl: twincable,
     altAttribute: 'twin cable beckum - logo',
     href: 'https://www.twincable-beckum.de/'
-  },
-  {
-    imageUrl: nonaadventurepark,
-    altAttribute: 'Nona adventure park - logo',
-    href: 'https://www.nonaadventurepark.com/'
   },
   {
     imageUrl: triolago,
@@ -302,6 +332,16 @@ const REFERENCES_AQUA_PARKS = [
     imageUrl: northhampton,
     altAttribute: 'northhampton - logo',
     href: 'https://www.northamptonaquapark.co.uk/'
+  },
+  {
+    imageUrl: charlestonquapark,
+    altAttribute: 'charleston aqua park - logo',
+    href: 'https://www.charlestonaquapark.com/'
+  },
+  {
+    imageUrl: springlakes,
+    altAttribute: 'springlakes - logo',
+    href: 'https://www.springlakes.co.uk/'
   }
 ];
 
