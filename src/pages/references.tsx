@@ -243,11 +243,6 @@ const REFERENCES_FULL_SIZE = [
     href: 'http://www.tngcablepark.com/'
   },
   {
-    imageUrl: trophylakes,
-    altAttribute: 'trophy lakes - logo',
-    href: 'https://www.trophylakesports.com/'
-  },
-  {
     imageUrl: kuwaittourism,
     altAttribute: 'kuwait tourism wakepark - logo',
     href: 'https://kuwaittourism.com/'
@@ -294,6 +289,11 @@ const REFERENCES_TWO_TOWER = [
     imageUrl: ldbwakeschool,
     altAttribute: 'ldbwakeschool - logo',
     href: 'https://www.ldbwakeschool.co.uk/'
+  },
+  {
+    imageUrl: trophylakes,
+    altAttribute: 'trophy lakes - logo',
+    href: 'https://www.trophylakesports.com/'
   }
 ];
 
